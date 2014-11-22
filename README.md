@@ -14,7 +14,7 @@ The following will help you set up the development environment necessary to Flas
 
 1. Download the Atmel IDE from here: http://www.atmel.com/microsite/atmel_studio6/default.aspx. Atmel Studio 6 is built around Visual Studio 10 and works exactly the same way. It's well made, fully featured IDE.
 
-2. Open RTOSDemo.atsln to open the project. The source files should be viewable within Atmel Studio
+2. Open CORTEX_ATSAM3X_Atmel_Studio_demo/RTOSDemo.atsln to open the project. The source files should be viewable within Atmel Studio
 
 3. Do what you need to do via the solution explorer and navigating between files
 
