@@ -323,7 +323,8 @@
 /** Push button #0 definition.
  *  Attributes = pull-up + debounce + interrupt on rising edge. */
 #define PUSHBUTTON_1_NAME    "LEFT CLICK"
-#define GPIO_PUSH_BUTTON_1           (PIO_PE7_IDX)
+//changed pio_pe7_idx to 135 dafuq
+#define GPIO_PUSH_BUTTON_1           (135)
 #define GPIO_PUSH_BUTTON_1_FLAGS\
 	(PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE | PIO_IT_RISE_EDGE)
 
@@ -685,7 +686,9 @@
 /*! USART0 pin ENABLE */
 #define PIN_USART0_EN\
 	{PIO_PE14, PIOE, ID_PIOE, PIO_OUTPUT_0, PIO_DEFAULT}
-#define PIN_USART0_EN_IDX         (PIO_PE14_IDX)
+
+// changed this from PIO_PE14_IDX to 142 dafuq
+#define PIN_USART0_EN_IDX         (142)
 #define PIN_USART0_EN_FLAGS       (PIO_OUTPUT_0 | PIO_DEFAULT)
 
 /**
