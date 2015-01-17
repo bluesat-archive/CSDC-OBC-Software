@@ -142,7 +142,7 @@ void vParTestToggleLED( unsigned portBASE_TYPE uxLED )
 	{
 		taskENTER_CRITICAL();
 		{
-			gpio_toggle_pin( ulLED[ uxLED ] );
+			gpio_toggle_pin(PIO_PB14_IDX); //ulLED[ uxLED ] );
 		}
 		taskEXIT_CRITICAL();
 	}

@@ -2274,12 +2274,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/list.o
  .data          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/list.o
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/list.o
- .text.vListInitialise
-                0x00000000       0x40 src/asf/thirdparty/FreeRTOS/list.o
- .text.vListInitialiseItem
-                0x00000000       0x18 src/asf/thirdparty/FreeRTOS/list.o
- .text.vListInsert
-                0x00000000       0x70 src/asf/thirdparty/FreeRTOS/list.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/list.o
  .debug_macro   0x00000000       0x58 src/asf/thirdparty/FreeRTOS/list.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/list.o
@@ -2310,20 +2304,8 @@ Discarded input sections
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .rodata.pcInterruptPriorityRegisters
                 0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.pxPortInitialiseStack
-                0x00000000       0x58 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.prvTaskExitError
-                0x00000000       0x24 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.prvPortStartFirstTask
-                0x00000000       0x20 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.xPortStartScheduler
-                0x00000000       0xc8 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .text.vPortEndScheduler
                 0x00000000       0x20 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.vPortYield
-                0x00000000       0x20 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .text.vPortSetupTimerInterrupt
-                0x00000000       0x34 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .debug_macro   0x00000000      0x166 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
@@ -2363,38 +2345,14 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .data          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.ucHeap    0x00000000     0xa000 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .rodata.xHeapStructSize
                 0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.xStart    0x00000000        0x8 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.pxEnd     0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.xFreeBytesRemaining
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.xMinimumEverFreeBytesRemaining
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .bss.xBlockAllocatedBit
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .text.pvPortMalloc
-                0x00000000      0x178 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .text.vPortFree
-                0x00000000       0xa4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .text.xPortGetFreeHeapSize
                 0x00000000       0x18 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .text.xPortGetMinimumEverFreeHeapSize
                 0x00000000       0x18 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .text.vPortInitialiseBlocks
                 0x00000000        0xc src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .text.prvHeapInit
-                0x00000000       0xc4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .text.prvInsertBlockIntoFreeList
-                0x00000000       0xb0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_info    0x00000000      0x33c src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_abbrev  0x00000000      0x177 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_loc     0x00000000      0x164 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_aranges
-                0x00000000       0x50 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_ranges  0x00000000       0x40 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_macro   0x00000000      0x15a src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_macro   0x00000000       0x58 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
@@ -2419,12 +2377,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x361 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_macro   0x00000000       0x79 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_macro   0x00000000       0x69 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_line    0x00000000      0x4e6 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_str     0x00000000     0x72ff src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .ARM.attributes
-                0x00000000       0x33 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
- .debug_frame   0x00000000       0xd0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .group         0x00000000        0x8 src/asf/thirdparty/FreeRTOS/queue.o
  .group         0x00000000        0x8 src/asf/thirdparty/FreeRTOS/queue.o
  .group         0x00000000        0x8 src/asf/thirdparty/FreeRTOS/queue.o
@@ -2457,44 +2409,18 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/queue.o
  .data          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/queue.o
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueGenericReset
-                0x00000000       0xc8 src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueGenericCreate
-                0x00000000       0x8c src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueCreateMutex
-                0x00000000       0x98 src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueGiveMutexRecursive
-                0x00000000       0x64 src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueTakeMutexRecursive
-                0x00000000       0x6c src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueCreateCountingSemaphore
-                0x00000000       0x5c src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueGenericSend
-                0x00000000      0x1c4 src/asf/thirdparty/FreeRTOS/queue.o
- .text.xQueueGenericReceive
-                0x00000000      0x1fc src/asf/thirdparty/FreeRTOS/queue.o
  .text.xQueuePeekFromISR
                 0x00000000       0x88 src/asf/thirdparty/FreeRTOS/queue.o
- .text.uxQueueMessagesWaiting
-                0x00000000       0x38 src/asf/thirdparty/FreeRTOS/queue.o
  .text.uxQueueSpacesAvailable
                 0x00000000       0x44 src/asf/thirdparty/FreeRTOS/queue.o
  .text.uxQueueMessagesWaitingFromISR
                 0x00000000       0x28 src/asf/thirdparty/FreeRTOS/queue.o
  .text.vQueueDelete
                 0x00000000       0x40 src/asf/thirdparty/FreeRTOS/queue.o
- .text.prvUnlockQueue
-                0x00000000       0xa8 src/asf/thirdparty/FreeRTOS/queue.o
- .text.prvIsQueueEmpty
-                0x00000000       0x34 src/asf/thirdparty/FreeRTOS/queue.o
  .text.xQueueIsQueueEmptyFromISR
                 0x00000000       0x34 src/asf/thirdparty/FreeRTOS/queue.o
- .text.prvIsQueueFull
-                0x00000000       0x38 src/asf/thirdparty/FreeRTOS/queue.o
  .text.xQueueIsQueueFullFromISR
                 0x00000000       0x38 src/asf/thirdparty/FreeRTOS/queue.o
- .text.vQueueWaitForMessageRestricted
-                0x00000000       0x68 src/asf/thirdparty/FreeRTOS/queue.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/queue.o
  .debug_macro   0x00000000       0x58 src/asf/thirdparty/FreeRTOS/queue.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/queue.o
@@ -2553,95 +2479,20 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/tasks.o
  .data          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.xDelayedTaskList1
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.xDelayedTaskList2
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.xTasksWaitingTermination
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.uxTasksDeleted
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.xSuspendedTaskList
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.uxCurrentNumberOfTasks
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.xSchedulerRunning
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
- .bss.uxTaskNumber
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskGenericCreate
-                0x00000000      0x180 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskDelete
-                0x00000000      0x104 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.vTaskDelayUntil
                 0x00000000       0xfc src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskDelay
-                0x00000000       0x9c src/asf/thirdparty/FreeRTOS/tasks.o
- .text.uxTaskPriorityGet
-                0x00000000       0x3c src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskPrioritySet
-                0x00000000      0x154 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskSuspend
-                0x00000000      0x110 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvTaskIsTaskSuspended
-                0x00000000       0x68 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskResume
-                0x00000000       0xb4 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.xTaskResumeFromISR
                 0x00000000       0xd0 src/asf/thirdparty/FreeRTOS/tasks.o
- .rodata        0x00000000        0x8 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskStartScheduler
-                0x00000000       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.vTaskEndScheduler
                 0x00000000       0x20 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskSuspendAll
-                0x00000000       0x1c src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskResumeAll
-                0x00000000      0x124 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskGetTickCount
-                0x00000000       0x2c src/asf/thirdparty/FreeRTOS/tasks.o
  .text.xTaskGetTickCountFromISR
                 0x00000000       0x38 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.uxTaskGetNumberOfTasks
-                0x00000000       0x18 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskPlaceOnEventList
-                0x00000000       0xa0 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.vTaskPlaceOnUnorderedEventList
                 0x00000000       0xbc src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskPlaceOnEventListRestricted
-                0x00000000       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.xTaskRemoveFromUnorderedEventList
                 0x00000000       0xbc src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskSetTimeOutState
-                0x00000000       0x38 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskCheckForTimeOut
-                0x00000000       0xb0 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskMissedYield
-                0x00000000       0x18 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvIdleTask
-                0x00000000       0x28 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvInitialiseTCBVariables
-                0x00000000       0x98 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvInitialiseTaskLists
-                0x00000000       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvCheckTasksWaitingTermination
-                0x00000000       0x8c src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvAddCurrentTaskToDelayedList
-                0x00000000       0x70 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvAllocateTCBAndStack
-                0x00000000       0x70 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.prvDeleteTCB
-                0x00000000       0x24 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskGetCurrentTaskHandle
-                0x00000000       0x20 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.xTaskGetSchedulerState
-                0x00000000       0x3c src/asf/thirdparty/FreeRTOS/tasks.o
- .text.vTaskPriorityInherit
-                0x00000000       0xf4 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.uxTaskResetEventItemValue
                 0x00000000       0x30 src/asf/thirdparty/FreeRTOS/tasks.o
- .text.pvTaskIncrementMutexHeldCount
-                0x00000000       0x28 src/asf/thirdparty/FreeRTOS/tasks.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/tasks.o
  .debug_macro   0x00000000       0x58 src/asf/thirdparty/FreeRTOS/tasks.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/tasks.o
@@ -2699,56 +2550,10 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/timers.o
  .data          0x00000000        0x0 src/asf/thirdparty/FreeRTOS/timers.o
  .bss           0x00000000        0x0 src/asf/thirdparty/FreeRTOS/timers.o
- .bss.xActiveTimerList1
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/timers.o
- .bss.xActiveTimerList2
-                0x00000000       0x14 src/asf/thirdparty/FreeRTOS/timers.o
- .bss.pxCurrentTimerList
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/timers.o
- .bss.pxOverflowTimerList
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/timers.o
- .bss.xTimerQueue
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/timers.o
- .rodata        0x00000000        0x8 src/asf/thirdparty/FreeRTOS/timers.o
- .text.xTimerCreateTimerTask
-                0x00000000       0x64 src/asf/thirdparty/FreeRTOS/timers.o
- .text.xTimerCreate
-                0x00000000       0x7c src/asf/thirdparty/FreeRTOS/timers.o
- .text.xTimerGenericCommand
-                0x00000000       0x98 src/asf/thirdparty/FreeRTOS/timers.o
  .text.pcTimerGetTimerName
                 0x00000000       0x1c src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvProcessExpiredTimer
-                0x00000000       0x80 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvTimerTask
-                0x00000000       0x30 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvProcessTimerOrBlockTask
-                0x00000000       0x84 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvGetNextExpireTime
-                0x00000000       0x48 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvSampleTimeNow
-                0x00000000       0x48 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvInsertTimerInActiveList
-                0x00000000       0x88 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvProcessReceivedCommands
-                0x00000000      0x12c src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvSwitchTimerLists
-                0x00000000       0xc0 src/asf/thirdparty/FreeRTOS/timers.o
- .text.prvCheckForValidListAndQueue
-                0x00000000       0x74 src/asf/thirdparty/FreeRTOS/timers.o
  .text.xTimerIsTimerActive
                 0x00000000       0x38 src/asf/thirdparty/FreeRTOS/timers.o
- .text.pvTimerGetTimerID
-                0x00000000       0x1c src/asf/thirdparty/FreeRTOS/timers.o
- .bss.xLastTime.5147
-                0x00000000        0x4 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_info    0x00000000      0x85a src/asf/thirdparty/FreeRTOS/timers.o
- .debug_abbrev  0x00000000      0x18d src/asf/thirdparty/FreeRTOS/timers.o
- .debug_loc     0x00000000      0x33c src/asf/thirdparty/FreeRTOS/timers.o
- .debug_aranges
-                0x00000000       0x90 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_ranges  0x00000000       0x80 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_macro   0x00000000      0x170 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_macro   0x00000000      0x862 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_macro   0x00000000       0x58 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_macro   0x00000000       0x16 src/asf/thirdparty/FreeRTOS/timers.o
@@ -2775,12 +2580,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_macro   0x00000000       0xb0 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_macro   0x00000000       0x91 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_line    0x00000000      0x5c7 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_str     0x00000000     0x8757 src/asf/thirdparty/FreeRTOS/timers.o
- .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/timers.o
- .ARM.attributes
-                0x00000000       0x33 src/asf/thirdparty/FreeRTOS/timers.o
- .debug_frame   0x00000000      0x1e0 src/asf/thirdparty/FreeRTOS/timers.o
  .group         0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
@@ -2809,30 +2608,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/BlockQ.o
  .data          0x00000000        0x0 src/Common-Demo-Source/BlockQ.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/BlockQ.o
- .bss.sBlockingConsumerCount
-                0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
- .bss.sBlockingProducerCount
-                0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
- .rodata        0x00000000       0x30 src/Common-Demo-Source/BlockQ.o
- .text.vStartBlockingQueueTasks
-                0x00000000      0x1cc src/Common-Demo-Source/BlockQ.o
- .text.vBlockingQueueProducer
-                0x00000000       0x60 src/Common-Demo-Source/BlockQ.o
- .text.vBlockingQueueConsumer
-                0x00000000       0x6c src/Common-Demo-Source/BlockQ.o
- .text.xAreBlockingQueuesStillRunning
-                0x00000000       0x9c src/Common-Demo-Source/BlockQ.o
- .bss.sLastBlockingConsumerCount.5049
-                0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
- .bss.sLastBlockingProducerCount.5050
-                0x00000000        0x8 src/Common-Demo-Source/BlockQ.o
- .debug_info    0x00000000      0x354 src/Common-Demo-Source/BlockQ.o
- .debug_abbrev  0x00000000      0x105 src/Common-Demo-Source/BlockQ.o
- .debug_loc     0x00000000       0xe2 src/Common-Demo-Source/BlockQ.o
- .debug_aranges
-                0x00000000       0x38 src/Common-Demo-Source/BlockQ.o
- .debug_ranges  0x00000000       0x28 src/Common-Demo-Source/BlockQ.o
- .debug_macro   0x00000000      0x161 src/Common-Demo-Source/BlockQ.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/BlockQ.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/BlockQ.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/BlockQ.o
@@ -2858,12 +2633,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/BlockQ.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/BlockQ.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/BlockQ.o
- .debug_line    0x00000000      0x47a src/Common-Demo-Source/BlockQ.o
- .debug_str     0x00000000     0x7d26 src/Common-Demo-Source/BlockQ.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/BlockQ.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/BlockQ.o
- .debug_frame   0x00000000       0x8c src/Common-Demo-Source/BlockQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/blocktim.o
  .group         0x00000000        0x8 src/Common-Demo-Source/blocktim.o
  .group         0x00000000        0x8 src/Common-Demo-Source/blocktim.o
@@ -2881,38 +2650,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/blocktim.o
  .data          0x00000000        0x0 src/Common-Demo-Source/blocktim.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/blocktim.o
- .bss.xTestQueue
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xSecondary
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xPrimaryCycles
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xSecondaryCycles
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xErrorOccurred
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xRunIndicator
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .rodata        0x00000000       0x10 src/Common-Demo-Source/blocktim.o
- .text.vCreateBlockTimeTasks
-                0x00000000       0x74 src/Common-Demo-Source/blocktim.o
- .text.vPrimaryBlockTimeTestTask
-                0x00000000      0x334 src/Common-Demo-Source/blocktim.o
- .text.vSecondaryBlockTimeTestTask
-                0x00000000       0xf0 src/Common-Demo-Source/blocktim.o
- .text.xAreBlockTimeTestTasksStillRunning
-                0x00000000       0x68 src/Common-Demo-Source/blocktim.o
- .bss.xLastPrimaryCycleCount.4511
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .bss.xLastSecondaryCycleCount.4512
-                0x00000000        0x4 src/Common-Demo-Source/blocktim.o
- .debug_info    0x00000000      0x285 src/Common-Demo-Source/blocktim.o
- .debug_abbrev  0x00000000       0xea src/Common-Demo-Source/blocktim.o
- .debug_loc     0x00000000       0xe0 src/Common-Demo-Source/blocktim.o
- .debug_aranges
-                0x00000000       0x38 src/Common-Demo-Source/blocktim.o
- .debug_ranges  0x00000000       0x28 src/Common-Demo-Source/blocktim.o
- .debug_macro   0x00000000       0xf0 src/Common-Demo-Source/blocktim.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/blocktim.o
  .debug_macro   0x00000000      0x166 src/Common-Demo-Source/blocktim.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/blocktim.o
@@ -2927,12 +2664,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/blocktim.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/blocktim.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/blocktim.o
- .debug_line    0x00000000      0x475 src/Common-Demo-Source/blocktim.o
- .debug_str     0x00000000     0x69a4 src/Common-Demo-Source/blocktim.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/blocktim.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/blocktim.o
- .debug_frame   0x00000000       0x8c src/Common-Demo-Source/blocktim.o
  .group         0x00000000        0x8 src/Common-Demo-Source/comtest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/comtest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/comtest.o
@@ -2964,8 +2695,6 @@ Discarded input sections
  .bss.xPort     0x00000000        0x4 src/Common-Demo-Source/comtest.o
  .bss.uxBaseLED
                 0x00000000        0x4 src/Common-Demo-Source/comtest.o
- .bss.uxRxLoops
-                0x00000000        0x4 src/Common-Demo-Source/comtest.o
  .rodata        0x00000000       0x10 src/Common-Demo-Source/comtest.o
  .text.vAltStartComTestTasks
                 0x00000000       0x78 src/Common-Demo-Source/comtest.o
@@ -2973,15 +2702,6 @@ Discarded input sections
                 0x00000000       0x9c src/Common-Demo-Source/comtest.o
  .text.vComRxTask
                 0x00000000       0xc8 src/Common-Demo-Source/comtest.o
- .text.xAreComTestTasksStillRunning
-                0x00000000       0x30 src/Common-Demo-Source/comtest.o
- .debug_info    0x00000000      0x216 src/Common-Demo-Source/comtest.o
- .debug_abbrev  0x00000000       0xc5 src/Common-Demo-Source/comtest.o
- .debug_loc     0x00000000       0xe0 src/Common-Demo-Source/comtest.o
- .debug_aranges
-                0x00000000       0x38 src/Common-Demo-Source/comtest.o
- .debug_ranges  0x00000000       0x28 src/Common-Demo-Source/comtest.o
- .debug_macro   0x00000000      0x1b0 src/Common-Demo-Source/comtest.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/comtest.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/comtest.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/comtest.o
@@ -3006,13 +2726,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x361 src/Common-Demo-Source/comtest.o
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/comtest.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/comtest.o
- .debug_macro   0x00000000       0x10 src/Common-Demo-Source/comtest.o
- .debug_line    0x00000000      0x481 src/Common-Demo-Source/comtest.o
- .debug_str     0x00000000     0x73b2 src/Common-Demo-Source/comtest.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/comtest.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/comtest.o
- .debug_frame   0x00000000       0x8c src/Common-Demo-Source/comtest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/countsem.o
  .group         0x00000000        0x8 src/Common-Demo-Source/countsem.o
  .group         0x00000000        0x8 src/Common-Demo-Source/countsem.o
@@ -3031,32 +2744,12 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/countsem.o
  .data          0x00000000        0x0 src/Common-Demo-Source/countsem.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/countsem.o
- .bss.xErrorDetected
-                0x00000000        0x4 src/Common-Demo-Source/countsem.o
- .bss.xParameters
-                0x00000000       0x18 src/Common-Demo-Source/countsem.o
- .rodata        0x00000000       0x10 src/Common-Demo-Source/countsem.o
- .text.vStartCountingSemaphoreTasks
-                0x00000000       0xa4 src/Common-Demo-Source/countsem.o
- .text.prvDecrementSemaphoreCount
-                0x00000000       0x80 src/Common-Demo-Source/countsem.o
- .text.prvIncrementSemaphoreCount
-                0x00000000       0x80 src/Common-Demo-Source/countsem.o
- .text.prvCountingSemaphoreTask
-                0x00000000       0x74 src/Common-Demo-Source/countsem.o
  .text.xAreCountingSemaphoreTasksStillRunning
                 0x00000000       0x68 src/Common-Demo-Source/countsem.o
  .bss.uxLastCount0.4492
                 0x00000000        0x4 src/Common-Demo-Source/countsem.o
  .bss.uxLastCount1.4493
                 0x00000000        0x4 src/Common-Demo-Source/countsem.o
- .debug_info    0x00000000      0x280 src/Common-Demo-Source/countsem.o
- .debug_abbrev  0x00000000      0x10b src/Common-Demo-Source/countsem.o
- .debug_loc     0x00000000      0x118 src/Common-Demo-Source/countsem.o
- .debug_aranges
-                0x00000000       0x40 src/Common-Demo-Source/countsem.o
- .debug_ranges  0x00000000       0x30 src/Common-Demo-Source/countsem.o
- .debug_macro   0x00000000       0xe7 src/Common-Demo-Source/countsem.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/countsem.o
  .debug_macro   0x00000000      0x166 src/Common-Demo-Source/countsem.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/countsem.o
@@ -3071,13 +2764,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/countsem.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/countsem.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/countsem.o
- .debug_macro   0x00000000       0x7e src/Common-Demo-Source/countsem.o
- .debug_line    0x00000000      0x422 src/Common-Demo-Source/countsem.o
- .debug_str     0x00000000     0x708c src/Common-Demo-Source/countsem.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/countsem.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/countsem.o
- .debug_frame   0x00000000       0xac src/Common-Demo-Source/countsem.o
  .group         0x00000000        0x8 src/Common-Demo-Source/death.o
  .group         0x00000000        0x8 src/Common-Demo-Source/death.o
  .group         0x00000000        0x8 src/Common-Demo-Source/death.o
@@ -3105,32 +2791,8 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/death.o
  .data          0x00000000        0x0 src/Common-Demo-Source/death.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/death.o
- .bss.usCreationCount
-                0x00000000        0x2 src/Common-Demo-Source/death.o
- .bss.uxTasksRunningAtStart
-                0x00000000        0x4 src/Common-Demo-Source/death.o
  .rodata.uxMaxNumberOfExtraTasksRunning
                 0x00000000        0x4 src/Common-Demo-Source/death.o
- .rodata        0x00000000       0x18 src/Common-Demo-Source/death.o
- .text.vCreateSuicidalTasks
-                0x00000000       0x70 src/Common-Demo-Source/death.o
- .text.vSuicidalTask
-                0x00000000       0x5c src/Common-Demo-Source/death.o
- .text.vCreateTasks
-                0x00000000       0x90 src/Common-Demo-Source/death.o
- .text.xIsCreateTaskStillRunning
-                0x00000000       0x78 src/Common-Demo-Source/death.o
- .data.usLastCreationCount.4931
-                0x00000000        0x2 src/Common-Demo-Source/death.o
- .bss.uxTasksRunningNow.4933
-                0x00000000        0x4 src/Common-Demo-Source/death.o
- .debug_info    0x00000000      0x268 src/Common-Demo-Source/death.o
- .debug_abbrev  0x00000000       0xe6 src/Common-Demo-Source/death.o
- .debug_loc     0x00000000       0xe0 src/Common-Demo-Source/death.o
- .debug_aranges
-                0x00000000       0x38 src/Common-Demo-Source/death.o
- .debug_ranges  0x00000000       0x28 src/Common-Demo-Source/death.o
- .debug_macro   0x00000000      0x152 src/Common-Demo-Source/death.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/death.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/death.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/death.o
@@ -3155,13 +2817,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x361 src/Common-Demo-Source/death.o
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/death.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/death.o
- .debug_line    0x00000000      0x458 src/Common-Demo-Source/death.o
- .debug_str     0x00000000     0x71d0 src/Common-Demo-Source/death.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/death.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/death.o
- .debug_frame   0x00000000       0x90 src/Common-Demo-Source/death.o
- COMMON         0x00000000        0x4 src/Common-Demo-Source/death.o
  .group         0x00000000        0x8 src/Common-Demo-Source/dynamic.o
  .group         0x00000000        0x8 src/Common-Demo-Source/dynamic.o
  .group         0x00000000        0x8 src/Common-Demo-Source/dynamic.o
@@ -3191,48 +2846,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/dynamic.o
  .data          0x00000000        0x0 src/Common-Demo-Source/dynamic.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/dynamic.o
- .bss.xContinuousIncrementHandle
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.xLimitedIncrementHandle
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.ulCounter
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.usCheckVariable
-                0x00000000        0x2 src/Common-Demo-Source/dynamic.o
- .bss.xSuspendedQueueSendError
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.xSuspendedQueueReceiveError
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.ulExpectedValue
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .rodata        0x00000000       0x28 src/Common-Demo-Source/dynamic.o
- .text.vStartDynamicPriorityTasks
-                0x00000000       0xe8 src/Common-Demo-Source/dynamic.o
- .text.vLimitedIncrementTask
-                0x00000000       0x34 src/Common-Demo-Source/dynamic.o
- .text.vContinuousIncrementTask
-                0x00000000       0x6c src/Common-Demo-Source/dynamic.o
- .text.vCounterControlTask
-                0x00000000       0xd8 src/Common-Demo-Source/dynamic.o
- .text.vQueueSendWhenSuspendedTask
-                0x00000000       0x5c src/Common-Demo-Source/dynamic.o
- .text.vQueueReceiveWhenSuspendedTask
-                0x00000000       0x80 src/Common-Demo-Source/dynamic.o
- .text.xAreDynamicPriorityTasksStillRunning
-                0x00000000       0x7c src/Common-Demo-Source/dynamic.o
- .bss.ulValueToSend.5055
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .bss.usLastTaskCheck.5068
-                0x00000000        0x2 src/Common-Demo-Source/dynamic.o
- .bss.ulLastExpectedValue.5069
-                0x00000000        0x4 src/Common-Demo-Source/dynamic.o
- .debug_info    0x00000000      0x35f src/Common-Demo-Source/dynamic.o
- .debug_abbrev  0x00000000      0x104 src/Common-Demo-Source/dynamic.o
- .debug_loc     0x00000000      0x188 src/Common-Demo-Source/dynamic.o
- .debug_aranges
-                0x00000000       0x50 src/Common-Demo-Source/dynamic.o
- .debug_ranges  0x00000000       0x40 src/Common-Demo-Source/dynamic.o
- .debug_macro   0x00000000      0x190 src/Common-Demo-Source/dynamic.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/dynamic.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/dynamic.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/dynamic.o
@@ -3259,13 +2872,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/dynamic.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/dynamic.o
  .debug_macro   0x00000000       0x7e src/Common-Demo-Source/dynamic.o
- .debug_line    0x00000000      0x4d2 src/Common-Demo-Source/dynamic.o
- .debug_str     0x00000000     0x8563 src/Common-Demo-Source/dynamic.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/dynamic.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/dynamic.o
- .debug_frame   0x00000000       0xec src/Common-Demo-Source/dynamic.o
- COMMON         0x00000000        0x4 src/Common-Demo-Source/dynamic.o
  .group         0x00000000        0x8 src/Common-Demo-Source/flash_timer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/flash_timer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/flash_timer.o
@@ -3284,18 +2890,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/flash_timer.o
  .data          0x00000000        0x0 src/Common-Demo-Source/flash_timer.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/flash_timer.o
- .rodata        0x00000000        0x8 src/Common-Demo-Source/flash_timer.o
- .text.vStartLEDFlashTimers
-                0x00000000       0x70 src/Common-Demo-Source/flash_timer.o
- .text.prvLEDTimerCallback
-                0x00000000       0x28 src/Common-Demo-Source/flash_timer.o
- .debug_info    0x00000000      0x13d src/Common-Demo-Source/flash_timer.o
- .debug_abbrev  0x00000000       0x91 src/Common-Demo-Source/flash_timer.o
- .debug_loc     0x00000000       0x70 src/Common-Demo-Source/flash_timer.o
- .debug_aranges
-                0x00000000       0x28 src/Common-Demo-Source/flash_timer.o
- .debug_ranges  0x00000000       0x18 src/Common-Demo-Source/flash_timer.o
- .debug_macro   0x00000000       0xd5 src/Common-Demo-Source/flash_timer.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/flash_timer.o
  .debug_macro   0x00000000      0x166 src/Common-Demo-Source/flash_timer.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/flash_timer.o
@@ -3311,12 +2905,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/flash_timer.o
  .debug_macro   0x00000000       0x91 src/Common-Demo-Source/flash_timer.o
  .debug_macro   0x00000000       0x10 src/Common-Demo-Source/flash_timer.o
- .debug_line    0x00000000      0x3b3 src/Common-Demo-Source/flash_timer.o
- .debug_str     0x00000000     0x657c src/Common-Demo-Source/flash_timer.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/flash_timer.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/flash_timer.o
- .debug_frame   0x00000000       0x50 src/Common-Demo-Source/flash_timer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/GenQTest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/GenQTest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/GenQTest.o
@@ -3346,54 +2934,12 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/GenQTest.o
  .data          0x00000000        0x0 src/Common-Demo-Source/GenQTest.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/GenQTest.o
- .bss.xErrorDetected
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.ulLoopCounter
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.ulLoopCounter2
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.ulGuardedVariable
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.xHighPriorityMutexTask
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.xMediumPriorityMutexTask
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.xISRMutex
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .rodata        0x00000000       0x20 src/Common-Demo-Source/GenQTest.o
- .text.vStartGenericQueueTasks
-                0x00000000       0xe8 src/Common-Demo-Source/GenQTest.o
- .text.prvSendFrontAndBackTest
-                0x00000000      0x334 src/Common-Demo-Source/GenQTest.o
- .text.prvTakeTwoMutexesReturnInDifferentOrder
-                0x00000000      0x144 src/Common-Demo-Source/GenQTest.o
- .text.prvTakeTwoMutexesReturnInSameOrder
-                0x00000000      0x11c src/Common-Demo-Source/GenQTest.o
- .text.prvLowPriorityMutexTask
-                0x00000000       0x5c src/Common-Demo-Source/GenQTest.o
- .text.prvMediumPriorityMutexTask
-                0x00000000       0x24 src/Common-Demo-Source/GenQTest.o
- .text.prvHighPriorityMutexTask
-                0x00000000       0x58 src/Common-Demo-Source/GenQTest.o
  .text.vInterruptMutexTask
                 0x00000000       0x48 src/Common-Demo-Source/GenQTest.o
  .text.vMutexISRInteractionTest
                 0x00000000       0x58 src/Common-Demo-Source/GenQTest.o
- .text.xAreGenericQueueTasksStillRunning
-                0x00000000       0x64 src/Common-Demo-Source/GenQTest.o
  .bss.xLastGiveTime.5091
                 0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.ulLastLoopCounter.5097
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .bss.ulLastLoopCounter2.5098
-                0x00000000        0x4 src/Common-Demo-Source/GenQTest.o
- .debug_info    0x00000000      0x3f6 src/Common-Demo-Source/GenQTest.o
- .debug_abbrev  0x00000000      0x10d src/Common-Demo-Source/GenQTest.o
- .debug_loc     0x00000000      0x224 src/Common-Demo-Source/GenQTest.o
- .debug_aranges
-                0x00000000       0x68 src/Common-Demo-Source/GenQTest.o
- .debug_ranges  0x00000000       0x58 src/Common-Demo-Source/GenQTest.o
- .debug_macro   0x00000000      0x192 src/Common-Demo-Source/GenQTest.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/GenQTest.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/GenQTest.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/GenQTest.o
@@ -3420,12 +2966,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/GenQTest.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/GenQTest.o
  .debug_macro   0x00000000       0x7e src/Common-Demo-Source/GenQTest.o
- .debug_line    0x00000000      0x5c9 src/Common-Demo-Source/GenQTest.o
- .debug_str     0x00000000     0x85c4 src/Common-Demo-Source/GenQTest.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/GenQTest.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/GenQTest.o
- .debug_frame   0x00000000      0x148 src/Common-Demo-Source/GenQTest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/integer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/integer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/integer.o
@@ -3453,22 +2993,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/integer.o
  .data          0x00000000        0x0 src/Common-Demo-Source/integer.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/integer.o
- .bss.xTaskCheck
-                0x00000000        0x4 src/Common-Demo-Source/integer.o
- .rodata        0x00000000        0x8 src/Common-Demo-Source/integer.o
- .text.vStartIntegerMathTasks
-                0x00000000       0x58 src/Common-Demo-Source/integer.o
- .text.vCompeteingIntMathTask
-                0x00000000       0x70 src/Common-Demo-Source/integer.o
- .text.xAreIntegerMathsTaskStillRunning
-                0x00000000       0x50 src/Common-Demo-Source/integer.o
- .debug_info    0x00000000      0x19f src/Common-Demo-Source/integer.o
- .debug_abbrev  0x00000000       0xd1 src/Common-Demo-Source/integer.o
- .debug_loc     0x00000000       0xa8 src/Common-Demo-Source/integer.o
- .debug_aranges
-                0x00000000       0x30 src/Common-Demo-Source/integer.o
- .debug_ranges  0x00000000       0x20 src/Common-Demo-Source/integer.o
- .debug_macro   0x00000000      0x176 src/Common-Demo-Source/integer.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/integer.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/integer.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/integer.o
@@ -3493,12 +3017,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x361 src/Common-Demo-Source/integer.o
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/integer.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/integer.o
- .debug_line    0x00000000      0x444 src/Common-Demo-Source/integer.o
- .debug_str     0x00000000     0x7211 src/Common-Demo-Source/integer.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/integer.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/integer.o
- .debug_frame   0x00000000       0x6c src/Common-Demo-Source/integer.o
  .group         0x00000000        0x8 src/Common-Demo-Source/PollQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/PollQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/PollQ.o
@@ -3527,28 +3045,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/PollQ.o
  .data          0x00000000        0x0 src/Common-Demo-Source/PollQ.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/PollQ.o
- .bss.xPollingConsumerCount
-                0x00000000        0x4 src/Common-Demo-Source/PollQ.o
- .bss.xPollingProducerCount
-                0x00000000        0x4 src/Common-Demo-Source/PollQ.o
- .rodata        0x00000000       0x10 src/Common-Demo-Source/PollQ.o
- .text.vStartPolledQueueTasks
-                0x00000000       0x74 src/Common-Demo-Source/PollQ.o
- .text.vPolledQueueProducer
-                0x00000000       0x80 src/Common-Demo-Source/PollQ.o
- .text.vPolledQueueConsumer
-                0x00000000       0x90 src/Common-Demo-Source/PollQ.o
- .text.xArePollingQueuesStillRunning
-                0x00000000       0x44 src/Common-Demo-Source/PollQ.o
- .bss.xPolledQueue.5016
-                0x00000000        0x4 src/Common-Demo-Source/PollQ.o
- .debug_info    0x00000000      0x22f src/Common-Demo-Source/PollQ.o
- .debug_abbrev  0x00000000       0xb6 src/Common-Demo-Source/PollQ.o
- .debug_loc     0x00000000       0xe0 src/Common-Demo-Source/PollQ.o
- .debug_aranges
-                0x00000000       0x38 src/Common-Demo-Source/PollQ.o
- .debug_ranges  0x00000000       0x28 src/Common-Demo-Source/PollQ.o
- .debug_macro   0x00000000      0x17f src/Common-Demo-Source/PollQ.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/PollQ.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/PollQ.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/PollQ.o
@@ -3574,12 +3070,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 src/Common-Demo-Source/PollQ.o
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/PollQ.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/PollQ.o
- .debug_line    0x00000000      0x46c src/Common-Demo-Source/PollQ.o
- .debug_str     0x00000000     0x7d04 src/Common-Demo-Source/PollQ.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/PollQ.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/PollQ.o
- .debug_frame   0x00000000       0x8c src/Common-Demo-Source/PollQ.o
  .group         0x00000000        0x8 src/Common-Demo-Source/recmutex.o
  .group         0x00000000        0x8 src/Common-Demo-Source/recmutex.o
  .group         0x00000000        0x8 src/Common-Demo-Source/recmutex.o
@@ -3598,47 +3088,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/recmutex.o
  .data          0x00000000        0x0 src/Common-Demo-Source/recmutex.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/recmutex.o
- .bss.xMutex    0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.xErrorOccurred
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.xControllingIsSuspended
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.xBlockingIsSuspended
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.uxControllingCycles
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.uxBlockingCycles
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.uxPollingCycles
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.xControllingTaskHandle
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.xBlockingTaskHandle
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .rodata        0x00000000       0x18 src/Common-Demo-Source/recmutex.o
- .text.vStartRecursiveMutexTasks
-                0x00000000       0xa0 src/Common-Demo-Source/recmutex.o
- .text.prvRecursiveMutexControllingTask
-                0x00000000       0xd0 src/Common-Demo-Source/recmutex.o
- .text.prvRecursiveMutexBlockingTask
-                0x00000000       0xa0 src/Common-Demo-Source/recmutex.o
- .text.prvRecursiveMutexPollingTask
-                0x00000000       0xd4 src/Common-Demo-Source/recmutex.o
- .text.xAreRecursiveMutexTasksStillRunning
-                0x00000000       0x98 src/Common-Demo-Source/recmutex.o
- .bss.uxLastControllingCycles.4493
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.uxLastBlockingCycles.4494
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .bss.uxLastPollingCycles.4495
-                0x00000000        0x4 src/Common-Demo-Source/recmutex.o
- .debug_info    0x00000000      0x297 src/Common-Demo-Source/recmutex.o
- .debug_abbrev  0x00000000       0xf9 src/Common-Demo-Source/recmutex.o
- .debug_loc     0x00000000      0x118 src/Common-Demo-Source/recmutex.o
- .debug_aranges
-                0x00000000       0x40 src/Common-Demo-Source/recmutex.o
- .debug_ranges  0x00000000       0x30 src/Common-Demo-Source/recmutex.o
- .debug_macro   0x00000000       0xf3 src/Common-Demo-Source/recmutex.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/recmutex.o
  .debug_macro   0x00000000      0x166 src/Common-Demo-Source/recmutex.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/recmutex.o
@@ -3654,12 +3103,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/recmutex.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/recmutex.o
  .debug_macro   0x00000000       0x7e src/Common-Demo-Source/recmutex.o
- .debug_line    0x00000000      0x449 src/Common-Demo-Source/recmutex.o
- .debug_str     0x00000000     0x719f src/Common-Demo-Source/recmutex.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/recmutex.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/recmutex.o
- .debug_frame   0x00000000       0xac src/Common-Demo-Source/recmutex.o
  .group         0x00000000        0x8 src/Common-Demo-Source/semtest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/semtest.o
  .group         0x00000000        0x8 src/Common-Demo-Source/semtest.o
@@ -3689,26 +3132,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/Common-Demo-Source/semtest.o
  .data          0x00000000        0x0 src/Common-Demo-Source/semtest.o
  .bss           0x00000000        0x0 src/Common-Demo-Source/semtest.o
- .bss.sCheckVariables
-                0x00000000        0x8 src/Common-Demo-Source/semtest.o
- .bss.sNextCheckVariable
-                0x00000000        0x2 src/Common-Demo-Source/semtest.o
- .rodata        0x00000000       0x20 src/Common-Demo-Source/semtest.o
- .text.vStartSemaphoreTasks
-                0x00000000      0x148 src/Common-Demo-Source/semtest.o
- .text.prvSemaphoreTest
-                0x00000000      0x120 src/Common-Demo-Source/semtest.o
- .text.xAreSemaphoreTasksStillRunning
-                0x00000000       0x64 src/Common-Demo-Source/semtest.o
- .bss.sLastCheckVariables.5039
-                0x00000000        0x8 src/Common-Demo-Source/semtest.o
- .debug_info    0x00000000      0x2a5 src/Common-Demo-Source/semtest.o
- .debug_abbrev  0x00000000      0x105 src/Common-Demo-Source/semtest.o
- .debug_loc     0x00000000       0xa8 src/Common-Demo-Source/semtest.o
- .debug_aranges
-                0x00000000       0x30 src/Common-Demo-Source/semtest.o
- .debug_ranges  0x00000000       0x20 src/Common-Demo-Source/semtest.o
- .debug_macro   0x00000000      0x182 src/Common-Demo-Source/semtest.o
  .debug_macro   0x00000000      0x862 src/Common-Demo-Source/semtest.o
  .debug_macro   0x00000000       0x58 src/Common-Demo-Source/semtest.o
  .debug_macro   0x00000000       0x16 src/Common-Demo-Source/semtest.o
@@ -3735,12 +3158,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x69 src/Common-Demo-Source/semtest.o
  .debug_macro   0x00000000       0xb0 src/Common-Demo-Source/semtest.o
  .debug_macro   0x00000000       0x7e src/Common-Demo-Source/semtest.o
- .debug_line    0x00000000      0x474 src/Common-Demo-Source/semtest.o
- .debug_str     0x00000000     0x84cc src/Common-Demo-Source/semtest.o
- .comment       0x00000000       0x5c src/Common-Demo-Source/semtest.o
- .ARM.attributes
-                0x00000000       0x33 src/Common-Demo-Source/semtest.o
- .debug_frame   0x00000000       0x6c src/Common-Demo-Source/semtest.o
  .group         0x00000000        0x8 src/main.o
  .group         0x00000000        0x8 src/main.o
  .group         0x00000000        0x8 src/main.o
@@ -3869,8 +3286,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/main.o
  .data          0x00000000        0x0 src/main.o
  .bss           0x00000000        0x0 src/main.o
- .text.vApplicationMallocFailedHook
-                0x00000000       0x10 src/main.o
  .text.vApplicationIdleHook
                 0x00000000        0xc src/main.o
  .text.vApplicationTickHook
@@ -4404,20 +3819,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/main_full.o
  .data          0x00000000        0x0 src/main_full.o
  .bss           0x00000000        0x0 src/main_full.o
- .rodata        0x00000000        0xc src/main_full.o
- .text.main_full
-                0x00000000       0xd0 src/main_full.o
- .text.prvCheckTimerCallback
-                0x00000000       0xfc src/main_full.o
- .bss.lChangedTimerPeriodAlready.7937
-                0x00000000        0x4 src/main_full.o
- .debug_info    0x00000000      0x181 src/main_full.o
- .debug_abbrev  0x00000000       0xbc src/main_full.o
- .debug_loc     0x00000000       0x70 src/main_full.o
- .debug_aranges
-                0x00000000       0x28 src/main_full.o
- .debug_ranges  0x00000000       0x18 src/main_full.o
- .debug_macro   0x00000000      0x6e9 src/main_full.o
  .debug_macro   0x00000000      0x862 src/main_full.o
  .debug_macro   0x00000000       0x58 src/main_full.o
  .debug_macro   0x00000000       0x16 src/main_full.o
@@ -4546,12 +3947,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x5f src/main_full.o
  .debug_macro   0x00000000       0x90 src/main_full.o
  .debug_macro   0x00000000       0x2e src/main_full.o
- .debug_line    0x00000000      0xeb9 src/main_full.o
- .debug_str     0x00000000    0x60006 src/main_full.o
- .comment       0x00000000       0x5c src/main_full.o
- .ARM.attributes
-                0x00000000       0x33 src/main_full.o
- .debug_frame   0x00000000       0x50 src/main_full.o
  .group         0x00000000        0x8 src/ParTest.o
  .group         0x00000000        0x8 src/ParTest.o
  .group         0x00000000        0x8 src/ParTest.o
@@ -4672,8 +4067,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/ParTest.o
  .data          0x00000000        0x0 src/ParTest.o
  .bss           0x00000000        0x0 src/ParTest.o
- .text.vParTestToggleLED
-                0x00000000       0x3c src/ParTest.o
  .debug_macro   0x00000000      0x862 src/ParTest.o
  .debug_macro   0x00000000      0x166 src/ParTest.o
  .debug_macro   0x00000000       0x16 src/ParTest.o
@@ -5083,10 +4476,6 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
- .text.memset   0x00000000       0x94 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
- .ARM.attributes
-                0x00000000       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
- .debug_frame   0x00000000       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
@@ -5169,7 +4558,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gn
 LOAD c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
                 0x00002000                STACK_SIZE = 0x2000
 
-.text           0x00080000     0x1ec0
+.text           0x00080000     0x6808
                 0x00080000                . = ALIGN (0x4)
                 0x00080000                _sfixed = .
  *(.vectors .vectors.*)
@@ -5349,178 +4738,504 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gn
  .text.system_init_flash
                 0x00080f74       0xa0 src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
                 0x00080f74                system_init_flash
+ .text.vListInitialise
+                0x00081014       0x40 src/asf/thirdparty/FreeRTOS/list.o
+                0x00081014                vListInitialise
+ .text.vListInitialiseItem
+                0x00081054       0x18 src/asf/thirdparty/FreeRTOS/list.o
+                0x00081054                vListInitialiseItem
  .text.vListInsertEnd
-                0x00081014       0x48 src/asf/thirdparty/FreeRTOS/list.o
-                0x00081014                vListInsertEnd
+                0x0008106c       0x48 src/asf/thirdparty/FreeRTOS/list.o
+                0x0008106c                vListInsertEnd
+ .text.vListInsert
+                0x000810b4       0x70 src/asf/thirdparty/FreeRTOS/list.o
+                0x000810b4                vListInsert
  .text.uxListRemove
-                0x0008105c       0x54 src/asf/thirdparty/FreeRTOS/list.o
-                0x0008105c                uxListRemove
+                0x00081124       0x54 src/asf/thirdparty/FreeRTOS/list.o
+                0x00081124                uxListRemove
+ .text.pxPortInitialiseStack
+                0x00081178       0x58 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081178                pxPortInitialiseStack
+ .text.prvTaskExitError
+                0x000811d0       0x24 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .text.SVC_Handler
-                0x000810b0       0x24 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x000810b0                SVC_Handler
+                0x000811f4       0x24 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x000811f4                SVC_Handler
+ .text.prvPortStartFirstTask
+                0x00081218       0x20 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+ .text.xPortStartScheduler
+                0x00081238       0xc8 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081238                xPortStartScheduler
+ .text.vPortYield
+                0x00081300       0x20 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081300                vPortYield
  .text.vPortEnterCritical
-                0x000810d4       0x44 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x000810d4                vPortEnterCritical
+                0x00081320       0x44 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081320                vPortEnterCritical
  .text.vPortExitCritical
-                0x00081118       0x38 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x00081118                vPortExitCritical
+                0x00081364       0x38 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081364                vPortExitCritical
  .text.ulPortSetInterruptMask
-                0x00081150       0x14 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x00081150                ulPortSetInterruptMask
+                0x0008139c       0x14 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x0008139c                ulPortSetInterruptMask
  .text.vPortClearInterruptMask
-                0x00081164        0x8 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x00081164                vPortClearInterruptMask
+                0x000813b0        0x8 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x000813b0                vPortClearInterruptMask
  .text.PendSV_Handler
-                0x0008116c       0x44 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x0008116c                PendSV_Handler
+                0x000813b8       0x44 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x000813b8                PendSV_Handler
  .text.SysTick_Handler
-                0x000811b0       0x34 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x000811b0                SysTick_Handler
+                0x000813fc       0x34 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x000813fc                SysTick_Handler
+ .text.vPortSetupTimerInterrupt
+                0x00081430       0x34 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081430                vPortSetupTimerInterrupt
  .text.vPortValidateInterruptPriority
-                0x000811e4       0x5c src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
-                0x000811e4                vPortValidateInterruptPriority
+                0x00081464       0x5c src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+                0x00081464                vPortValidateInterruptPriority
+ .text.pvPortMalloc
+                0x000814c0      0x178 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+                0x000814c0                pvPortMalloc
+ .text.vPortFree
+                0x00081638       0xa4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+                0x00081638                vPortFree
+ .text.prvHeapInit
+                0x000816dc       0xc4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .text.prvInsertBlockIntoFreeList
+                0x000817a0       0xb0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .text.xQueueGenericReset
+                0x00081850       0xc8 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081850                xQueueGenericReset
+ .text.xQueueGenericCreate
+                0x00081918       0x8c src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081918                xQueueGenericCreate
+ .text.xQueueCreateMutex
+                0x000819a4       0x98 src/asf/thirdparty/FreeRTOS/queue.o
+                0x000819a4                xQueueCreateMutex
+ .text.xQueueGiveMutexRecursive
+                0x00081a3c       0x64 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081a3c                xQueueGiveMutexRecursive
+ .text.xQueueTakeMutexRecursive
+                0x00081aa0       0x6c src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081aa0                xQueueTakeMutexRecursive
+ .text.xQueueCreateCountingSemaphore
+                0x00081b0c       0x5c src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081b0c                xQueueCreateCountingSemaphore
+ .text.xQueueGenericSend
+                0x00081b68      0x1c4 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081b68                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x00081240       0xfc src/asf/thirdparty/FreeRTOS/queue.o
-                0x00081240                xQueueGenericSendFromISR
+                0x00081d2c       0xfc src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081d2c                xQueueGenericSendFromISR
+ .text.xQueueGenericReceive
+                0x00081e28      0x1fc src/asf/thirdparty/FreeRTOS/queue.o
+                0x00081e28                xQueueGenericReceive
  .text.xQueueReceiveFromISR
-                0x0008133c       0xc8 src/asf/thirdparty/FreeRTOS/queue.o
-                0x0008133c                xQueueReceiveFromISR
+                0x00082024       0xc8 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00082024                xQueueReceiveFromISR
+ .text.uxQueueMessagesWaiting
+                0x000820ec       0x38 src/asf/thirdparty/FreeRTOS/queue.o
+                0x000820ec                uxQueueMessagesWaiting
  .text.prvCopyDataToQueue
-                0x00081404       0xe4 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00082124       0xe4 src/asf/thirdparty/FreeRTOS/queue.o
  .text.prvCopyDataFromQueue
-                0x000814e8       0x50 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00082208       0x50 src/asf/thirdparty/FreeRTOS/queue.o
+ .text.prvUnlockQueue
+                0x00082258       0xa8 src/asf/thirdparty/FreeRTOS/queue.o
+ .text.prvIsQueueEmpty
+                0x00082300       0x34 src/asf/thirdparty/FreeRTOS/queue.o
+ .text.prvIsQueueFull
+                0x00082334       0x38 src/asf/thirdparty/FreeRTOS/queue.o
+ .text.vQueueWaitForMessageRestricted
+                0x0008236c       0x68 src/asf/thirdparty/FreeRTOS/queue.o
+                0x0008236c                vQueueWaitForMessageRestricted
+ .text.xTaskGenericCreate
+                0x000823d4      0x180 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000823d4                xTaskGenericCreate
+ .text.vTaskDelete
+                0x00082554      0x104 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082554                vTaskDelete
+ .text.vTaskDelay
+                0x00082658       0x9c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082658                vTaskDelay
+ .text.uxTaskPriorityGet
+                0x000826f4       0x3c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000826f4                uxTaskPriorityGet
+ .text.vTaskPrioritySet
+                0x00082730      0x154 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082730                vTaskPrioritySet
+ .text.vTaskSuspend
+                0x00082884      0x110 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082884                vTaskSuspend
+ .text.prvTaskIsTaskSuspended
+                0x00082994       0x68 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.vTaskResume
+                0x000829fc       0xb4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000829fc                vTaskResume
+ .text.vTaskStartScheduler
+                0x00082ab0       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082ab0                vTaskStartScheduler
+ .text.vTaskSuspendAll
+                0x00082b30       0x1c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082b30                vTaskSuspendAll
+ .text.xTaskResumeAll
+                0x00082b4c      0x124 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082b4c                xTaskResumeAll
+ .text.xTaskGetTickCount
+                0x00082c70       0x2c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082c70                xTaskGetTickCount
+ .text.uxTaskGetNumberOfTasks
+                0x00082c9c       0x18 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082c9c                uxTaskGetNumberOfTasks
  .text.xTaskIncrementTick
-                0x00081538      0x17c src/asf/thirdparty/FreeRTOS/tasks.o
-                0x00081538                xTaskIncrementTick
+                0x00082cb4      0x17c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082cb4                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x000816b4       0xfc src/asf/thirdparty/FreeRTOS/tasks.o
-                0x000816b4                vTaskSwitchContext
+                0x00082e30       0xfc src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082e30                vTaskSwitchContext
+ .text.vTaskPlaceOnEventList
+                0x00082f2c       0xa0 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082f2c                vTaskPlaceOnEventList
+ .text.vTaskPlaceOnEventListRestricted
+                0x00082fcc       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00082fcc                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x000817b0       0xc0 src/asf/thirdparty/FreeRTOS/tasks.o
-                0x000817b0                xTaskRemoveFromEventList
+                0x0008304c       0xc0 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x0008304c                xTaskRemoveFromEventList
+ .text.vTaskSetTimeOutState
+                0x0008310c       0x38 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x0008310c                vTaskSetTimeOutState
+ .text.xTaskCheckForTimeOut
+                0x00083144       0xb0 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083144                xTaskCheckForTimeOut
+ .text.vTaskMissedYield
+                0x000831f4       0x18 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000831f4                vTaskMissedYield
+ .text.prvIdleTask
+                0x0008320c       0x28 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvInitialiseTCBVariables
+                0x00083234       0x98 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvInitialiseTaskLists
+                0x000832cc       0x80 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvCheckTasksWaitingTermination
+                0x0008334c       0x8c src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvAddCurrentTaskToDelayedList
+                0x000833d8       0x70 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvAllocateTCBAndStack
+                0x00083448       0x70 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.prvDeleteTCB
+                0x000834b8       0x24 src/asf/thirdparty/FreeRTOS/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x00081870       0x48 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000834dc       0x48 src/asf/thirdparty/FreeRTOS/tasks.o
+ .text.xTaskGetCurrentTaskHandle
+                0x00083524       0x20 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083524                xTaskGetCurrentTaskHandle
+ .text.xTaskGetSchedulerState
+                0x00083544       0x3c src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083544                xTaskGetSchedulerState
+ .text.vTaskPriorityInherit
+                0x00083580       0xf4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083580                vTaskPriorityInherit
  .text.xTaskPriorityDisinherit
-                0x000818b8       0xe4 src/asf/thirdparty/FreeRTOS/tasks.o
-                0x000818b8                xTaskPriorityDisinherit
+                0x00083674       0xe4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083674                xTaskPriorityDisinherit
+ .text.pvTaskIncrementMutexHeldCount
+                0x00083758       0x28 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00083758                pvTaskIncrementMutexHeldCount
+ .text.xTimerCreateTimerTask
+                0x00083780       0x64 src/asf/thirdparty/FreeRTOS/timers.o
+                0x00083780                xTimerCreateTimerTask
+ .text.xTimerCreate
+                0x000837e4       0x7c src/asf/thirdparty/FreeRTOS/timers.o
+                0x000837e4                xTimerCreate
+ .text.xTimerGenericCommand
+                0x00083860       0x98 src/asf/thirdparty/FreeRTOS/timers.o
+                0x00083860                xTimerGenericCommand
+ .text.prvProcessExpiredTimer
+                0x000838f8       0x80 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvTimerTask
+                0x00083978       0x30 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvProcessTimerOrBlockTask
+                0x000839a8       0x84 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvGetNextExpireTime
+                0x00083a2c       0x48 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvSampleTimeNow
+                0x00083a74       0x48 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvInsertTimerInActiveList
+                0x00083abc       0x88 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvProcessReceivedCommands
+                0x00083b44      0x12c src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvSwitchTimerLists
+                0x00083c70       0xc0 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.prvCheckForValidListAndQueue
+                0x00083d30       0x74 src/asf/thirdparty/FreeRTOS/timers.o
+ .text.pvTimerGetTimerID
+                0x00083da4       0x1c src/asf/thirdparty/FreeRTOS/timers.o
+                0x00083da4                pvTimerGetTimerID
+ .text.vStartBlockingQueueTasks
+                0x00083dc0      0x1cc src/Common-Demo-Source/BlockQ.o
+                0x00083dc0                vStartBlockingQueueTasks
+ .text.vBlockingQueueProducer
+                0x00083f8c       0x60 src/Common-Demo-Source/BlockQ.o
+ .text.vBlockingQueueConsumer
+                0x00083fec       0x6c src/Common-Demo-Source/BlockQ.o
+ .text.xAreBlockingQueuesStillRunning
+                0x00084058       0x9c src/Common-Demo-Source/BlockQ.o
+                0x00084058                xAreBlockingQueuesStillRunning
+ .text.vCreateBlockTimeTasks
+                0x000840f4       0x74 src/Common-Demo-Source/blocktim.o
+                0x000840f4                vCreateBlockTimeTasks
+ .text.vPrimaryBlockTimeTestTask
+                0x00084168      0x334 src/Common-Demo-Source/blocktim.o
+ .text.vSecondaryBlockTimeTestTask
+                0x0008449c       0xf0 src/Common-Demo-Source/blocktim.o
+ .text.xAreBlockTimeTestTasksStillRunning
+                0x0008458c       0x68 src/Common-Demo-Source/blocktim.o
+                0x0008458c                xAreBlockTimeTestTasksStillRunning
+ .text.xAreComTestTasksStillRunning
+                0x000845f4       0x30 src/Common-Demo-Source/comtest.o
+                0x000845f4                xAreComTestTasksStillRunning
+ .text.vStartCountingSemaphoreTasks
+                0x00084624       0xa4 src/Common-Demo-Source/countsem.o
+                0x00084624                vStartCountingSemaphoreTasks
+ .text.prvDecrementSemaphoreCount
+                0x000846c8       0x80 src/Common-Demo-Source/countsem.o
+ .text.prvIncrementSemaphoreCount
+                0x00084748       0x80 src/Common-Demo-Source/countsem.o
+ .text.prvCountingSemaphoreTask
+                0x000847c8       0x74 src/Common-Demo-Source/countsem.o
+ .text.vCreateSuicidalTasks
+                0x0008483c       0x70 src/Common-Demo-Source/death.o
+                0x0008483c                vCreateSuicidalTasks
+ .text.vSuicidalTask
+                0x000848ac       0x5c src/Common-Demo-Source/death.o
+ .text.vCreateTasks
+                0x00084908       0x90 src/Common-Demo-Source/death.o
+ .text.xIsCreateTaskStillRunning
+                0x00084998       0x78 src/Common-Demo-Source/death.o
+                0x00084998                xIsCreateTaskStillRunning
+ .text.vStartDynamicPriorityTasks
+                0x00084a10       0xe8 src/Common-Demo-Source/dynamic.o
+                0x00084a10                vStartDynamicPriorityTasks
+ .text.vLimitedIncrementTask
+                0x00084af8       0x34 src/Common-Demo-Source/dynamic.o
+ .text.vContinuousIncrementTask
+                0x00084b2c       0x6c src/Common-Demo-Source/dynamic.o
+ .text.vCounterControlTask
+                0x00084b98       0xd8 src/Common-Demo-Source/dynamic.o
+ .text.vQueueSendWhenSuspendedTask
+                0x00084c70       0x5c src/Common-Demo-Source/dynamic.o
+ .text.vQueueReceiveWhenSuspendedTask
+                0x00084ccc       0x80 src/Common-Demo-Source/dynamic.o
+ .text.xAreDynamicPriorityTasksStillRunning
+                0x00084d4c       0x7c src/Common-Demo-Source/dynamic.o
+                0x00084d4c                xAreDynamicPriorityTasksStillRunning
+ .text.vStartLEDFlashTimers
+                0x00084dc8       0x70 src/Common-Demo-Source/flash_timer.o
+                0x00084dc8                vStartLEDFlashTimers
+ .text.prvLEDTimerCallback
+                0x00084e38       0x28 src/Common-Demo-Source/flash_timer.o
+ .text.vStartGenericQueueTasks
+                0x00084e60       0xe8 src/Common-Demo-Source/GenQTest.o
+                0x00084e60                vStartGenericQueueTasks
+ .text.prvSendFrontAndBackTest
+                0x00084f48      0x334 src/Common-Demo-Source/GenQTest.o
+ .text.prvTakeTwoMutexesReturnInDifferentOrder
+                0x0008527c      0x144 src/Common-Demo-Source/GenQTest.o
+ .text.prvTakeTwoMutexesReturnInSameOrder
+                0x000853c0      0x11c src/Common-Demo-Source/GenQTest.o
+ .text.prvLowPriorityMutexTask
+                0x000854dc       0x5c src/Common-Demo-Source/GenQTest.o
+ .text.prvMediumPriorityMutexTask
+                0x00085538       0x24 src/Common-Demo-Source/GenQTest.o
+ .text.prvHighPriorityMutexTask
+                0x0008555c       0x58 src/Common-Demo-Source/GenQTest.o
+ .text.xAreGenericQueueTasksStillRunning
+                0x000855b4       0x64 src/Common-Demo-Source/GenQTest.o
+                0x000855b4                xAreGenericQueueTasksStillRunning
+ .text.vStartIntegerMathTasks
+                0x00085618       0x58 src/Common-Demo-Source/integer.o
+                0x00085618                vStartIntegerMathTasks
+ .text.vCompeteingIntMathTask
+                0x00085670       0x70 src/Common-Demo-Source/integer.o
+ .text.xAreIntegerMathsTaskStillRunning
+                0x000856e0       0x50 src/Common-Demo-Source/integer.o
+                0x000856e0                xAreIntegerMathsTaskStillRunning
+ .text.vStartPolledQueueTasks
+                0x00085730       0x74 src/Common-Demo-Source/PollQ.o
+                0x00085730                vStartPolledQueueTasks
+ .text.vPolledQueueProducer
+                0x000857a4       0x80 src/Common-Demo-Source/PollQ.o
+ .text.vPolledQueueConsumer
+                0x00085824       0x90 src/Common-Demo-Source/PollQ.o
+ .text.xArePollingQueuesStillRunning
+                0x000858b4       0x44 src/Common-Demo-Source/PollQ.o
+                0x000858b4                xArePollingQueuesStillRunning
+ .text.vStartRecursiveMutexTasks
+                0x000858f8       0xa0 src/Common-Demo-Source/recmutex.o
+                0x000858f8                vStartRecursiveMutexTasks
+ .text.prvRecursiveMutexControllingTask
+                0x00085998       0xd0 src/Common-Demo-Source/recmutex.o
+ .text.prvRecursiveMutexBlockingTask
+                0x00085a68       0xa0 src/Common-Demo-Source/recmutex.o
+ .text.prvRecursiveMutexPollingTask
+                0x00085b08       0xd4 src/Common-Demo-Source/recmutex.o
+ .text.xAreRecursiveMutexTasksStillRunning
+                0x00085bdc       0x98 src/Common-Demo-Source/recmutex.o
+                0x00085bdc                xAreRecursiveMutexTasksStillRunning
+ .text.vStartSemaphoreTasks
+                0x00085c74      0x148 src/Common-Demo-Source/semtest.o
+                0x00085c74                vStartSemaphoreTasks
+ .text.prvSemaphoreTest
+                0x00085dbc      0x120 src/Common-Demo-Source/semtest.o
+ .text.xAreSemaphoreTasksStillRunning
+                0x00085edc       0x64 src/Common-Demo-Source/semtest.o
+                0x00085edc                xAreSemaphoreTasksStillRunning
  .text.NVIC_SetPriorityGrouping
-                0x0008199c       0x48 src/main.o
- .text.main     0x000819e4       0x30 src/main.o
-                0x000819e4                main
+                0x00085f40       0x48 src/main.o
+ .text.main     0x00085f88       0x28 src/main.o
+                0x00085f88                main
  .text.prvSetupHardware
-                0x00081a14       0x28 src/main.o
+                0x00085fb0       0x28 src/main.o
+ .text.vApplicationMallocFailedHook
+                0x00085fd8       0x10 src/main.o
+                0x00085fd8                vApplicationMallocFailedHook
  .text.vApplicationStackOverflowHook
-                0x00081a3c       0x14 src/main.o
-                0x00081a3c                vApplicationStackOverflowHook
+                0x00085fe8       0x14 src/main.o
+                0x00085fe8                vApplicationStackOverflowHook
+ .text.main_full
+                0x00085ffc       0xc0 src/main_full.o
+                0x00085ffc                main_full
+ .text.prvCheckTimerCallback
+                0x000860bc       0xf4 src/main_full.o
  .text.vParTestInitialise
-                0x00081a50       0x44 src/ParTest.o
-                0x00081a50                vParTestInitialise
+                0x000861b0       0x44 src/ParTest.o
+                0x000861b0                vParTestInitialise
  .text.vParTestSetLED
-                0x00081a94       0x74 src/ParTest.o
-                0x00081a94                vParTestSetLED
+                0x000861f4       0x74 src/ParTest.o
+                0x000861f4                vParTestSetLED
+ .text.vParTestToggleLED
+                0x00086268       0x30 src/ParTest.o
+                0x00086268                vParTestToggleLED
  .text.USART0_Handler
-                0x00081b08       0xd0 src/serial.o
-                0x00081b08                USART0_Handler
+                0x00086298       0xd0 src/serial.o
+                0x00086298                USART0_Handler
  .text.__libc_init_array
-                0x00081bd8       0x50 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
-                0x00081bd8                __libc_init_array
- .text.memcmp   0x00081c28       0x68 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
-                0x00081c28                memcmp
- .text          0x00081c90       0xec c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcpy.o)
-                0x00081c90                memcpy
+                0x00086368       0x50 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
+                0x00086368                __libc_init_array
+ .text.memcmp   0x000863b8       0x68 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
+                0x000863b8                memcmp
+ .text          0x00086420       0xec c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcpy.o)
+                0x00086420                memcpy
+ .text.memset   0x0008650c       0x94 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+                0x0008650c                memset
  .text.startup.register_fini
-                0x00081d7c       0x14 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
- .text.atexit   0x00081d90        0xc c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
-                0x00081d90                atexit
+                0x000865a0       0x14 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
+ .text.atexit   0x000865b4        0xc c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
+                0x000865b4                atexit
  .text.__libc_fini_array
-                0x00081d9c       0x30 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
-                0x00081d9c                __libc_fini_array
+                0x000865c0       0x30 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
+                0x000865c0                __libc_fini_array
  .text.__register_exitproc
-                0x00081dcc       0xa8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
-                0x00081dcc                __register_exitproc
+                0x000865f0       0xa8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
+                0x000865f0                __register_exitproc
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
+ .rodata        0x00086698        0x8 src/asf/thirdparty/FreeRTOS/tasks.o
  .rodata.ucExpectedStackBytes.5295
-                0x00081e74       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
- .rodata.ulLED  0x00081e88        0xc src/ParTest.o
+                0x000866a0       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+ .rodata        0x000866b4        0x8 src/asf/thirdparty/FreeRTOS/timers.o
+ .rodata        0x000866bc       0x30 src/Common-Demo-Source/BlockQ.o
+ .rodata        0x000866ec       0x10 src/Common-Demo-Source/blocktim.o
+ .rodata        0x000866fc       0x10 src/Common-Demo-Source/countsem.o
+ .rodata        0x0008670c       0x18 src/Common-Demo-Source/death.o
+ .rodata        0x00086724       0x28 src/Common-Demo-Source/dynamic.o
+ .rodata        0x0008674c        0x8 src/Common-Demo-Source/flash_timer.o
+ .rodata        0x00086754       0x20 src/Common-Demo-Source/GenQTest.o
+ .rodata        0x00086774        0x8 src/Common-Demo-Source/integer.o
+ .rodata        0x0008677c       0x10 src/Common-Demo-Source/PollQ.o
+ .rodata        0x0008678c       0x18 src/Common-Demo-Source/recmutex.o
+ .rodata        0x000867a4       0x20 src/Common-Demo-Source/semtest.o
+ .rodata        0x000867c4        0xc src/main_full.o
+ .rodata.ulLED  0x000867d0        0xc src/ParTest.o
  .rodata.str1.4
-                0x00081e94        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
+                0x000867dc        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
  .rodata._global_impure_ptr
-                0x00081e98        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
-                0x00081e98                _global_impure_ptr
+                0x000867e0        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
+                0x000867e0                _global_impure_ptr
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00081e9c                . = ALIGN (0x4)
+                0x000867e4                . = ALIGN (0x4)
  *(.init)
- .init          0x00081e9c        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
-                0x00081e9c                _init
- .init          0x00081ea0        0x8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
-                0x00081ea8                . = ALIGN (0x4)
-                0x00081ea8                __preinit_array_start = .
+ .init          0x000867e4        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
+                0x000867e4                _init
+ .init          0x000867e8        0x8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
+                0x000867f0                . = ALIGN (0x4)
+                0x000867f0                __preinit_array_start = .
  *(.preinit_array)
-                0x00081ea8                __preinit_array_end = .
-                0x00081ea8                . = ALIGN (0x4)
-                0x00081ea8                __init_array_start = .
+                0x000867f0                __preinit_array_end = .
+                0x000867f0                . = ALIGN (0x4)
+                0x000867f0                __init_array_start = .
  *(SORT(.init_array.*))
  .init_array.00000
-                0x00081ea8        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
+                0x000867f0        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x00081eac        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
-                0x00081eb0                __init_array_end = .
-                0x00081eb0                . = ALIGN (0x4)
+ .init_array    0x000867f4        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+                0x000867f8                __init_array_end = .
+                0x000867f8                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00081eb0                . = ALIGN (0x4)
+                0x000867f8                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00081eb0        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
-                0x00081eb0                _fini
- .fini          0x00081eb4        0x8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
-                0x00081ebc                . = ALIGN (0x4)
-                0x00081ebc                __fini_array_start = .
+ .fini          0x000867f8        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
+                0x000867f8                _fini
+ .fini          0x000867fc        0x8 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
+                0x00086804                . = ALIGN (0x4)
+                0x00086804                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00081ebc        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+ .fini_array    0x00086804        0x4 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00081ec0                __fini_array_end = .
+                0x00086808                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00081ec0                . = ALIGN (0x4)
-                0x00081ec0                _efixed = .
-                0x00081ec0                PROVIDE (__exidx_start, .)
+                0x00086808                . = ALIGN (0x4)
+                0x00086808                _efixed = .
+                0x00086808                PROVIDE (__exidx_start, .)
 
-.vfp11_veneer   0x00081ec0        0x0
+.vfp11_veneer   0x00086808        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00081ec0        0x0
+.v4_bx          0x00086808        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00081ec0        0x0
+.iplt           0x00086808        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
-.eh_frame       0x00081ec0        0x0
- .eh_frame      0x00081ec0        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+.eh_frame       0x00086808        0x0
+ .eh_frame      0x00086808        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
-.rel.dyn        0x00081ec0        0x0
+.rel.dyn        0x00086808        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
-.jcr            0x00081ec0        0x0
- .jcr           0x00081ec0        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+.jcr            0x00086808        0x0
+ .jcr           0x00086808        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
-.igot.plt       0x00081ec0        0x0
+.igot.plt       0x00086808        0x0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00081ec0                PROVIDE (__exidx_end, .)
-                0x00081ec0                . = ALIGN (0x4)
-                0x00081ec0                _etext = .
+                0x00086808                PROVIDE (__exidx_end, .)
+                0x00086808                . = ALIGN (0x4)
+                0x00086808                _etext = .
 
-.relocate       0x20070000      0x438 load address 0x00081ec0
+.relocate       0x20070000      0x438 load address 0x00086808
                 0x20070000                . = ALIGN (0x4)
                 0x20070000                _srelocate = .
  *(.ramfunc .ramfunc.*)
@@ -5532,13 +5247,15 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gn
                 0x20070004        0x4 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .data.xNextTaskUnblockTime
                 0x20070008        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
- *fill*         0x2007000c        0x4 
+ .data.usLastCreationCount.4931
+                0x2007000c        0x2 src/Common-Demo-Source/death.o
+ *fill*         0x2007000e        0x2 
  .data.impure_data
                 0x20070010      0x428 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
                 0x20070438                . = ALIGN (0x4)
                 0x20070438                _erelocate = .
 
-.bss            0x20070438      0x138 load address 0x000822f8
+.bss            0x20070438     0xa300 load address 0x00086c40
                 0x20070438                . = ALIGN (0x4)
                 0x20070438                _sbss = .
                 0x20070438                _szero = .
@@ -5551,47 +5268,205 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gn
  *fill*         0x200704c5        0x3 
  .bss.ulMaxPRIGROUPValue
                 0x200704c8        0x4 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+ .bss.ucHeap    0x200704cc     0xa000 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .bss.xStart    0x2007a4cc        0x8 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .bss.pxEnd     0x2007a4d4        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .bss.xFreeBytesRemaining
+                0x2007a4d8        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .bss.xMinimumEverFreeBytesRemaining
+                0x2007a4dc        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .bss.xBlockAllocatedBit
+                0x2007a4e0        0x4 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .bss.pxCurrentTCB
-                0x200704cc        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
-                0x200704cc                pxCurrentTCB
+                0x2007a4e4        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a4e4                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x200704d0       0x64 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a4e8       0x64 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xDelayedTaskList1
+                0x2007a54c       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xDelayedTaskList2
+                0x2007a560       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.pxDelayedTaskList
-                0x20070534        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a574        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x20070538        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a578        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.xPendingReadyList
-                0x2007053c       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a57c       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xTasksWaitingTermination
+                0x2007a590       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.uxTasksDeleted
+                0x2007a5a4        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xSuspendedTaskList
+                0x2007a5a8       0x14 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.uxCurrentNumberOfTasks
+                0x2007a5bc        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.xTickCount
-                0x20070550        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5c0        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.uxTopReadyPriority
-                0x20070554        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5c4        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xSchedulerRunning
+                0x2007a5c8        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.uxPendedTicks
-                0x20070558        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5cc        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.xYieldPending
-                0x2007055c        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5d0        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.xNumOfOverflows
-                0x20070560        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5d4        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.uxTaskNumber
+                0x2007a5d8        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
  .bss.uxSchedulerSuspended
-                0x20070564        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x2007a5dc        0x4 src/asf/thirdparty/FreeRTOS/tasks.o
+ .bss.xActiveTimerList1
+                0x2007a5e0       0x14 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.xActiveTimerList2
+                0x2007a5f4       0x14 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.pxCurrentTimerList
+                0x2007a608        0x4 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.pxOverflowTimerList
+                0x2007a60c        0x4 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.xTimerQueue
+                0x2007a610        0x4 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.xLastTime.5147
+                0x2007a614        0x4 src/asf/thirdparty/FreeRTOS/timers.o
+ .bss.sBlockingConsumerCount
+                0x2007a618        0x8 src/Common-Demo-Source/BlockQ.o
+ .bss.sBlockingProducerCount
+                0x2007a620        0x8 src/Common-Demo-Source/BlockQ.o
+ .bss.sLastBlockingConsumerCount.5049
+                0x2007a628        0x8 src/Common-Demo-Source/BlockQ.o
+ .bss.sLastBlockingProducerCount.5050
+                0x2007a630        0x8 src/Common-Demo-Source/BlockQ.o
+ .bss.xTestQueue
+                0x2007a638        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xSecondary
+                0x2007a63c        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xPrimaryCycles
+                0x2007a640        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xSecondaryCycles
+                0x2007a644        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xErrorOccurred
+                0x2007a648        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xRunIndicator
+                0x2007a64c        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xLastPrimaryCycleCount.4511
+                0x2007a650        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.xLastSecondaryCycleCount.4512
+                0x2007a654        0x4 src/Common-Demo-Source/blocktim.o
+ .bss.uxRxLoops
+                0x2007a658        0x4 src/Common-Demo-Source/comtest.o
+ .bss.xErrorDetected
+                0x2007a65c        0x4 src/Common-Demo-Source/countsem.o
+ .bss.xParameters
+                0x2007a660       0x18 src/Common-Demo-Source/countsem.o
+ .bss.usCreationCount
+                0x2007a678        0x2 src/Common-Demo-Source/death.o
+ *fill*         0x2007a67a        0x2 
+ .bss.uxTasksRunningAtStart
+                0x2007a67c        0x4 src/Common-Demo-Source/death.o
+ .bss.uxTasksRunningNow.4933
+                0x2007a680        0x4 src/Common-Demo-Source/death.o
+ .bss.xContinuousIncrementHandle
+                0x2007a684        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.xLimitedIncrementHandle
+                0x2007a688        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.ulCounter
+                0x2007a68c        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.usCheckVariable
+                0x2007a690        0x2 src/Common-Demo-Source/dynamic.o
+ *fill*         0x2007a692        0x2 
+ .bss.xSuspendedQueueSendError
+                0x2007a694        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.xSuspendedQueueReceiveError
+                0x2007a698        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.ulExpectedValue
+                0x2007a69c        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.ulValueToSend.5055
+                0x2007a6a0        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.usLastTaskCheck.5068
+                0x2007a6a4        0x2 src/Common-Demo-Source/dynamic.o
+ *fill*         0x2007a6a6        0x2 
+ .bss.ulLastExpectedValue.5069
+                0x2007a6a8        0x4 src/Common-Demo-Source/dynamic.o
+ .bss.xErrorDetected
+                0x2007a6ac        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.ulLoopCounter
+                0x2007a6b0        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.ulLoopCounter2
+                0x2007a6b4        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.ulGuardedVariable
+                0x2007a6b8        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.xHighPriorityMutexTask
+                0x2007a6bc        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.xMediumPriorityMutexTask
+                0x2007a6c0        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.xISRMutex
+                0x2007a6c4        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.ulLastLoopCounter.5097
+                0x2007a6c8        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.ulLastLoopCounter2.5098
+                0x2007a6cc        0x4 src/Common-Demo-Source/GenQTest.o
+ .bss.xTaskCheck
+                0x2007a6d0        0x4 src/Common-Demo-Source/integer.o
+ .bss.xPollingConsumerCount
+                0x2007a6d4        0x4 src/Common-Demo-Source/PollQ.o
+ .bss.xPollingProducerCount
+                0x2007a6d8        0x4 src/Common-Demo-Source/PollQ.o
+ .bss.xPolledQueue.5016
+                0x2007a6dc        0x4 src/Common-Demo-Source/PollQ.o
+ .bss.xMutex    0x2007a6e0        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.xErrorOccurred
+                0x2007a6e4        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.xControllingIsSuspended
+                0x2007a6e8        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.xBlockingIsSuspended
+                0x2007a6ec        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxControllingCycles
+                0x2007a6f0        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxBlockingCycles
+                0x2007a6f4        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxPollingCycles
+                0x2007a6f8        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.xControllingTaskHandle
+                0x2007a6fc        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.xBlockingTaskHandle
+                0x2007a700        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxLastControllingCycles.4493
+                0x2007a704        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxLastBlockingCycles.4494
+                0x2007a708        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.uxLastPollingCycles.4495
+                0x2007a70c        0x4 src/Common-Demo-Source/recmutex.o
+ .bss.sCheckVariables
+                0x2007a710        0x8 src/Common-Demo-Source/semtest.o
+ .bss.sNextCheckVariable
+                0x2007a718        0x2 src/Common-Demo-Source/semtest.o
+ *fill*         0x2007a71a        0x2 
+ .bss.sLastCheckVariables.5039
+                0x2007a71c        0x8 src/Common-Demo-Source/semtest.o
+ .bss.lChangedTimerPeriodAlready.7937
+                0x2007a724        0x4 src/main_full.o
  .bss.xRxedChars
-                0x20070568        0x4 src/serial.o
+                0x2007a728        0x4 src/serial.o
  .bss.xCharsForTx
-                0x2007056c        0x4 src/serial.o
+                0x2007a72c        0x4 src/serial.o
  *(COMMON)
-                0x20070570                . = ALIGN (0x4)
-                0x20070570                _ebss = .
-                0x20070570                _ezero = .
+ COMMON         0x2007a730        0x4 src/Common-Demo-Source/death.o
+                0x2007a730                xCreatedTask
+ COMMON         0x2007a734        0x4 src/Common-Demo-Source/dynamic.o
+                0x2007a734                xSuspendedTestQueue
+                0x2007a738                . = ALIGN (0x4)
+                0x2007a738                _ebss = .
+                0x2007a738                _ezero = .
 
-.stack          0x20070570     0x2000 load address 0x00082430
-                0x20070570                . = ALIGN (0x8)
-                0x20070570                _sstack = .
-                0x20072570                . = (. + STACK_SIZE)
- *fill*         0x20070570     0x2000 
-                0x20072570                . = ALIGN (0x8)
-                0x20072570                _estack = .
-                0x20072570                . = ALIGN (0x4)
-                0x20072570                _end = .
+.stack          0x2007a738     0x2000 load address 0x00090f40
+                0x2007a738                . = ALIGN (0x8)
+                0x2007a738                _sstack = .
+                0x2007c738                . = (. + STACK_SIZE)
+ *fill*         0x2007a738     0x2000 
+                0x2007c738                . = ALIGN (0x8)
+                0x2007c738                _estack = .
+                0x2007c738                . = ALIGN (0x4)
+                0x2007c738                _end = .
 OUTPUT(RTOSDemo.elf elf32-littlearm)
 
 .ARM.attributes
@@ -5623,33 +5498,65 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .ARM.attributes
                 0x00000248       0x33 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .ARM.attributes
-                0x0000027b       0x33 src/asf/thirdparty/FreeRTOS/queue.o
+                0x0000027b       0x33 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .ARM.attributes
-                0x000002ae       0x33 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x000002ae       0x33 src/asf/thirdparty/FreeRTOS/queue.o
  .ARM.attributes
-                0x000002e1       0x33 src/main.o
+                0x000002e1       0x33 src/asf/thirdparty/FreeRTOS/tasks.o
  .ARM.attributes
-                0x00000314       0x33 src/ParTest.o
+                0x00000314       0x33 src/asf/thirdparty/FreeRTOS/timers.o
  .ARM.attributes
-                0x00000347       0x33 src/serial.o
+                0x00000347       0x33 src/Common-Demo-Source/BlockQ.o
  .ARM.attributes
-                0x0000037a       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
+                0x0000037a       0x33 src/Common-Demo-Source/blocktim.o
  .ARM.attributes
-                0x000003a7       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
+                0x000003ad       0x33 src/Common-Demo-Source/comtest.o
  .ARM.attributes
-                0x000003d4       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
+                0x000003e0       0x33 src/Common-Demo-Source/countsem.o
  .ARM.attributes
-                0x00000401       0x1b c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcpy.o)
+                0x00000413       0x33 src/Common-Demo-Source/death.o
  .ARM.attributes
-                0x0000041c       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
+                0x00000446       0x33 src/Common-Demo-Source/dynamic.o
  .ARM.attributes
-                0x00000449       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
+                0x00000479       0x33 src/Common-Demo-Source/flash_timer.o
  .ARM.attributes
-                0x00000476       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
+                0x000004ac       0x33 src/Common-Demo-Source/GenQTest.o
  .ARM.attributes
-                0x000004a3       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
+                0x000004df       0x33 src/Common-Demo-Source/integer.o
  .ARM.attributes
-                0x000004d0       0x1d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
+                0x00000512       0x33 src/Common-Demo-Source/PollQ.o
+ .ARM.attributes
+                0x00000545       0x33 src/Common-Demo-Source/recmutex.o
+ .ARM.attributes
+                0x00000578       0x33 src/Common-Demo-Source/semtest.o
+ .ARM.attributes
+                0x000005ab       0x33 src/main.o
+ .ARM.attributes
+                0x000005de       0x33 src/main_full.o
+ .ARM.attributes
+                0x00000611       0x33 src/ParTest.o
+ .ARM.attributes
+                0x00000644       0x33 src/serial.o
+ .ARM.attributes
+                0x00000677       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000006a4       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x000006d1       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x000006fe       0x1b c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000719       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000746       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000773       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x000007a0       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x000007cd       0x2d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x000007fa       0x1d c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
 
 .comment        0x00000000       0x5b
  .comment       0x00000000       0x5b src/asf/common/services/clock/sam3x/sysclk.o
@@ -5664,13 +5571,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .comment       0x00000000       0x5c src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/list.o
  .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
+ .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/queue.o
  .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/tasks.o
+ .comment       0x00000000       0x5c src/asf/thirdparty/FreeRTOS/timers.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/BlockQ.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/blocktim.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/comtest.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/countsem.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/death.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/dynamic.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/flash_timer.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/GenQTest.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/integer.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/PollQ.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/recmutex.o
+ .comment       0x00000000       0x5c src/Common-Demo-Source/semtest.o
  .comment       0x00000000       0x5c src/main.o
+ .comment       0x00000000       0x5c src/main_full.o
  .comment       0x00000000       0x5c src/ParTest.o
  .comment       0x00000000       0x5c src/serial.o
 
-.debug_info     0x00000000     0x85ac
+.debug_info     0x00000000     0xb117
  .debug_info    0x00000000      0x668 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_info    0x00000668      0x1ac src/asf/sam/boards/sam3x_ek/init.o
  .debug_info    0x00000814      0xeac src/asf/sam/drivers/pio/pio.o
@@ -5682,13 +5604,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_info    0x00004e13      0x47a src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_info    0x0000528d      0x2d4 src/asf/thirdparty/FreeRTOS/list.o
  .debug_info    0x00005561      0x371 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_info    0x000058d2      0xaf0 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_info    0x000063c2     0x10bc src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_info    0x0000747e      0x3ee src/main.o
- .debug_info    0x0000786c      0x1e1 src/ParTest.o
- .debug_info    0x00007a4d      0xb5f src/serial.o
+ .debug_info    0x000058d2      0x33c src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_info    0x00005c0e      0xaf0 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_info    0x000066fe     0x10bc src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_info    0x000077ba      0x85a src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_info    0x00008014      0x354 src/Common-Demo-Source/BlockQ.o
+ .debug_info    0x00008368      0x285 src/Common-Demo-Source/blocktim.o
+ .debug_info    0x000085ed      0x216 src/Common-Demo-Source/comtest.o
+ .debug_info    0x00008803      0x280 src/Common-Demo-Source/countsem.o
+ .debug_info    0x00008a83      0x268 src/Common-Demo-Source/death.o
+ .debug_info    0x00008ceb      0x35f src/Common-Demo-Source/dynamic.o
+ .debug_info    0x0000904a      0x13d src/Common-Demo-Source/flash_timer.o
+ .debug_info    0x00009187      0x3f6 src/Common-Demo-Source/GenQTest.o
+ .debug_info    0x0000957d      0x19f src/Common-Demo-Source/integer.o
+ .debug_info    0x0000971c      0x22f src/Common-Demo-Source/PollQ.o
+ .debug_info    0x0000994b      0x297 src/Common-Demo-Source/recmutex.o
+ .debug_info    0x00009be2      0x2a5 src/Common-Demo-Source/semtest.o
+ .debug_info    0x00009e87      0x3cf src/main.o
+ .debug_info    0x0000a256      0x181 src/main_full.o
+ .debug_info    0x0000a3d7      0x1e1 src/ParTest.o
+ .debug_info    0x0000a5b8      0xb5f src/serial.o
 
-.debug_abbrev   0x00000000     0x1715
+.debug_abbrev   0x00000000     0x2581
  .debug_abbrev  0x00000000      0x1c3 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_abbrev  0x000001c3       0xc5 src/asf/sam/boards/sam3x_ek/init.o
  .debug_abbrev  0x00000288      0x1a6 src/asf/sam/drivers/pio/pio.o
@@ -5700,13 +5637,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_abbrev  0x00000b5a       0xf5 src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_abbrev  0x00000c4f       0xc3 src/asf/thirdparty/FreeRTOS/list.o
  .debug_abbrev  0x00000d12      0x1d2 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_abbrev  0x00000ee4      0x16f src/asf/thirdparty/FreeRTOS/queue.o
- .debug_abbrev  0x00001053      0x231 src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_abbrev  0x00001284      0x1b8 src/main.o
- .debug_abbrev  0x0000143c       0xdd src/ParTest.o
- .debug_abbrev  0x00001519      0x1fc src/serial.o
+ .debug_abbrev  0x00000ee4      0x177 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_abbrev  0x0000105b      0x16f src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_abbrev  0x000011ca      0x231 src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_abbrev  0x000013fb      0x18d src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_abbrev  0x00001588      0x105 src/Common-Demo-Source/BlockQ.o
+ .debug_abbrev  0x0000168d       0xea src/Common-Demo-Source/blocktim.o
+ .debug_abbrev  0x00001777       0xc5 src/Common-Demo-Source/comtest.o
+ .debug_abbrev  0x0000183c      0x10b src/Common-Demo-Source/countsem.o
+ .debug_abbrev  0x00001947       0xe6 src/Common-Demo-Source/death.o
+ .debug_abbrev  0x00001a2d      0x104 src/Common-Demo-Source/dynamic.o
+ .debug_abbrev  0x00001b31       0x91 src/Common-Demo-Source/flash_timer.o
+ .debug_abbrev  0x00001bc2      0x10d src/Common-Demo-Source/GenQTest.o
+ .debug_abbrev  0x00001ccf       0xd1 src/Common-Demo-Source/integer.o
+ .debug_abbrev  0x00001da0       0xb6 src/Common-Demo-Source/PollQ.o
+ .debug_abbrev  0x00001e56       0xf9 src/Common-Demo-Source/recmutex.o
+ .debug_abbrev  0x00001f4f      0x105 src/Common-Demo-Source/semtest.o
+ .debug_abbrev  0x00002054      0x198 src/main.o
+ .debug_abbrev  0x000021ec       0xbc src/main_full.o
+ .debug_abbrev  0x000022a8       0xdd src/ParTest.o
+ .debug_abbrev  0x00002385      0x1fc src/serial.o
 
-.debug_loc      0x00000000     0x4138
+.debug_loc      0x00000000     0x523a
  .debug_loc     0x00000000      0x2f8 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_loc     0x000002f8       0x2c src/asf/sam/boards/sam3x_ek/init.o
  .debug_loc     0x00000324      0x850 src/asf/sam/drivers/pio/pio.o
@@ -5718,13 +5670,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_loc     0x00002ba0       0x90 src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_loc     0x00002c30      0x118 src/asf/thirdparty/FreeRTOS/list.o
  .debug_loc     0x00002d48      0x1dc src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_loc     0x00002f24      0x508 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_loc     0x0000342c      0x8bc src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_loc     0x00003ce8      0x158 src/main.o
- .debug_loc     0x00003e40       0xa8 src/ParTest.o
- .debug_loc     0x00003ee8      0x250 src/serial.o
+ .debug_loc     0x00002f24      0x164 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_loc     0x00003088      0x508 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_loc     0x00003590      0x8bc src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_loc     0x00003e4c      0x33c src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_loc     0x00004188       0xe2 src/Common-Demo-Source/BlockQ.o
+ .debug_loc     0x0000426a       0xe0 src/Common-Demo-Source/blocktim.o
+ .debug_loc     0x0000434a       0xe0 src/Common-Demo-Source/comtest.o
+ .debug_loc     0x0000442a      0x118 src/Common-Demo-Source/countsem.o
+ .debug_loc     0x00004542       0xe0 src/Common-Demo-Source/death.o
+ .debug_loc     0x00004622      0x188 src/Common-Demo-Source/dynamic.o
+ .debug_loc     0x000047aa       0x70 src/Common-Demo-Source/flash_timer.o
+ .debug_loc     0x0000481a      0x224 src/Common-Demo-Source/GenQTest.o
+ .debug_loc     0x00004a3e       0xa8 src/Common-Demo-Source/integer.o
+ .debug_loc     0x00004ae6       0xe0 src/Common-Demo-Source/PollQ.o
+ .debug_loc     0x00004bc6      0x118 src/Common-Demo-Source/recmutex.o
+ .debug_loc     0x00004cde       0xa8 src/Common-Demo-Source/semtest.o
+ .debug_loc     0x00004d86      0x14c src/main.o
+ .debug_loc     0x00004ed2       0x70 src/main_full.o
+ .debug_loc     0x00004f42       0xa8 src/ParTest.o
+ .debug_loc     0x00004fea      0x250 src/serial.o
 
-.debug_aranges  0x00000000      0xb48
+.debug_aranges  0x00000000      0xf28
  .debug_aranges
                 0x00000000       0x88 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_aranges
@@ -5748,17 +5715,47 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_aranges
                 0x00000798       0x90 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .debug_aranges
-                0x00000828       0xd0 src/asf/thirdparty/FreeRTOS/queue.o
+                0x00000828       0x50 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
  .debug_aranges
-                0x000008f8      0x160 src/asf/thirdparty/FreeRTOS/tasks.o
+                0x00000878       0xd0 src/asf/thirdparty/FreeRTOS/queue.o
  .debug_aranges
-                0x00000a58       0x50 src/main.o
+                0x00000948      0x160 src/asf/thirdparty/FreeRTOS/tasks.o
  .debug_aranges
-                0x00000aa8       0x30 src/ParTest.o
+                0x00000aa8       0x90 src/asf/thirdparty/FreeRTOS/timers.o
  .debug_aranges
-                0x00000ad8       0x70 src/serial.o
+                0x00000b38       0x38 src/Common-Demo-Source/BlockQ.o
+ .debug_aranges
+                0x00000b70       0x38 src/Common-Demo-Source/blocktim.o
+ .debug_aranges
+                0x00000ba8       0x38 src/Common-Demo-Source/comtest.o
+ .debug_aranges
+                0x00000be0       0x40 src/Common-Demo-Source/countsem.o
+ .debug_aranges
+                0x00000c20       0x38 src/Common-Demo-Source/death.o
+ .debug_aranges
+                0x00000c58       0x50 src/Common-Demo-Source/dynamic.o
+ .debug_aranges
+                0x00000ca8       0x28 src/Common-Demo-Source/flash_timer.o
+ .debug_aranges
+                0x00000cd0       0x68 src/Common-Demo-Source/GenQTest.o
+ .debug_aranges
+                0x00000d38       0x30 src/Common-Demo-Source/integer.o
+ .debug_aranges
+                0x00000d68       0x38 src/Common-Demo-Source/PollQ.o
+ .debug_aranges
+                0x00000da0       0x40 src/Common-Demo-Source/recmutex.o
+ .debug_aranges
+                0x00000de0       0x30 src/Common-Demo-Source/semtest.o
+ .debug_aranges
+                0x00000e10       0x50 src/main.o
+ .debug_aranges
+                0x00000e60       0x28 src/main_full.o
+ .debug_aranges
+                0x00000e88       0x30 src/ParTest.o
+ .debug_aranges
+                0x00000eb8       0x70 src/serial.o
 
-.debug_ranges   0x00000000      0xa48
+.debug_ranges   0x00000000      0xd38
  .debug_ranges  0x00000000       0x78 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_ranges  0x00000078       0x10 src/asf/sam/boards/sam3x_ek/init.o
  .debug_ranges  0x00000088      0x138 src/asf/sam/drivers/pio/pio.o
@@ -5770,13 +5767,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_ranges  0x000006a8       0x20 src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_ranges  0x000006c8       0x30 src/asf/thirdparty/FreeRTOS/list.o
  .debug_ranges  0x000006f8       0x80 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_ranges  0x00000778       0xc0 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_ranges  0x00000838      0x150 src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_ranges  0x00000988       0x40 src/main.o
- .debug_ranges  0x000009c8       0x20 src/ParTest.o
- .debug_ranges  0x000009e8       0x60 src/serial.o
+ .debug_ranges  0x00000778       0x40 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_ranges  0x000007b8       0xc0 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_ranges  0x00000878      0x150 src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_ranges  0x000009c8       0x80 src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_ranges  0x00000a48       0x28 src/Common-Demo-Source/BlockQ.o
+ .debug_ranges  0x00000a70       0x28 src/Common-Demo-Source/blocktim.o
+ .debug_ranges  0x00000a98       0x28 src/Common-Demo-Source/comtest.o
+ .debug_ranges  0x00000ac0       0x30 src/Common-Demo-Source/countsem.o
+ .debug_ranges  0x00000af0       0x28 src/Common-Demo-Source/death.o
+ .debug_ranges  0x00000b18       0x40 src/Common-Demo-Source/dynamic.o
+ .debug_ranges  0x00000b58       0x18 src/Common-Demo-Source/flash_timer.o
+ .debug_ranges  0x00000b70       0x58 src/Common-Demo-Source/GenQTest.o
+ .debug_ranges  0x00000bc8       0x20 src/Common-Demo-Source/integer.o
+ .debug_ranges  0x00000be8       0x28 src/Common-Demo-Source/PollQ.o
+ .debug_ranges  0x00000c10       0x30 src/Common-Demo-Source/recmutex.o
+ .debug_ranges  0x00000c40       0x20 src/Common-Demo-Source/semtest.o
+ .debug_ranges  0x00000c60       0x40 src/main.o
+ .debug_ranges  0x00000ca0       0x18 src/main_full.o
+ .debug_ranges  0x00000cb8       0x20 src/ParTest.o
+ .debug_ranges  0x00000cd8       0x60 src/serial.o
 
-.debug_macro    0x00000000    0x16af2
+.debug_macro    0x00000000    0x184ce
  .debug_macro   0x00000000      0x52d src/asf/common/services/clock/sam3x/sysclk.o
  .debug_macro   0x0000052d      0x862 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_macro   0x00000d8f      0x231 src/asf/common/services/clock/sam3x/sysclk.o
@@ -5919,24 +5931,41 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_macro   0x00014d34       0x79 src/asf/thirdparty/FreeRTOS/list.o
  .debug_macro   0x00014dad      0x145 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
  .debug_macro   0x00014ef2       0x69 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_macro   0x00014f5b      0x1c3 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_macro   0x0001511e      0x2a6 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_macro   0x000153c4       0x10 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_macro   0x000153d4       0x1f src/asf/thirdparty/FreeRTOS/queue.o
- .debug_macro   0x000153f3       0xb0 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_macro   0x000154a3      0x1ff src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_macro   0x000156a2       0x91 src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_macro   0x00015733       0x17 src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_macro   0x0001574a      0x5e0 src/main.o
- .debug_macro   0x00015d2a       0x97 src/main.o
- .debug_macro   0x00015dc1       0xef src/main.o
- .debug_macro   0x00015eb0       0x28 src/main.o
- .debug_macro   0x00015ed8       0x6a src/main.o
- .debug_macro   0x00015f42       0x2e src/main.o
- .debug_macro   0x00015f70      0x567 src/ParTest.o
- .debug_macro   0x000164d7      0x61b src/serial.o
+ .debug_macro   0x00014f5b      0x15a src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_macro   0x000150b5      0x1c3 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_macro   0x00015278      0x2a6 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_macro   0x0001551e       0x10 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_macro   0x0001552e       0x1f src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_macro   0x0001554d       0xb0 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_macro   0x000155fd      0x1ff src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_macro   0x000157fc       0x91 src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_macro   0x0001588d       0x17 src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_macro   0x000158a4      0x170 src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_macro   0x00015a14      0x161 src/Common-Demo-Source/BlockQ.o
+ .debug_macro   0x00015b75       0xf0 src/Common-Demo-Source/blocktim.o
+ .debug_macro   0x00015c65      0x1b0 src/Common-Demo-Source/comtest.o
+ .debug_macro   0x00015e15       0x10 src/Common-Demo-Source/comtest.o
+ .debug_macro   0x00015e25       0xe7 src/Common-Demo-Source/countsem.o
+ .debug_macro   0x00015f0c       0x7e src/Common-Demo-Source/countsem.o
+ .debug_macro   0x00015f8a      0x152 src/Common-Demo-Source/death.o
+ .debug_macro   0x000160dc      0x190 src/Common-Demo-Source/dynamic.o
+ .debug_macro   0x0001626c       0xd5 src/Common-Demo-Source/flash_timer.o
+ .debug_macro   0x00016341      0x192 src/Common-Demo-Source/GenQTest.o
+ .debug_macro   0x000164d3      0x176 src/Common-Demo-Source/integer.o
+ .debug_macro   0x00016649      0x17f src/Common-Demo-Source/PollQ.o
+ .debug_macro   0x000167c8       0xf3 src/Common-Demo-Source/recmutex.o
+ .debug_macro   0x000168bb      0x182 src/Common-Demo-Source/semtest.o
+ .debug_macro   0x00016a3d      0x5e0 src/main.o
+ .debug_macro   0x0001701d       0x97 src/main.o
+ .debug_macro   0x000170b4       0xef src/main.o
+ .debug_macro   0x000171a3       0x28 src/main.o
+ .debug_macro   0x000171cb       0x6a src/main.o
+ .debug_macro   0x00017235       0x2e src/main.o
+ .debug_macro   0x00017263      0x6e9 src/main_full.o
+ .debug_macro   0x0001794c      0x567 src/ParTest.o
+ .debug_macro   0x00017eb3      0x61b src/serial.o
 
-.debug_line     0x00000000     0xb7c2
+.debug_line     0x00000000    0x106c4
  .debug_line    0x00000000      0xd25 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_line    0x00000d25      0xbb9 src/asf/sam/boards/sam3x_ek/init.o
  .debug_line    0x000018de      0xdec src/asf/sam/drivers/pio/pio.o
@@ -5948,13 +5977,28 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_line    0x000066a9      0x965 src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_line    0x0000700e      0x429 src/asf/thirdparty/FreeRTOS/list.o
  .debug_line    0x00007437      0x48a src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_line    0x000078c1      0x949 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_line    0x0000820a      0xbbf src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_line    0x00008dc9      0xe49 src/main.o
- .debug_line    0x00009c12      0xcd6 src/ParTest.o
- .debug_line    0x0000a8e8      0xeda src/serial.o
+ .debug_line    0x000078c1      0x4e6 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_line    0x00007da7      0x949 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_line    0x000086f0      0xbbf src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_line    0x000092af      0x5c7 src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_line    0x00009876      0x47a src/Common-Demo-Source/BlockQ.o
+ .debug_line    0x00009cf0      0x475 src/Common-Demo-Source/blocktim.o
+ .debug_line    0x0000a165      0x481 src/Common-Demo-Source/comtest.o
+ .debug_line    0x0000a5e6      0x422 src/Common-Demo-Source/countsem.o
+ .debug_line    0x0000aa08      0x458 src/Common-Demo-Source/death.o
+ .debug_line    0x0000ae60      0x4d2 src/Common-Demo-Source/dynamic.o
+ .debug_line    0x0000b332      0x3b3 src/Common-Demo-Source/flash_timer.o
+ .debug_line    0x0000b6e5      0x5c9 src/Common-Demo-Source/GenQTest.o
+ .debug_line    0x0000bcae      0x444 src/Common-Demo-Source/integer.o
+ .debug_line    0x0000c0f2      0x46c src/Common-Demo-Source/PollQ.o
+ .debug_line    0x0000c55e      0x449 src/Common-Demo-Source/recmutex.o
+ .debug_line    0x0000c9a7      0x474 src/Common-Demo-Source/semtest.o
+ .debug_line    0x0000ce1b      0xe42 src/main.o
+ .debug_line    0x0000dc5d      0xeb7 src/main_full.o
+ .debug_line    0x0000eb14      0xcd6 src/ParTest.o
+ .debug_line    0x0000f7ea      0xeda src/serial.o
 
-.debug_str      0x00000000    0x64e9d
+.debug_str      0x00000000    0x671a9
  .debug_str     0x00000000    0x5b1e5 src/asf/common/services/clock/sam3x/sysclk.o
                               0x5b490 (size before relaxing)
  .debug_str     0x0005b1e5      0x678 src/asf/sam/boards/sam3x_ek/init.o
@@ -5977,18 +6021,48 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
                                0x6de4 (size before relaxing)
  .debug_str     0x0005ff22      0xaba src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
                                0x6412 (size before relaxing)
- .debug_str     0x000609dc     0x1ffd src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_str     0x000609dc      0x2b3 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+                               0x72ff (size before relaxing)
+ .debug_str     0x00060c8f     0x1fb4 src/asf/thirdparty/FreeRTOS/queue.o
                                0x9157 (size before relaxing)
- .debug_str     0x000629d9     0x18a2 src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_str     0x00062c43     0x1897 src/asf/thirdparty/FreeRTOS/tasks.o
                                0x9a31 (size before relaxing)
- .debug_str     0x0006427b      0x1e3 src/main.o
-                              0x5e497 (size before relaxing)
- .debug_str     0x0006445e       0x8c src/ParTest.o
+ .debug_str     0x000644da      0x3a2 src/asf/thirdparty/FreeRTOS/timers.o
+                               0x8757 (size before relaxing)
+ .debug_str     0x0006487c      0x263 src/Common-Demo-Source/BlockQ.o
+                               0x7d26 (size before relaxing)
+ .debug_str     0x00064adf      0x2b1 src/Common-Demo-Source/blocktim.o
+                               0x69a4 (size before relaxing)
+ .debug_str     0x00064d90      0x332 src/Common-Demo-Source/comtest.o
+                               0x73b2 (size before relaxing)
+ .debug_str     0x000650c2      0x992 src/Common-Demo-Source/countsem.o
+                               0x708c (size before relaxing)
+ .debug_str     0x00065a54      0x138 src/Common-Demo-Source/death.o
+                               0x71d0 (size before relaxing)
+ .debug_str     0x00065b8c      0x2ef src/Common-Demo-Source/dynamic.o
+                               0x8563 (size before relaxing)
+ .debug_str     0x00065e7b       0xe9 src/Common-Demo-Source/flash_timer.o
+                               0x657c (size before relaxing)
+ .debug_str     0x00065f64      0x333 src/Common-Demo-Source/GenQTest.o
+                               0x85c4 (size before relaxing)
+ .debug_str     0x00066297      0x1ab src/Common-Demo-Source/integer.o
+                               0x7211 (size before relaxing)
+ .debug_str     0x00066442      0x223 src/Common-Demo-Source/PollQ.o
+                               0x7d04 (size before relaxing)
+ .debug_str     0x00066665      0x2d7 src/Common-Demo-Source/recmutex.o
+                               0x719f (size before relaxing)
+ .debug_str     0x0006693c      0x20a src/Common-Demo-Source/semtest.o
+                               0x84cc (size before relaxing)
+ .debug_str     0x00066b46      0x184 src/main.o
+                              0x5e492 (size before relaxing)
+ .debug_str     0x00066cca      0x28e src/main_full.o
+                              0x60006 (size before relaxing)
+ .debug_str     0x00066f58       0x86 src/ParTest.o
                               0x5d9d6 (size before relaxing)
- .debug_str     0x000644ea      0x9b3 src/serial.o
+ .debug_str     0x00066fde      0x1cb src/serial.o
                               0x5f2a3 (size before relaxing)
 
-.debug_frame    0x00000000     0x2540
+.debug_frame    0x00000000     0x2fdc
  .debug_frame   0x00000000      0x1c4 src/asf/common/services/clock/sam3x/sysclk.o
  .debug_frame   0x000001c4       0x2c src/asf/sam/boards/sam3x_ek/init.o
  .debug_frame   0x000001f0      0x44c src/asf/sam/drivers/pio/pio.o
@@ -6000,17 +6074,33 @@ OUTPUT(RTOSDemo.elf elf32-littlearm)
  .debug_frame   0x0000172c       0x5c src/asf/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o
  .debug_frame   0x00001788       0x9c src/asf/thirdparty/FreeRTOS/list.o
  .debug_frame   0x00001824      0x178 src/asf/thirdparty/FreeRTOS/portable/GCC/ARM_CM3/port.o
- .debug_frame   0x0000199c      0x2f0 src/asf/thirdparty/FreeRTOS/queue.o
- .debug_frame   0x00001c8c      0x4fc src/asf/thirdparty/FreeRTOS/tasks.o
- .debug_frame   0x00002188       0xd4 src/main.o
- .debug_frame   0x0000225c       0x70 src/ParTest.o
- .debug_frame   0x000022cc      0x158 src/serial.o
- .debug_frame   0x00002424       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
- .debug_frame   0x00002450       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
- .debug_frame   0x0000247c       0x48 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x000024c4       0x20 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
- .debug_frame   0x000024e4       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
- .debug_frame   0x00002510       0x30 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
+ .debug_frame   0x0000199c       0xd0 src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_frame   0x00001a6c      0x2f0 src/asf/thirdparty/FreeRTOS/queue.o
+ .debug_frame   0x00001d5c      0x4fc src/asf/thirdparty/FreeRTOS/tasks.o
+ .debug_frame   0x00002258      0x1e0 src/asf/thirdparty/FreeRTOS/timers.o
+ .debug_frame   0x00002438       0x8c src/Common-Demo-Source/BlockQ.o
+ .debug_frame   0x000024c4       0x8c src/Common-Demo-Source/blocktim.o
+ .debug_frame   0x00002550       0x8c src/Common-Demo-Source/comtest.o
+ .debug_frame   0x000025dc       0xac src/Common-Demo-Source/countsem.o
+ .debug_frame   0x00002688       0x90 src/Common-Demo-Source/death.o
+ .debug_frame   0x00002718       0xec src/Common-Demo-Source/dynamic.o
+ .debug_frame   0x00002804       0x50 src/Common-Demo-Source/flash_timer.o
+ .debug_frame   0x00002854      0x148 src/Common-Demo-Source/GenQTest.o
+ .debug_frame   0x0000299c       0x6c src/Common-Demo-Source/integer.o
+ .debug_frame   0x00002a08       0x8c src/Common-Demo-Source/PollQ.o
+ .debug_frame   0x00002a94       0xac src/Common-Demo-Source/recmutex.o
+ .debug_frame   0x00002b40       0x6c src/Common-Demo-Source/semtest.o
+ .debug_frame   0x00002bac       0xd0 src/main.o
+ .debug_frame   0x00002c7c       0x50 src/main_full.o
+ .debug_frame   0x00002ccc       0x70 src/ParTest.o
+ .debug_frame   0x00002d3c      0x158 src/serial.o
+ .debug_frame   0x00002e94       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-init.o)
+ .debug_frame   0x00002ec0       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00002eec       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+ .debug_frame   0x00002f18       0x48 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00002f60       0x20 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-atexit.o)
+ .debug_frame   0x00002f80       0x2c c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-fini.o)
+ .debug_frame   0x00002fac       0x30 c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
 
 Cross Reference Table
 
@@ -6185,6 +6275,7 @@ main                                              src/main.o
                                                   c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/crt0.o
 main_blinky                                       src/main_blinky.o
 main_full                                         src/main_full.o
+                                                  src/main.o
 malloc                                            c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-__atexit.o)
 memcmp                                            c:/program files (x86)/atmel/atmel toolchain/arm gcc/native/4.8.1437/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memcmp.o)
                                                   src/asf/thirdparty/FreeRTOS/tasks.o
@@ -6246,7 +6337,6 @@ pio_set_writeprotect                              src/asf/sam/drivers/pio/pio.o
 pio_sync_output_write                             src/asf/sam/drivers/pio/pio.o
 pio_toggle_pin                                    src/asf/sam/drivers/pio/pio.o
                                                   src/ParTest.o
-                                                  src/main.o
 pio_toggle_pin_group                              src/asf/sam/drivers/pio/pio.o
 pmc_clr_fast_startup_input                        src/asf/sam/drivers/pmc/pmc.o
 pmc_disable_all_pck                               src/asf/sam/drivers/pmc/pmc.o
@@ -6450,7 +6540,6 @@ uxTaskPriorityGet                                 src/asf/thirdparty/FreeRTOS/ta
                                                   src/Common-Demo-Source/dynamic.o
 uxTaskResetEventItemValue                         src/asf/thirdparty/FreeRTOS/tasks.o
 vAltStartComTestTasks                             src/Common-Demo-Source/comtest.o
-                                                  src/main_full.o
 vApplicationIdleHook                              src/main.o
 vApplicationMallocFailedHook                      src/main.o
                                                   src/asf/thirdparty/FreeRTOS/portable/MemMang/heap_4.o

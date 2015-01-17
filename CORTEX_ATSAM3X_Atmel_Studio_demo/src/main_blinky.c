@@ -171,6 +171,7 @@ void main_blinky( void )
 
 		xTaskCreate( prvQueueSendTask, "TX", configMINIMAL_STACK_SIZE, ( void * ) mainQUEUE_SEND_PARAMETER, mainQUEUE_SEND_TASK_PRIORITY, NULL );
 
+		
 		/* Start the tasks and timer running. */
 		vTaskStartScheduler();
 	}

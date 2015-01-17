@@ -92,7 +92,7 @@ function. */
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
 or 0 to run the more comprehensive test and demo application. */
-#define mainCREATE_SIMPLE_BLINKY_DEMO_ONLY	1
+#define mainCREATE_SIMPLE_BLINKY_DEMO_ONLY	0
 
 /*-----------------------------------------------------------*/
 
@@ -124,13 +124,16 @@ int main( void )
 {
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
+	gpio_configure_pin(PIO_PB14_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
+/*	while (1) {
+	
 	int x =1 ;
 	uint32_t test = PIO_PB14_IDX;
 	gpio_configure_pin(test, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-	while (1) {
+	uint32_t test = PIO_PB14_IDX;
 		pio_toggle_pin(test);
 	}
-	
+	*/
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
 	#if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1
