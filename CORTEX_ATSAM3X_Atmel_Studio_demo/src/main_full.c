@@ -123,6 +123,10 @@
 #include "partest.h"
 #include "comtest2.h"
 
+// BLUESAT CHANGES
+// Add inlcudes for every application we use
+#include <BLUEsat_Blink/bluesat_blink.h>
+
 
 /* Atmel library includes. */
 #include "asf.h"
