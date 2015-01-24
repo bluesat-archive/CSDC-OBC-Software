@@ -9,6 +9,5 @@
 #define BLUESAT_BLINK_H
 
 void vStartBluesat_BlinkTasks( UBaseType_t uxPriority );
-BaseType_t xAreBluesat_BlinkTaskStillRunning( void );
 
 #endif /* BLUESAT_BLINK_H_ */

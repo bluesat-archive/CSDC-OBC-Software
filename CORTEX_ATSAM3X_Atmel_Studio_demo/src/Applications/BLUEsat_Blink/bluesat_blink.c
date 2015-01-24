@@ -56,11 +56,8 @@ short sTask;
 
 static portTASK_FUNCTION( vRepeatingBluesat_BlinkTask, pvParameters )
 {
-/* These variables are all effectively set to constants so they are volatile to
-ensure the compiler does not just get rid of them. */
-// volatile long lValue;
-short sError = pdFALSE;
-volatile BaseType_t *pxTaskHasExecuted;
+	short sError = pdFALSE;
+	volatile BaseType_t *pxTaskHasExecuted;
 
 	/* Set a pointer to the variable we are going to set to true each
 	iteration.  This is also a good test of the parameter passing mechanism
@@ -70,16 +67,12 @@ volatile BaseType_t *pxTaskHasExecuted;
 	/* Keep performing a calculation and checking the result against a constant. */
 	for( ;; )
 	{
-		// Blinks an LED connect on PIN 53
-			
 		// Config PIO_PB14_IDX, which is PIN 53 on the arduino board
-
 		gpio_configure_pin(PIN_53, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
 			
 		// Blinks the LED
 		int x;
 		while (1) {
-			// Only meant for testing, this will not exit.
 			x = 0;
 			while (x < 300000) {
 				x++;
@@ -87,14 +80,7 @@ volatile BaseType_t *pxTaskHasExecuted;
 			pio_toggle_pin(PIN_53);
 		}
 		
-		// 
-		/*
-		if( 0 )
-		{
-			sError = pdTRUE;
-		}
-		*/
-
+		
 		if( sError == pdFALSE )
 		{
 			/* We have not encountered any errors, so set the flag that show
@@ -113,29 +99,3 @@ volatile BaseType_t *pxTaskHasExecuted;
 		#endif
 	}
 }
-/*-----------------------------------------------------------*/
-
-/* This is called to check that all the created tasks are still running. */
-BaseType_t xAreBluesat_BlinkTaskStillRunning( void )
-{
-BaseType_t xReturn = pdTRUE;
-short sTask;
-
-	/* Check the maths tasks are still running by ensuring their check variables 
-	are still being set to true. */
-	for( sTask = 0; sTask < intgNUMBER_OF_TASKS; sTask++ )
-	{
-		if( xTaskCheck[ sTask ] == pdFALSE )
-		{
-			/* The check has not incremented so an error exists. */
-			xReturn = pdFALSE;
-		}
-
-		/* Reset the check variable so we can tell if it has been set by
-		the next time around. */
-		xTaskCheck[ sTask ] = pdFALSE;
-	}
-
-	return xReturn;
-}
-
