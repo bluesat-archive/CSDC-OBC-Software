@@ -124,16 +124,30 @@ int main( void )
 {
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
-	gpio_configure_pin(PIO_PB14_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-/*	while (1) {
 	
-	int x =1 ;
-	uint32_t test = PIO_PB14_IDX;
-	gpio_configure_pin(test, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-	uint32_t test = PIO_PB14_IDX;
-		pio_toggle_pin(test);
+	
+	/*
+	
+	// BLUESAT MODIFICATION
+	// Blinks an LED connect on PIN 53
+	
+	// Config PIO_PB14_IDX, which is PIN 53 on the arduino board
+	uint32_t PIN_53 = PIO_PB14_IDX;
+	gpio_configure_pin(PIN_53, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
+	
+	// Blinks the LED
+	int x;
+	while (1) {
+		// Only meant for testing, this will not exit.
+		x = 0;
+		while (x < 1000000) {
+			x++;	
+		}
+		pio_toggle_pin(PIN_53);
 	}
+
 	*/
+	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
 	#if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1

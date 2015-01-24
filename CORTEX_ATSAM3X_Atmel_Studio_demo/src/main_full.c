@@ -190,7 +190,13 @@ TimerHandle_t xCheckTimer = NULL;
 	vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
 	vStartLEDFlashTimers( mainNUMBER_OF_FLASH_TIMERS_LEDS );
-	//changed vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
+	
+	
+	//changed 
+	//vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
+	
+	// BLUESAT APPLICATIONS
+	vStartBluesat_BlinkTasks( tskIDLE_PRIORITY );
 
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */

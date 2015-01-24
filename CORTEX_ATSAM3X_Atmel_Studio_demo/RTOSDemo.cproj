@@ -519,6 +519,9 @@
     <Compile Include="src\Common-Demo-Source\blocktim.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Common-Demo-Source\bluesat_blink.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Common-Demo-Source\comtest.c">
       <SubType>compile</SubType>
     </Compile>
@@ -553,6 +556,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Common-Demo-Source\include\blocktim.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Common-Demo-Source\include\bluesat_blink.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Common-Demo-Source\include\comtest.h">
@@ -1060,6 +1066,8 @@
     <Folder Include="src\Common-Demo-Source\" />
     <Folder Include="src\Common-Demo-Source\include\" />
     <Folder Include="src\config\" />
+    <Folder Include="src\Applications" />
+    <Folder Include="src\Drivers" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
