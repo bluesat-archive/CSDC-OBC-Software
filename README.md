@@ -32,24 +32,24 @@ Note that especially for the include folders, you will have to change the compil
 Folder Structure
 --------------
 
-*Applications
-**Application_1
-***include
-***src
-**Applicaiton_2
-***include
-***src
-*Drivers (see note 1)
-**Atmel Drivers
-***(see note 1)
-**Driver_1
-***include
-***src
-**Driver_2
-***include
-***src
-*FreeRTOS
-**Copy structure exactly from exitsing FreeRtos code
+* Applications
+** Application_1
+*** include
+*** src
+** Applicaiton_2
+*** include
+*** src
+* Drivers (see note 1)
+** Atmel Drivers
+*** (see note 1)
+** Driver_1
+*** include
+*** src
+** Driver_2
+*** include
+*** src
+* FreeRTOS
+** Copy structure exactly from exitsing FreeRtos code
 
 "src" folders contain the *.c or *.cpp files specific to the implementaiton of the local module
 "include" folders contain the *.h files specific to the implementation of the local module. Note that applications which use drivers should have <drivername/driver1.h> with the compiler understanding that <drivername/driver1.h> points to Drivers/driver1/include/driver1.h 
@@ -58,9 +58,9 @@ Applications
 -------------
 These are essentially the PortTask functions that will execute in the application layer. They will do most of the high level tasks for the CubeSat. This level is quite abstract and example applications could be 
 
-*TelemetryReporter
-*PowerManager
-*AttitudeManager
+* TelemetryReporter
+* PowerManager
+* AttitudeManager
 
 Drivers (note 1)
 ---------------------
@@ -73,8 +73,8 @@ The low level drivers should keep the same folder/code structure as provided by 
 
 The BLUEsat drivers will be things written by us used to control the boards and low-level things not currently handled easily by the Atmel drivers. Examples include
 
-*DebugWrite (through UART)
-*TransmitStringToEarth (*char outputBuff)
-*ReadCommandFromEarth (*char inputBuff)
-*SetAttitude(int angle1, int angle2, int angle3) 
+* DebugWrite (through UART)
+* TransmitStringToEarth (*char outputBuff)
+* ReadCommandFromEarth (*char inputBuff)
+* SetAttitude(int angle1, int angle2, int angle3) 
 
