@@ -73,3 +73,4 @@ The BLUEsat drivers will be things written by us used to control the boards and 
 * ReadCommandFromEarth (*char inputBuff)
 * SetAttitude(int angle1, int angle2, int angle3) 
 
+poop
