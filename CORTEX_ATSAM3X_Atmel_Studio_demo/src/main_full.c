@@ -123,10 +123,8 @@
 #include "partest.h"
 #include "comtest2.h"
 
-// BLUESAT CHANGES
-// Add inlcudes for every application we use
-#include <BLUEsat_Blink/bluesat_blink.h>
-
+/* BLUESAT APPLICATIONS - INCLUDES */
+#include <BLUEsat_Blink/BLUEsat_blink_app.h>
 
 /* Atmel library includes. */
 #include "asf.h"
@@ -196,11 +194,12 @@ TimerHandle_t xCheckTimer = NULL;
 	vStartLEDFlashTimers( mainNUMBER_OF_FLASH_TIMERS_LEDS );
 	
 	
-	//changed 
-	//vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
+	// changed
+	// disabled because it wasn't working
+	// vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
 	
-	// BLUESAT APPLICATIONS
-	vStartBluesat_BlinkTasks( tskIDLE_PRIORITY );
+	/* BLUESAT APPLICATIONS - START*/
+	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
 
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */

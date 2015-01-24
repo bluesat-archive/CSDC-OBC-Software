@@ -397,10 +397,10 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink.c">
+    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink.h">
+    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Common-Demo-Source\BlockQ.c">

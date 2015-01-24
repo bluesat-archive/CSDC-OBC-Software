@@ -11,15 +11,12 @@
  * PIN 53 on the arduino board is referenced as PIO_PB14_IDX
  */
 
-//#include <stdio.h>
-#include <stdlib.h>
-
 /* Scheduler include files. */
 #include "FreeRTOS.h"
 #include "task.h"
 
 /* Demo program include files. */
-#include "bluesat_blink.h"
+#include "BLUEsat_blink_app.h"
 
 /* Atmel library includes. */
 #include <asf.h>
@@ -31,7 +28,7 @@
 #define intgNUMBER_OF_TASKS		( 1 )
 
 /* The task function. */
-static portTASK_FUNCTION_PROTO( vRepeatingBluesat_BlinkTask, pvParameters );
+static portTASK_FUNCTION_PROTO( vBLUEsat_BlinkTask, pvParameters );
 
 /* Variables that are set to true within the calculation task to indicate
 that the task is still executing.  The check task sets the variable back to
@@ -43,18 +40,18 @@ uint32_t PIN_53 = PIO_PB14_IDX;
 
 /*-----------------------------------------------------------*/
 
-void vStartBluesat_BlinkTasks( UBaseType_t uxPriority )
+void vStartBLUEsat_BlinkTasks( UBaseType_t uxPriority )
 {
-short sTask;
-
+	short sTask;
+	
 	for( sTask = 0; sTask < intgNUMBER_OF_TASKS; sTask++ )
 	{
-		xTaskCreate( vRepeatingBluesat_BlinkTask, "Bluesat_Blink", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
+		xTaskCreate( vBLUEsat_BlinkTask, "BLUEsat_Blink", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
 	}
 }
 /*-----------------------------------------------------------*/
 
-static portTASK_FUNCTION( vRepeatingBluesat_BlinkTask, pvParameters )
+static portTASK_FUNCTION( vBLUEsat_BlinkTask, pvParameters )
 {
 	short sError = pdFALSE;
 	volatile BaseType_t *pxTaskHasExecuted;

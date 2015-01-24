@@ -8,6 +8,6 @@
 #ifndef BLUESAT_BLINK_H
 #define BLUESAT_BLINK_H
 
-void vStartBluesat_BlinkTasks( UBaseType_t uxPriority );
+void vStartBLUEsat_BlinkTasks( UBaseType_t uxPriority );
 
 #endif /* BLUESAT_BLINK_H_ */
