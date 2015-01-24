@@ -32,27 +32,22 @@ Note that especially for the include folders, you will have to change the compil
 Folder Structure
 --------------
 
-* Applications
-** Application_1
-*** include
-*** src
-** Applicaiton_2
-*** include
-*** src
-* Drivers (see note 1)
-** Atmel Drivers
-*** (see note 1)
-** Driver_1
-*** include
-*** src
-** Driver_2
-*** include
-*** src
-* FreeRTOS
-** Copy structure exactly from exitsing FreeRtos code
-
-"src" folders contain the *.c or *.cpp files specific to the implementaiton of the local module
-"include" folders contain the *.h files specific to the implementation of the local module. Note that applications which use drivers should have <drivername/driver1.h> with the compiler understanding that <drivername/driver1.h> points to Drivers/driver1/include/driver1.h 
+<pre> <code>
+Applications
+-> Application_1
+--> *c and *h files
+->Applicaiton_2
+--> *c and *h files
+Drivers (see note 1)
+->Atmel Drivers
+-->(see note 1)
+->Driver_1
+--> *c and *h files
+->Driver_2
+--> *c and *h files
+FreeRTOS
+->Copy structure exactly from exitsing FreeRtos code
+</code></pre>
 
 Applications
 -------------
