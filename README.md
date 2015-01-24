@@ -22,3 +22,59 @@ The following will help you set up the development environment necessary to Flas
 
 5. (TBD) Burn the program onto the dev board using the SAM ICE
 
+Code Restructuring Guide by Thien (24-jan-2015)
+============================
+
+Ok now that we're starting to write ourselfves some real applications we need to make sure that the code is structured in an way that is easy to maintain and navigate. The OldSat CSC software (https://github.com/bluesat/csc-software/tree/master/BLUEsat-CSC) serves a good guide to the structure of code we want to see but in general follow the following principles.
+
+Note that especially for the include folders, you will have to change the compiler/make settings in Atmel Studio so it knows which include folders to look in and which source files to compile. This may be a bit complex but given that its Visual Studio 2010 there should be plenty of support online. Worst case scenario I will help you walk through it
+
+Folder Structure
+--------------
+
+*Applications
+**Application_1
+***include
+***src
+**Applicaiton_2
+***include
+***src
+*Drivers (see note 1)
+**Atmel Drivers
+***(see note 1)
+**Driver_1
+***include
+***src
+**Driver_2
+***include
+***src
+*FreeRTOS
+**Copy structure exactly from exitsing FreeRtos code
+
+"src" folders contain the *.c or *.cpp files specific to the implementaiton of the local module
+"include" folders contain the *.h files specific to the implementation of the local module. Note that applications which use drivers should have <drivername/driver1.h> with the compiler understanding that <drivername/driver1.h> points to Drivers/driver1/include/driver1.h 
+
+Applications
+-------------
+These are essentially the PortTask functions that will execute in the application layer. They will do most of the high level tasks for the CubeSat. This level is quite abstract and example applications could be 
+
+*TelemetryReporter
+*PowerManager
+*AttitudeManager
+
+Drivers (note 1)
+---------------------
+Drivers will be split into two categories: 
+
+1. Low level drivers written by Atmel/Other Chip manufacturers.
+2. High(er) level drivers written by us for BLUEsat boards
+
+The low level drivers should keep the same folder/code structure as provided by atmel (you may not even need to include them if you're staying in Atmel Studio)
+
+The BLUEsat drivers will be things written by us used to control the boards and low-level things not currently handled easily by the Atmel drivers. Examples include
+
+*DebugWrite (through UART)
+*TransmitStringToEarth (*char outputBuff)
+*ReadCommandFromEarth (*char inputBuff)
+*SetAttitude(int angle1, int angle2, int angle3) 
+
