@@ -71,7 +71,7 @@ static portTASK_FUNCTION( vBLUEsat_BlinkTask, pvParameters )
 		int x;
 		while (1) {
 			x = 0;
-			while (x < 300000) {
+			while (x < 1000000) {
 				x++;
 			}
 			pio_toggle_pin(PIN_53);

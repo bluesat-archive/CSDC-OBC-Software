@@ -1,18 +1,30 @@
 CSDC-OBC-Software
 =================
 
-FreeRTOS Kernel, initially ported to the SAM3X series
+FreeRTOS Kernel, initially ported to the SAM3X series.
+
+Contents
+--------
+
+* [Quickstart Guide](#quickstart-guide-for-sam3x-ek-demo-application)
+* [Code Structure Guide](#code-structure-guide)
+  * [Folder Structure](#folder-structure)
+  * [Naming Conventions](#naming-conventions)
+* [Applications](#applications)
+* [Drivers](#drivers-note-1)
+* [Creating a new application](#creating-a-new-application)
+* [References](#references)
 
 
 
 Quickstart Guide for SAM3X-EK Demo Application
 ------------------
 
-(Original Source: http://www.freertos.org/Atmel_SAM3_SAM3X-EK_SAM3S-EK2_RTOS_Demo.html)
+The project's original source can be found [here](http://www.freertos.org/Atmel_SAM3_SAM3X-EK_SAM3S-EK2_RTOS_Demo.html).
 
 The following will help you set up the development environment necessary to Flash the FreeRTOS SAM3X-EK Demo onto any board with a ATSAM3X chip.  
 
-1. Download the Atmel IDE from here: http://www.atmel.com/microsite/atmel_studio6/default.aspx. Atmel Studio 6 is built around Visual Studio 10 and works exactly the same way. It's well made, fully featured IDE.
+1. Download the Atmel IDE from [here](http://www.atmel.com/microsite/atmel_studio6/default.aspx). Atmel Studio 6 is built around Visual Studio 10 and works exactly the same way. It's well made, fully featured IDE.
 
 2. Open CORTEX_ATSAM3X_Atmel_Studio_demo/RTOSDemo.atsln to open the project. The source files should be viewable within Atmel Studio
 
@@ -22,15 +34,12 @@ The following will help you set up the development environment necessary to Flas
 
 5. (TBD) Burn the program onto the dev board using the SAM ICE
 
-Code Restructuring Guide by Thien (24-jan-2015)
+Code Structure Guide
 ----------------------------
 
-Ok now that we're starting to write ourselfves some real applications we need to make sure that the code is structured in an way that is easy to maintain and navigate. The OldSat CSC software (https://github.com/bluesat/csc-software/tree/master/BLUEsat-CSC) serves a good guide to the structure of code we want to see but in general follow the following principles.
+The [OldSat CSC software](https://github.com/bluesat/csc-software/tree/master/BLUEsat-CSC) serves as a good guide to the structure of code we want to see.
 
-Note that especially for the include folders, you will have to change the compiler/make settings in Atmel Studio so it knows which include folders to look in and which source files to compile. This may be a bit complex but given that its Visual Studio 2010 there should be plenty of support online. Worst case scenario I will help you walk through it
-
-Folder Structure
---------------
+### Folder Structure
 ```
 > src
 -> Applications
@@ -41,13 +50,19 @@ Folder Structure
 -> Drivers (see note 1)
 --> Atmel Drivers
 ---> (see note 1)
--->Driver_1
+--> Driver_1
 ---> *c and *h files
--->Driver_2
+--> Driver_2
 ---> *c and *h files
 -> FreeRTOS
---> Copy structure exactly from exitsing FreeRtos code
+--> Copy structure exactly from exitsing FreeRTOS code
 ```
+
+### Naming Conventions
+
+* BLUEsat applications are appended with '_app'.
+* BLUEsat drivers are appended with '_drv'.
+* BLUEsat is spelt BLUEsat and not Bluesat.
 
 Applications
 -------------
@@ -73,13 +88,6 @@ The BLUEsat drivers will be things written by us used to control the boards and 
 * ReadCommandFromEarth (*char inputBuff)
 * SetAttitude(int angle1, int angle2, int angle3) 
 
-Naming Convections
----------
-
-* BLUEsat applications are appended with '_app'.
-* BLUEsat drivers are appended with '_drv'.
-* BLUEsat is spelt BLUEsat and not Bluesat.
-
 To Do 
 -----------
 _(Last updated Jan 24th 2015)_
@@ -95,7 +103,7 @@ _(Last updated Jan 24th 2015)_
 Creating a new application
 ----
 _Refer to BLUEsat_Blink as an example._
-### Notes
+#### Notes
 
 * Applications are saved in the folder ../src/Applications/"Application Name"/
 * All application *.c and *.h files should be saved in the relevant application folder
@@ -105,9 +113,9 @@ _Refer to BLUEsat_Blink as an example._
 * _**Important**_: 'vTaskNameTask' must be exactly the same in all cases below.
 * _**Important**_: 'vStartTaskNameTasks' must be exactly the same in main_full() and the application *.c and *.h files.
 
-### In the Application \*.c and \*.h files
+#### In the Application \*.c and \*.h files
 
-#### *portTASK_FUNCTION_PROTO*
+##### *portTASK_FUNCTION_PROTO*
 ```c
 static portTASK_FUNCTION_PROTO( vTaskNameTask, pvParameters );
 ```
@@ -115,7 +123,7 @@ Change:
 
 * 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
 
-#### *Starting the Application*
+##### *Starting the Application*
 
 ```c
 void vStartTaskNameTasks( UBaseType_t uxPriority )
@@ -134,7 +142,7 @@ Change:
 * 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
 * 'TaskName' to the name of the application.
 
-#### *portTASK_FUNCTION*
+##### *portTASK_FUNCTION*
 
 _This is just an overview of the structure; missing error handling._
 
@@ -152,7 +160,7 @@ Change:
 
 * 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
 
-### In main_full()
+#### In main_full()
 
 ```c
 /* BLUESAT APPLICATIONS - INCLUDES */
@@ -177,4 +185,10 @@ References
 * [Arduino Due Overview](http://arduino.cc/en/Main/arduinoBoardDue)
 * [Ardiuno Due Pin Mapping](http://arduino.cc/en/Hacking/PinMappingSAM3X)
 * [Arduino Due Schematic](http://arduino.cc/en/uploads/Main/arduino-Due-schematic.pdf)
-
+* [Atmel ATSAM3X8E Overview](http://www.atmel.com/devices/SAM3X8E.aspx?tab=overview)
+* [Atmel Application Note - UART](http://www.atmel.com/Images/Atmel-42299-Universal-Asynchronous-Receiver-Transceiver-UART_ApplicationNote_AT07896.pdf)
+  * This application note describes how to use the ASF driver for interfacing to the UART module on on SAM.
+* [Atmel Application Note - Getting Started with FreeRTOS on Atmel](http://www.atmel.com/Images/Atmel-42382-Getting-Started-with-FreeRTOS-on-Atmel-SAM-Flash-MCUs_ApplicationNote_AT04056.pdf)
+  * This application note illustrates the basic functionality of the FreeRTOS Real Time Operating System and shows how to use it on SAM microcontroller.
+* [SAM3X/SAM3A Series Summary](http://www.atmel.com/Images/doc11057s.pdf)
+* [SAM3X/SAM3A Series Complete](http://www.atmel.com/Images/doc11057.pdf)

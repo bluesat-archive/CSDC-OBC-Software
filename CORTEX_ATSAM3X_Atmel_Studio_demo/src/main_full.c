@@ -196,11 +196,11 @@ TimerHandle_t xCheckTimer = NULL;
 	
 	// changed
 	// disabled because it wasn't working
-	// vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
+	vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
 	
 	/* BLUESAT APPLICATIONS - START*/
 	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
-
+	
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */
 	xCheckTimer = xTimerCreate( "CheckTimer",					/* A text name, purely to help debugging. */
