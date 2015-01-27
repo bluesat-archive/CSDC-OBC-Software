@@ -192,5 +192,6 @@ References
   * This application note illustrates the basic functionality of the FreeRTOS Real Time Operating System and shows how to use it on SAM microcontroller.
 * [SAM3X/SAM3A Series Summary](http://www.atmel.com/Images/doc11057s.pdf)
   * PIO Register Mapping: Page 654
+  * USART I/O Lines: Page 780
   * USART Register Mapping: Page 835
 * [SAM3X/SAM3A Series Complete](http://www.atmel.com/Images/doc11057.pdf)
