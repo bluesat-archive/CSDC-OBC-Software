@@ -36,7 +36,9 @@ false, flagging an error if the variable is still false the next time it
 is called. */
 static volatile BaseType_t xTaskCheck[ intgNUMBER_OF_TASKS ] = { ( BaseType_t ) pdFALSE };
 	
-uint32_t PIN_53 = PIO_PB14_IDX;
+	
+#define PIO_register	0
+#define GPIO_function	1
 
 /*-----------------------------------------------------------*/
 
@@ -55,44 +57,65 @@ static portTASK_FUNCTION( vBLUEsat_BlinkTask, pvParameters )
 {
 	short sError = pdFALSE;
 	volatile BaseType_t *pxTaskHasExecuted;
+	int x;
+	int delay = 1000000;
+	 
+	// set to either PIO_register or GPIO_function
+	short blink_method = GPIO_function;
 
 	/* Set a pointer to the variable we are going to set to true each
 	iteration.  This is also a good test of the parameter passing mechanism
 	within each port. */
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
-
-	/* Keep performing a calculation and checking the result against a constant. */
-	for( ;; )
-	{
-		// Config PIO_PB14_IDX, which is PIN 53 on the arduino board
-		gpio_configure_pin(PIN_53, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-			
-		// Blinks the LED
-		int x;
+	
+	
+	// PIO_PB27 is the arduino due on-board LED, labeled as 'L' next to the green 'ON' LED
+	
+	if (blink_method == PIO_register) {
+		// In order: enables, sets to output, disables pullup
+		PIOB->PIO_PER	= PIO_PB27;
+		PIOB->PIO_OER	= PIO_PB27;
+		PIOB->PIO_PUDR	= PIO_PB27;
+		
 		while (1) {
-			x = 0;
-			while (x < 1000000) {
-				x++;
+			// Set Output Data Register 
+			PIOB->PIO_SODR = PIO_PB27;
+			for (x=0;x<delay;x++);
+			// Clear Output Data Register
+			PIOB->PIO_CODR = PIO_PB27;
+			for (x=0;x<delay;x++);
+		}
+		
+	} else if (blink_method == GPIO_function) {
+		gpio_configure_pin(PIO_PB27_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
+		
+		while (1) {
+			for (x=0;x<delay;x++);
+			pio_toggle_pin(PIO_PB27_IDX);
+		}
+	} else {
+		
+		// shouldn't get to here
+	
+		/* Keep performing a calculation and checking the result against a constant. */
+		for( ;; )
+		{		
+			if( sError == pdFALSE )
+			{
+				/* We have not encountered any errors, so set the flag that show
+				we are still executing.  This will be periodically cleared by
+				the check task. */
+				portENTER_CRITICAL();
+					*pxTaskHasExecuted = pdTRUE;
+				portEXIT_CRITICAL();
 			}
-			pio_toggle_pin(PIN_53);
-		}
-		
-		
-		if( sError == pdFALSE )
-		{
-			/* We have not encountered any errors, so set the flag that show
-			we are still executing.  This will be periodically cleared by
-			the check task. */
-			portENTER_CRITICAL();
-				*pxTaskHasExecuted = pdTRUE;
-			portEXIT_CRITICAL();
-		}
 
-		/* Yield in case cooperative scheduling is being used. */
-		#if configUSE_PREEMPTION == 0
-		{
-			taskYIELD();
+			/* Yield in case cooperative scheduling is being used. */
+			#if configUSE_PREEMPTION == 0
+			{
+				taskYIELD();
+			}
+			#endif
 		}
-		#endif
 	}
 }
