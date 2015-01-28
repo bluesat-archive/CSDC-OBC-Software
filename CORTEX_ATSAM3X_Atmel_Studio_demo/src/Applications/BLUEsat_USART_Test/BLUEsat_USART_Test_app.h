@@ -11,6 +11,4 @@
 
 void vStartBLUEsat_USART_TestTasks( UBaseType_t uxPriority );
 
-
-
 #endif /* BLUESAT_USART_TEST_H_ */
