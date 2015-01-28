@@ -407,10 +407,10 @@
     <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_USART_Test\BLUEsat_USART_Test_app.c">
+    <Compile Include="src\Applications\BLUEsat_UART_Test\BLUEsat_UART_Test_app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_USART_Test\BLUEsat_USART_Test_app.h">
+    <Compile Include="src\Applications\BLUEsat_UART_Test\BLUEsat_UART_Test_app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Common-Demo-Source\BlockQ.c">
@@ -1038,7 +1038,7 @@
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\Applications\BLUEsat_Blink" />
-    <Folder Include="src\Applications\BLUEsat_USART_Test" />
+    <Folder Include="src\Applications\BLUEsat_UART_Test" />
     <Folder Include="src\Common-Demo-Source\" />
     <Folder Include="src\Common-Demo-Source\include\" />
     <Folder Include="src\Applications\" />

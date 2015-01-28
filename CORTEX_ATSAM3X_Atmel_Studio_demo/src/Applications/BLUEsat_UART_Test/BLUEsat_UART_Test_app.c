@@ -85,24 +85,16 @@ static portTASK_FUNCTION( vBLUEsat_UART_TestTask, pvParameters )
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
 	
 	// send
-	char String[] = "Hello World\n\r- Serial Driver Test\n\r\n\r";
-	
-	SystemInit();
-	
-	configure_uart();
-	
+	uint8_t String[] = "Hello World\n\r- Serial Driver Test\n\r- Now with uart_print_string_to_serial()\n\r\n\r";
+		
 	int x;
-	int y;
+	// int y;
 	
 	/* Keep performing a calculation and checking the result against a constant. */
 	for( ;; )
 	{
-		for (x = 0; String[x] != '\0'; x++) {
-			uart_putchar(String[x]);
-			for (y=0;y<1000;y++);
-		}
-		for (x=0;x<1000000;x++);
-		
+		uart_print_string_to_serial(String);
+		for (x=0;x<1000000;x++);		
 		
 		if( sError == pdFALSE )
 		{

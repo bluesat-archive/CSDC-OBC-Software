@@ -5,12 +5,18 @@
  *  Author: John
  */ 
 
+/*
+	Code borrowed and barely modified from: http://codetron.net/uart-interface-sam3x8e-arduino-due/
+*/
+
 
 #ifndef SERIAL_PRINT_DRV_H_
 #define SERIAL_PRINT_DRV_H_
 
-int uart_getchar(uint8_t *c);
-int uart_putchar(const uint8_t c);
+uint32_t uart_getchar(uint8_t *c);
+uint32_t uart_putchar(const uint8_t c);
 void configure_uart(void);
+
+uint32_t uart_print_string_to_serial(uint8_t *c);
 
 #endif /* SERIAL_PRINT_DRV_H_ */
