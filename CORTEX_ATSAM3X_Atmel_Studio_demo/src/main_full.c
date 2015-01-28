@@ -183,6 +183,8 @@ TimerHandle_t xCheckTimer = NULL;
 	/* Start all the other standard demo/test tasks.  The have not particular
 	functionality, but do demonstrate how to use the FreeRTOS API and test the
 	kernel port. */
+	uart_print_string_to_serial("==========================\n\r");
+	uart_print_string_to_serial("Start launching demo tasks\n\r");
 	vStartIntegerMathTasks( tskIDLE_PRIORITY );
 	vStartDynamicPriorityTasks();
 	vStartBlockingQueueTasks( mainBLOCK_Q_PRIORITY );
@@ -193,15 +195,23 @@ TimerHandle_t xCheckTimer = NULL;
 	vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
 	vStartLEDFlashTimers( mainNUMBER_OF_FLASH_TIMERS_LEDS );
+	uart_print_string_to_serial("Finish launching demo tasks\n\r");
+	uart_print_string_to_serial("==========================\n\r\n\r");
 	
 	
 	// changed
 	// disabled because it wasn't working
 	// vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
 	
+	uart_print_string_to_serial("==========================\n\r");
+	uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
+	
 	/* BLUESAT APPLICATIONS - START*/
 	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
 	vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
+	
+	uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
+	uart_print_string_to_serial("==========================\n\r\n\r");
 	
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */

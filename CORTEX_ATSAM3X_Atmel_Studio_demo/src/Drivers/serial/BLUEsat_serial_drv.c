@@ -113,7 +113,7 @@ uint32_t uart_putchar(const uint8_t c)
 	return 0;
 }
 
-uint32_t uart_print_string_to_serial(uint8_t *c)
+uint32_t uart_print_string_to_serial(char *c)
 {
 	uint32_t x;
 	uint32_t y;

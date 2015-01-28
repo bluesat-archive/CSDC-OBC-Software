@@ -26,9 +26,6 @@
 /* Atmel library includes. */
 #include <asf.h>
 
-/* BLUEsat library includes. */
-#include <BLUEsat_library_drv.h>
-
 /* The constants used in the calculation. */
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE
 
@@ -85,7 +82,7 @@ static portTASK_FUNCTION( vBLUEsat_UART_TestTask, pvParameters )
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
 	
 	// send
-	uint8_t String[] = "Hello World\n\r- Serial Driver Test\n\r- Now with uart_print_string_to_serial()\n\r\n\r";
+	char String[] = "Hello World\n\r- Serial Driver Test\n\r- Now with uart_print_string_to_serial()\n\r\n\r";
 		
 	int x;
 	// int y;

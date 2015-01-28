@@ -9,9 +9,8 @@
 #ifndef INCFILE1_H_
 #define INCFILE1_H_
 
-// BLUEsat
+// serial output
 #include <serial/BLUEsat_serial_drv.h>
-
 
 
 #endif /* INCFILE1_H_ */

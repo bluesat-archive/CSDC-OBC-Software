@@ -84,4 +84,7 @@
 // From module: pio_handler support enabled
 #include <pio_handler.h>
 
+/* BLUEsat library includes. */
+#include <BLUEsat_library_drv.h>
+
 #endif // ASF_H
