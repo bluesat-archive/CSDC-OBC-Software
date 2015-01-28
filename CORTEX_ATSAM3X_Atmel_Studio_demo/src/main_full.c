@@ -125,9 +125,7 @@
 
 /* BLUESAT APPLICATIONS - INCLUDES */
 #include <BLUEsat_Blink/BLUEsat_blink_app.h>
-#include <BLUEsat_USART_Test/BLUEsat_USART_Test_app.h>
-
-
+#include <BLUEsat_UART_Test/BLUEsat_UART_Test_app.h>
 
 /* Atmel library includes. */
 #include "asf.h"
@@ -203,7 +201,7 @@ TimerHandle_t xCheckTimer = NULL;
 	
 	/* BLUESAT APPLICATIONS - START*/
 	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
-	vStartBLUEsat_USART_TestTasks( tskIDLE_PRIORITY );
+	vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
 	
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */

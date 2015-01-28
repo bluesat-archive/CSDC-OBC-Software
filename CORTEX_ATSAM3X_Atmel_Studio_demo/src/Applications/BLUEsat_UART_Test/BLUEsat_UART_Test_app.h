@@ -9,6 +9,6 @@
 #ifndef BLUESAT_USART_TEST_H_
 #define BLUESAT_USART_TEST_H_
 
-void vStartBLUEsat_USART_TestTasks( UBaseType_t uxPriority );
+void vStartBLUEsat_UART_TestTasks( UBaseType_t uxPriority );
 
 #endif /* BLUESAT_USART_TEST_H_ */

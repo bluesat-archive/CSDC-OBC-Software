@@ -21,7 +21,7 @@
 #include "task.h"
 
 /* Demo program include files. */
-#include "BLUEsat_USART_Test_app.h"
+#include "BLUEsat_UART_Test_app.h"
 
 /* Atmel library includes. */
 #include <asf.h>
@@ -53,7 +53,7 @@
 #define serMASK_ALL_INTERRUPTS			( 0xffffffffUL )
 
 /* The task function. */
-static portTASK_FUNCTION_PROTO( vBLUEsat_USART_TestTask, pvParameters );
+static portTASK_FUNCTION_PROTO( vBLUEsat_UART_TestTask, pvParameters );
 
 /* Variables that are set to true within the calculation task to indicate
 that the task is still executing.  The check task sets the variable back to
@@ -63,18 +63,18 @@ static volatile BaseType_t xTaskCheck[ intgNUMBER_OF_TASKS ] = { ( BaseType_t ) 
 
 /*-----------------------------------------------------------*/
 
-void vStartBLUEsat_USART_TestTasks( UBaseType_t uxPriority )
+void vStartBLUEsat_UART_TestTasks( UBaseType_t uxPriority )
 {
 	short sTask;
 	
 	for( sTask = 0; sTask < intgNUMBER_OF_TASKS; sTask++ )
 	{
-		xTaskCreate( vBLUEsat_USART_TestTask, "BLUEsat_USART_Test", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
+		xTaskCreate( vBLUEsat_UART_TestTask, "BLUEsat_UART_Test", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
 	}
 }
 /*-----------------------------------------------------------*/
 
-static portTASK_FUNCTION( vBLUEsat_USART_TestTask, pvParameters )
+static portTASK_FUNCTION( vBLUEsat_UART_TestTask, pvParameters )
 {
 	short sError = pdFALSE;
 	volatile BaseType_t *pxTaskHasExecuted;
