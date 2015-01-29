@@ -142,6 +142,8 @@ Change:
 * 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
 * 'TaskName' to the name of the application.
 
+Have a look at the [freeRTOS page on xTaskCreate](http://www.freertos.org/a00125.html) for more information on xTaskCreate and its parameters. 
+
 ##### *portTASK_FUNCTION*
 
 _This is just an overview of the structure; missing error handling._
