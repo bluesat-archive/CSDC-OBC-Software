@@ -26,7 +26,7 @@
 #define POLARITY_FLAG 0
 
 // baudrate (guess)
-#define BAUD_RATE 115200
+#define BAUD_RATE 9600
 
 // blug
 // Default Configuration of SPI Master Delay BS.
@@ -53,13 +53,13 @@ void configure_spi(void){
 	// configure pins
 	
 	// attempt to disable the interupts on MISO and MOSI
-	PIOA->PIO_IDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI;
+	PIOA->PIO_IDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK;
 	
 	// disable the pins entirely
-	PIOA->PIO_PDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI;
+	PIOA->PIO_PDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK;
 	
 	ul_sr = PIOA->PIO_ABSR;
-	PIOA->PIO_ABSR &= ~(PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI) & ul_sr;
+	PIOA->PIO_ABSR &= ~(PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK) & ul_sr;
 	/*
 	///////////////////////////////////////////////////////////
 	
@@ -130,6 +130,10 @@ void spi_master_setup_device(
 void BLUEsat_spi_write_string (char* c) {
 	uint32_t x;
 	uint32_t y;
+	// enable GPIO low
+	PIOB->PIO_CODR = PIO_PB14;
+	for (y=0;y<SPI_WRITE_DELAY/10;y++);
+	
 	
 	// don't forget that \0
 	for (x = 0; c[x] != '\0'; x++) {
@@ -137,4 +141,7 @@ void BLUEsat_spi_write_string (char* c) {
 		for (y=0;y<SPI_WRITE_DELAY;y++);
 	}
 	
+	// enable GPIO high
+	PIOB->PIO_SODR = PIO_PB14;
+	for (y=0;y<SPI_WRITE_DELAY/10;y++);
 }
