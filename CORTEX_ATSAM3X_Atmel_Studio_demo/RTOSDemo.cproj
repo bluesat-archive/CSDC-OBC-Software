@@ -262,6 +262,7 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -300,6 +301,7 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -356,6 +358,7 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -391,6 +394,7 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -621,6 +625,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\pmc\sleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\spi\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\spi\spi.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\usart\usart.c">
@@ -1061,6 +1071,7 @@
     <Folder Include="src\Drivers\asf\sam\drivers\" />
     <Folder Include="src\Drivers\asf\sam\drivers\pio\" />
     <Folder Include="src\Drivers\asf\sam\drivers\pmc\" />
+    <Folder Include="src\Drivers\asf\sam\drivers\spi\" />
     <Folder Include="src\Drivers\asf\sam\drivers\usart\" />
     <Folder Include="src\Drivers\asf\sam\utils\" />
     <Folder Include="src\Drivers\asf\sam\utils\cmsis\" />
