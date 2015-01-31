@@ -996,6 +996,12 @@
     <Compile Include="src\Drivers\asf\thirdparty\FreeRTOS\timers.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\BLUEsat_spi\BLUEsat_spi_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\BLUEsat_spi\BLUEsat_spi_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\serial\BLUEsat_serial_drv.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1100,6 +1106,7 @@
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\GCC\ARM_CM3\" />
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\MemMang\" />
     <Folder Include="src\Drivers\arudino-pins" />
+    <Folder Include="src\Drivers\BLUEsat_spi" />
     <Folder Include="src\Drivers\serial" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

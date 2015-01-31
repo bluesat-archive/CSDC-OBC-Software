@@ -12,5 +12,8 @@
 // serial output
 #include <serial/BLUEsat_serial_drv.h>
 
+// spi
+#include <BLUEsat_spi/BLUEsat_spi_drv.h>
+
 
 #endif /* INCFILE1_H_ */

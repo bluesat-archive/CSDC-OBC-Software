@@ -128,6 +128,18 @@ int main( void )
 	/* Prepare UART register and PIO */
 	configure_uart();
 	
+	/* Configure SPI */
+	configure_spi();
+	spi_enable(SPI0);
+	
+	int x;
+	
+	while (1) {
+		BLUEsat_spi_write_string("Hello, from BLUEsat");
+		for(x=0;x<500;x++);
+	}
+	
+	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
 	#if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1

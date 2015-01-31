@@ -10,7 +10,6 @@
 
 #include "BLUEsat_serial_drv.h"
 
-
 // I was running into errors where the arduino was pushing
 // characters through the UART register too quickly and so
 // I added a small delay with a for loop to fix this. Should
