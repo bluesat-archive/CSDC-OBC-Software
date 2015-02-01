@@ -129,18 +129,7 @@ int main( void )
 	configure_uart();
 	
 	/* Configure SPI */
-	configure_spi();
-	spi_enable(SPI0);
-	
-	int x;
-	
-	gpio_configure_pin(PIO_PB14_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-	
-	while (1) {
-		BLUEsat_spi_write_string("Hello, from BLUEsat");
-		for(x=0;x<500;x++);
-	}
-	
+	configure_spi(SPI0);	
 	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */

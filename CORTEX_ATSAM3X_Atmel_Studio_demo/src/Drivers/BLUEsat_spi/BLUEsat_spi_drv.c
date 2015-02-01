@@ -44,7 +44,7 @@
 
 #define SPI_WRITE_DELAY 450
 
-void configure_spi(void){
+void configure_spi(Spi *p_spi){
 	
 	uint32_t ul_sr;
 	
@@ -60,41 +60,13 @@ void configure_spi(void){
 	
 	ul_sr = PIOA->PIO_ABSR;
 	PIOA->PIO_ABSR &= ~(PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK) & ul_sr;
-	/*
-	///////////////////////////////////////////////////////////
-	
-	// Peripheral Clock Enable Register for spi
-	PMC->PMC_PCER0 = 1 << ID_SPI0;
-	
-	// configure PMC
-	
-	///////////////////////////////////////////////////////////
-
-	// configure spi
-	
-	// enable spi SPI Software Reset 
-	SPI0->SPI_CR = SPI_CR_SWRST;
-	
-	// set master
-	SPI0->SPI_MR |= SPI_MR_MSTR;
-	
-	// disable mode fault detect
-	SPI0->SPI_MR |= SPI_MR_MODFDIS;
-	
-	// disable loopback mode
-	SPI0->SPI_MR &= (~SPI_MR_LLB);
-	
-	*/
 	
 	// copied from:
 	// http://asf.atmel.com/docs/latest/sam3x/html/sam_spi_quickstart.html
-	spi_master_init(SPI0);
-	spi_master_setup_device(
-					SPI0,
-					DEVICE_ID,
-					POLARITY_FLAG,
-					BAUD_RATE					
-	);
+	spi_master_init(p_spi);
+	spi_master_setup_device(p_spi, DEVICE_ID, POLARITY_FLAG,	BAUD_RATE);
+	
+	spi_enable(p_spi);
 }
 
 void spi_master_init(Spi *p_spi)
@@ -104,21 +76,17 @@ void spi_master_init(Spi *p_spi)
 	spi_set_master_mode(p_spi);
 	spi_disable_mode_fault_detect(p_spi);
 	spi_disable_loopback(p_spi);
+	
+	//
 	spi_set_peripheral_chip_select_value(p_spi,	spi_get_pcs(DEFAULT_CHIP_ID));
 	spi_set_fixed_peripheral_select(p_spi);
 	spi_disable_peripheral_select_decode(p_spi);
 	spi_set_delay_between_chip_select(p_spi, CONFIG_SPI_MASTER_DELAY_BCS);
 }
 
-void spi_master_setup_device(
-				Spi *p_spi,
-				uint32_t device_id,
-				uint32_t flags,
-				uint32_t baud_rate
-)
+void spi_master_setup_device(Spi *p_spi, uint32_t device_id, uint32_t flags, uint32_t baud_rate)
 {
-	spi_set_transfer_delay(p_spi, device_id, CONFIG_SPI_MASTER_DELAY_BS,
-	CONFIG_SPI_MASTER_DELAY_BCT);
+	spi_set_transfer_delay(p_spi, device_id, CONFIG_SPI_MASTER_DELAY_BS, CONFIG_SPI_MASTER_DELAY_BCT);
 	spi_set_bits_per_transfer(p_spi, device_id, CONFIG_SPI_MASTER_BITS_PER_TRANSFER);
 	spi_set_baudrate_div(p_spi, device_id,
 	spi_calc_baudrate_div(baud_rate, sysclk_get_cpu_hz()));
@@ -129,19 +97,16 @@ void spi_master_setup_device(
 
 void BLUEsat_spi_write_string (char* c) {
 	uint32_t x;
-	uint32_t y;
+	//uint32_t y;
+	
 	// enable GPIO low
 	PIOB->PIO_CODR = PIO_PB14;
-	for (y=0;y<SPI_WRITE_DELAY/10;y++);
-	
 	
 	// don't forget that \0
 	for (x = 0; c[x] != '\0'; x++) {
 		spi_write(SPI0,c[x],0,0);
-		for (y=0;y<SPI_WRITE_DELAY;y++);
 	}
 	
 	// enable GPIO high
 	PIOB->PIO_SODR = PIO_PB14;
-	for (y=0;y<SPI_WRITE_DELAY/10;y++);
 }

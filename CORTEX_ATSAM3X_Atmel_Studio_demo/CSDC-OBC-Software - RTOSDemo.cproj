@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.2</ProjectVersion>
     <ProjectGuid>{1a1a7c6e-bd59-4e82-8371-7f51ae9a4bd9}</ProjectGuid>
-    <Name>$(MSBuildProjectName)</Name>
+    <Name>CSDC-OBC-Software - RTOSDemo</Name>
     <AssemblyName>$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>$(MSBuildProjectName)</RootNamespace>
     <AsfVersion>3.3.0</AsfVersion>
@@ -409,6 +409,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\BLUEsat_SPI_Test\BLUEsat_SPI_Test_app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\BLUEsat_SPI_Test\BLUEsat_SPI_Test_app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Applications\BLUEsat_UART_Test\BLUEsat_UART_Test_app.c">
@@ -1055,6 +1061,7 @@
     <Folder Include="src\" />
     <Folder Include="src\Applications\BLUEsat_Blink" />
     <Folder Include="src\Applications\BLUEsat_UART_Test" />
+    <Folder Include="src\Applications\BLUEsat_SPI_Test" />
     <Folder Include="src\Common-Demo-Source\" />
     <Folder Include="src\Common-Demo-Source\include\" />
     <Folder Include="src\Applications\" />
