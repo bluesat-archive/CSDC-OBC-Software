@@ -8,7 +8,7 @@
 /* Atmel Library */
 #include <asf.h>
 
-#include "BLUEsat_serial_drv.h"
+#include "BLUEsat_UART_drv.h"
 
 // I was running into errors where the arduino was pushing
 // characters through the UART register too quickly and so

@@ -10,7 +10,7 @@
 #define INCFILE1_H_
 
 // serial output
-#include <serial/BLUEsat_serial_drv.h>
+#include <BLUEsat_UART/BLUEsat_UART_drv.h>
 
 // spi
 #include <BLUEsat_spi/BLUEsat_spi_drv.h>
