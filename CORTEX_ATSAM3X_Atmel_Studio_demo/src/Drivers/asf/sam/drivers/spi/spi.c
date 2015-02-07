@@ -112,7 +112,10 @@ void spi_disable_clock(Spi *p_spi)
  */
 void spi_set_peripheral_chip_select_value(Spi *p_spi, uint32_t ul_value)
 {
+	// resets value PCS in the SPI Mode Register
 	p_spi->SPI_MR &= (~SPI_MR_PCS_Msk);
+	
+	//copy value into PCS 
 	p_spi->SPI_MR |= SPI_MR_PCS(ul_value);
 }
 

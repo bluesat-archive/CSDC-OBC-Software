@@ -12,7 +12,7 @@
 // necessary for spi_set_peripheral_chip_select_value()
 // See: http://asf.atmel.com/docs/latest/sam3x/html/group__sam__drivers__spi__group.html#ga71131f0a9772ac93eeb6af52a1101ecc
 #define 	spi_get_pcs(chip_sel_id)   ((~(1u<<(chip_sel_id)))&0xF)
-#define 	DEFAULT_CHIP_ID   0
+#define 	DEFAULT_CHIP_ID   0000
 
 // See: http://asf.atmel.com/docs/latest/sam3x/html/group__sam__drivers__spi__group.html#gab1a11f2d8808eb355c9b1e43be00da96
 #define CONFIG_SPI_MASTER_DELAY_BCS   0
@@ -49,10 +49,15 @@ void configure_spi(Spi *p_spi){
 	// configure the MISO, MOSI, and Clock Pins
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK);
 	
+	// enable the chip select pin
+ 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA28A_SPI0_NPCS0);
+	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA29A_SPI0_NPCS1);
+	
+	
 	// copied from:
 	// http://asf.atmel.com/docs/latest/sam3x/html/sam_spi_quickstart.html
 	spi_master_init(p_spi);
-	spi_master_setup_device(p_spi, DEVICE_ID, POLARITY_FLAG,	BAUD_RATE);
+	spi_master_setup_device(p_spi, DEVICE_ID, POLARITY_FLAG, BAUD_RATE);
 	
 	spi_enable(p_spi);
 }
@@ -66,9 +71,16 @@ void spi_master_init(Spi *p_spi)
 	spi_disable_loopback(p_spi);
 	
 	//
-	spi_set_peripheral_chip_select_value(p_spi,	spi_get_pcs(DEFAULT_CHIP_ID));
+	uint32_t x = spi_get_pcs(DEFAULT_CHIP_ID);
+	spi_set_peripheral_chip_select_value(p_spi,	x);
 	spi_set_fixed_peripheral_select(p_spi);
+	
+	// enable the chip select pin
+	//spi_enable_peripheral_select_decode(p_spi);
 	spi_disable_peripheral_select_decode(p_spi);
+	// set which pin it is send to??
+	
+	
 	spi_set_delay_between_chip_select(p_spi, CONFIG_SPI_MASTER_DELAY_BCS);
 }
 
@@ -76,14 +88,14 @@ void spi_master_setup_device(Spi *p_spi, uint32_t device_id, uint32_t flags, uin
 {
 	spi_set_transfer_delay(p_spi, device_id, CONFIG_SPI_MASTER_DELAY_BS, CONFIG_SPI_MASTER_DELAY_BCT);
 	spi_set_bits_per_transfer(p_spi, device_id, CONFIG_SPI_MASTER_BITS_PER_TRANSFER);
-	spi_set_baudrate_div(p_spi, device_id,
-	spi_calc_baudrate_div(baud_rate, sysclk_get_cpu_hz()));
+	spi_set_baudrate_div(p_spi, device_id, spi_calc_baudrate_div(baud_rate, sysclk_get_cpu_hz()));
 	spi_configure_cs_behavior(p_spi, device_id, SPI_CS_KEEP_LOW);
 	spi_set_clock_polarity(p_spi, device_id, flags >> 1);
 	spi_set_clock_phase(p_spi, device_id, ((flags & 0x1) ^ 0x1));
 }
 
 void BLUEsat_spi_write_string (char* c) {
+	
 	uint32_t x;
 	//uint32_t y;
 	
@@ -92,7 +104,7 @@ void BLUEsat_spi_write_string (char* c) {
 	
 	// don't forget that \0
 	for (x = 0; c[x] != '\0'; x++) {
-		spi_write(SPI0,c[x],0,0);
+		spi_write(SPI0,c[x], 0 ,0);
 	}
 	
 	// enable GPIO high
