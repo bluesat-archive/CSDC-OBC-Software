@@ -46,20 +46,8 @@
 
 void configure_spi(Spi *p_spi){
 	
-	uint32_t ul_sr;
-	
-	///////////////////////////////////////////////////////////
-	
-	// configure pins
-	
-	// attempt to disable the interupts on MISO and MOSI
-	PIOA->PIO_IDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK;
-	
-	// disable the pins entirely
-	PIOA->PIO_PDR = PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK;
-	
-	ul_sr = PIOA->PIO_ABSR;
-	PIOA->PIO_ABSR &= ~(PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK) & ul_sr;
+	// configure the MISO, MOSI, and Clock Pins
+	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO | PIO_PA26A_SPI0_MOSI | PIO_PA27A_SPI0_SPCK);
 	
 	// copied from:
 	// http://asf.atmel.com/docs/latest/sam3x/html/sam_spi_quickstart.html
