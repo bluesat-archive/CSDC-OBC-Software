@@ -55,7 +55,7 @@ static portTASK_FUNCTION( vBLUEsat_SPI_TestTask, pvParameters ) {
 	gpio_configure_pin(PIO_PB14_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
 		
 	for (;;) {
-		BLUEsat_spi_write_string("Hello, from BLUEsat");
+		BLUEsat_spi_write_string("Hello, from BLUEsat",0);
 	}
 	
 }
