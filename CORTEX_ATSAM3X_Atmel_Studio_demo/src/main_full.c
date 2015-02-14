@@ -190,6 +190,7 @@ TimerHandle_t xCheckTimer = NULL;
 	kernel port. */
 	uart_print_string_to_serial("==========================\n\r");
 	uart_print_string_to_serial("Start launching demo tasks\n\r");
+	/*
 	vStartIntegerMathTasks( tskIDLE_PRIORITY );
 	vStartDynamicPriorityTasks();
 	vStartBlockingQueueTasks( mainBLOCK_Q_PRIORITY );
@@ -200,6 +201,7 @@ TimerHandle_t xCheckTimer = NULL;
 	vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
 	vStartLEDFlashTimers( mainNUMBER_OF_FLASH_TIMERS_LEDS );
+	*/
 	uart_print_string_to_serial("Finish launching demo tasks\n\r");
 	uart_print_string_to_serial("==========================\n\r\n\r");
 	
@@ -212,7 +214,7 @@ TimerHandle_t xCheckTimer = NULL;
 	uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
 	
 	/* BLUESAT APPLICATIONS - START*/
-	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
+	// vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
 	// vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
 	// vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
 	vStartcc1120_testTasks( tskIDLE_PRIORITY );

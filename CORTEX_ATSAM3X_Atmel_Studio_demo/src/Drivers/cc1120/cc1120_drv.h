@@ -9,6 +9,8 @@
 #ifndef CC1120_DRV_H_
 #define CC1120_DRV_H_
 
+#define HEADER_WRITE_BIT		  0x80;
+#define HEADER_READ_BIT		      0x00;
 
 
 
