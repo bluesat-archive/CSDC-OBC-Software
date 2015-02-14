@@ -263,6 +263,9 @@
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms_spi</Value>
+      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -302,6 +305,9 @@
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms_spi</Value>
+      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -359,6 +365,9 @@
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms_spi</Value>
+      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -395,6 +404,9 @@
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms_spi</Value>
+      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -405,22 +417,28 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.c">
+    <Compile Include="src\Applications\blink_test\blink_test_app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_Blink\bluesat_blink_app.h">
+    <Compile Include="src\Applications\blink_test\blink_test_app.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_SPI_Test\BLUEsat_SPI_Test_app.c">
+    <Compile Include="src\Applications\spi_test\spi_test_app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_SPI_Test\BLUEsat_SPI_Test_app.h">
+    <Compile Include="src\Applications\spi_test\spi_test_app.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_UART_Test\BLUEsat_UART_Test_app.c">
+    <Compile Include="src\Applications\uart_test\uart_test_app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Applications\BLUEsat_UART_Test\BLUEsat_UART_Test_app.h">
+    <Compile Include="src\Applications\uart_test\uart_test_app.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\cc1120_test\cc1120_test_app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\cc1120_test\cc1120_test_app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Common-Demo-Source\BlockQ.c">
@@ -1002,22 +1020,25 @@
     <Compile Include="src\Drivers\asf\thirdparty\FreeRTOS\timers.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\BLUEsat_spi\BLUEsat_spi_drv.c">
+    <Compile Include="src\Drivers\cc1120\cc1120_drv.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\BLUEsat_spi\BLUEsat_spi_drv.h">
+    <Compile Include="src\Drivers\cc1120\cc1120_drv.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\BLUEsat_UART\BLUEsat_UART_drv.c">
+    <Compile Include="src\Drivers\comms_spi\comms_spi_drv.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\BLUEsat_UART\BLUEsat_UART_drv.h">
+    <Compile Include="src\Drivers\comms_spi\comms_spi_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_UART\comms_UART_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_UART\comms_UART_drv.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\FreeRTOSConfig.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\BLUEsat_library_drv.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\main.c">
@@ -1059,9 +1080,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\Applications\BLUEsat_Blink" />
-    <Folder Include="src\Applications\BLUEsat_UART_Test" />
-    <Folder Include="src\Applications\BLUEsat_SPI_Test" />
+    <Folder Include="src\Applications\blink_test" />
+    <Folder Include="src\Applications\uart_test" />
+    <Folder Include="src\Applications\spi_test" />
+    <Folder Include="src\Applications\cc1120_test" />
     <Folder Include="src\Common-Demo-Source\" />
     <Folder Include="src\Common-Demo-Source\include\" />
     <Folder Include="src\Applications\" />
@@ -1113,8 +1135,9 @@
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\GCC\ARM_CM3\" />
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\MemMang\" />
     <Folder Include="src\Drivers\arudino-pins" />
-    <Folder Include="src\Drivers\BLUEsat_spi" />
-    <Folder Include="src\Drivers\BLUEsat_UART" />
+    <Folder Include="src\Drivers\cc1120\" />
+    <Folder Include="src\Drivers\comms_spi" />
+    <Folder Include="src\Drivers\comms_UART" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

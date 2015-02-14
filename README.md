@@ -12,6 +12,7 @@ Contents
   * [Naming Conventions](#naming-conventions)
 * [Applications](#applications)
 * [Drivers](#drivers-note-1)
+  * [Adding a new driver](#adding-a-new-driver)
 * [Creating a new application](#creating-a-new-application)
 * [References](#references)
 
@@ -88,14 +89,45 @@ The BLUEsat drivers will be things written by us used to control the boards and 
 * ReadCommandFromEarth (*char inputBuff)
 * SetAttitude(int angle1, int angle2, int angle3) 
 
+### Adding a new driver
+
+Instructions if you need to add a new driver:
+
+1. Open Atmel Studio. Go to Solution Explorer.
+1. Drivers go in ```src > Drivers > DRIVER_NAME```
+1. Right click on parent folder in context menu ```Add > New Folder```
+1. Close Atmel Studio.
+2. Open the *.cproj file a text editor.
+3. Add the path directory under the following folders 4 places:
+```
+    <Project ... >
+        <armgcc.compiler.directories.IncludePaths>
+            <ListValues>
+                <Value>../src/Drivers/DRIVER_NAME</Value>
+        <armgcc.preprocessingassembler.general.IncludePaths>
+            <ListValues>
+                <Value>../src/Drivers/DRIVER_NAME</Value>
+    </ArmGcc>
+        <armgcc.compiler.directories.IncludePaths>
+            <ListValues>
+                <Value>../src/Drivers/DRIVER_NAME</Value>
+        <armgcc.preprocessingassembler.general.IncludePaths>
+            <ListValues>
+                <Value>../src/Drivers/DRIVER_NAME</Value>
+```
+4. Save the file.
+5. Open Atmel Studio.
+6. Add \*.c and \*.h files; they should now be linked. 
+
+
 To Do 
 -----------
 _(Last updated Jan 24th 2015)_
 
-1. Debug Terminal through UART - DebugWrite(char *outputBuffer);
+1. Debug Terminal through UART - DebugWrite(char \*outputBuffer);
 2. Comms drivers for CAN
   * CAN_Read(int channel_no, char\* inputBuffer)
-  * CAN_write(int channel, char\* outputBuffer)  (*see [this code](https://github.com/UTAT-SpaceSystems/CDH-OBC_PhaseI/blob/master/Code/src/housekeep_test.c)*)
+  * CAN_write(int channel, char\* outputBuffer)  (\*see [this code](https://github.com/UTAT-SpaceSystems/CDH-OBC_PhaseI/blob/master/Code/src/housekeep_test.c)*)
 3. _
 4. _
 5. _
@@ -106,12 +138,12 @@ _Refer to BLUEsat_Blink as an example._
 #### Notes
 
 * Applications are saved in the folder ../src/Applications/"Application Name"/
-* All application *.c and *.h files should be saved in the relevant application folder
+* All application \*.c and \*.h files should be saved in the relevant application folder
 * The application needs to include a function to run xTaskCreate, portTASK_FUNCTION, and portTASK_FUNCTION_PROTO
 * Add '#include <"Application Name"/\*.h> into main_full under "BLUESAT APPLICATIONS"
 * Start the application in main_full()
 * _**Important**_: 'vTaskNameTask' must be exactly the same in all cases below.
-* _**Important**_: 'vStartTaskNameTasks' must be exactly the same in main_full() and the application *.c and *.h files.
+* _**Important**_: 'vStartTaskNameTasks' must be exactly the same in main_full() and the application \*.c and \*.h files.
 
 #### In the Application \*.c and \*.h files
 

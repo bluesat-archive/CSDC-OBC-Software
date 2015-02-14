@@ -124,12 +124,16 @@
 #include "comtest2.h"
 
 /* BLUESAT APPLICATIONS - INCLUDES */
-#include <BLUEsat_Blink/BLUEsat_blink_app.h>
-#include <BLUEsat_UART_Test/BLUEsat_UART_Test_app.h>
-#include <BLUEsat_SPI_Test/BLUEsat_SPI_Test_app.h>
+#include <blink_test/blink_test_app.h>
+#include <uart_test/uart_test_app.h>
+#include <spi_test/spi_test_app.h>
+#include <cc1120_test/cc1120_test_app.h>
 
 /* Atmel library includes. */
 #include "asf.h"
+
+/* BLUEsat library includes. */
+#include <comms_uart_drv.h>
 
 /* Priorities for the demo application tasks. */
 #define mainQUEUE_POLL_PRIORITY				( tskIDLE_PRIORITY + 2UL )
@@ -210,7 +214,8 @@ TimerHandle_t xCheckTimer = NULL;
 	/* BLUESAT APPLICATIONS - START*/
 	vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
 	// vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
-	vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
+	// vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
+	vStartcc1120_testTasks( tskIDLE_PRIORITY );
 	
 	uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
 	uart_print_string_to_serial("==========================\n\r\n\r");
