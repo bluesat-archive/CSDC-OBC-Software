@@ -10,10 +10,10 @@
 #include "cc1120_test_app.h"		// Application include file.
 
 #include <asf.h>
-#include <comms_spi_drv.h>
+#include <cc1120_drv.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE				// number of variables available for this task
-#define intgNUMBER_OF_TASKS		( 1 )									// Create one task
+#define intgNUMBER_OF_TASKS		( 1 )									// 
 
 static portTASK_FUNCTION_PROTO( vcc1120_TestTask, pvParameters );		// The task function.
 
@@ -34,8 +34,8 @@ void vStartcc1120_testTasks( UBaseType_t uxPriority )
 }
 /*-----------------------------------------------------------*/
 
-static portTASK_FUNCTION( vcc1120_TestTask, pvParameters ) {
-	
+static portTASK_FUNCTION( vcc1120_TestTask, pvParameters ) 
+{
 	pvParameters = pvParameters;
 	
 	// LED to use for debugging
@@ -43,52 +43,18 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters ) {
 	
 	int y;
 	
+	uint16_t send_byte = 0;
+	send_byte = send_byte;
+	
 	uint16_t read_byte = 0;
 	read_byte = read_byte;
 	
 	for (;;) {
-		/*
-		for (y=0; y<200; y++) {
-			spi_write(SPI0, 0x00, 0, 0);
-		}
-		spi_write(SPI0, 0x00, 0, 1);
 		
-		for (y=0; y<1000; y++);
+		uint32_t flag = cc1120_reset();
+		flag = flag;
 		
-		for (y=0; y<20; y++) {
-			spi_write(SPI0, 0xFF, 0, 0);
-		}
-		spi_write(SPI0, 0xFF, 0, 1);
-		
-		for (y=0; y<1000; y++);
-		*/
-		
-		
-		// talk to cc1120
-		uint16_t send_byte;
-		
-		send_byte |= 0x80;
-		// CSn (slave select) goes to low
-		spi_write(SPI0, send_byte, 0, 0);
-		
-		send_byte = 0x00;
-		spi_write(SPI0, send_byte, 0, 1);
-		
-		for (y=0; y<1000; y++);
-		
-		// wait for the CC1120's MISO to go low in response
-		/*
-		while (1) {
-			spi_read(SPI0, &read_byte, 0)
-			if ( == low) {
-				pio_set_pin_high(PIO_PB27_IDX);
-				// wait for a bit
-				for (y=0, y<500; y++);
-			}
-		}
-		*/
-		
-		
+		for (y=0; y<1000; y++);		
 	}
 	
 }
