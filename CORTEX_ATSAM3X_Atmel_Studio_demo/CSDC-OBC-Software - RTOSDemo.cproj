@@ -244,6 +244,7 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
+      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -262,9 +263,11 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>../src/Drivers/comms_spi</Value>
-      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/comms_uart</Value>
+      <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -290,6 +293,7 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
+      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -304,9 +308,11 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>../src/Drivers/comms_spi</Value>
-      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/comms_uart</Value>
+      <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -342,6 +348,7 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
+      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -364,9 +371,11 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>../src/Drivers/comms_spi</Value>
-      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/comms_uart</Value>
+      <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -389,6 +398,7 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
+      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -403,9 +413,11 @@
       <Value>../src/Drivers/asf/sam/drivers/pmc</Value>
       <Value>../src/Drivers/asf/common/services/clock</Value>
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
+      <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
       <Value>../src/Drivers/comms_spi</Value>
-      <Value>../src/Drivers/comms_UART</Value>
+      <Value>../src/Drivers/comms_uart</Value>
+      <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -609,6 +621,15 @@
     <Compile Include="src\Drivers\asf\common\services\gpio\sam_ioport\sam_gpio.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\asf\common\services\serial\sam_uart\uart_serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\common\services\serial\serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\common\services\serial\usart_serial.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\asf\common\utils\interrupt.h">
       <SubType>compile</SubType>
     </Compile>
@@ -655,6 +676,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\spi\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\uart\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\uart\uart.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\usart\usart.c">
@@ -1032,10 +1059,16 @@
     <Compile Include="src\Drivers\comms_spi\comms_spi_drv.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\comms_UART\comms_UART_drv.c">
+    <Compile Include="src\Drivers\comms_uart\comms_uart_drv.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\comms_UART\comms_UART_drv.h">
+    <Compile Include="src\Drivers\comms_uart\comms_uart_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_usart\comms_usart_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_usart\comms_usart_drv.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\FreeRTOSConfig.h">
@@ -1098,6 +1131,8 @@
     <Folder Include="src\Drivers\asf\common\services\clock\sam3x\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\sam_ioport\" />
+    <Folder Include="src\Drivers\asf\common\services\serial\" />
+    <Folder Include="src\Drivers\asf\common\services\serial\sam_uart\" />
     <Folder Include="src\Drivers\asf\common\utils\" />
     <Folder Include="src\Drivers\asf\common\utils\interrupt\" />
     <Folder Include="src\Drivers\asf\sam\" />
@@ -1107,6 +1142,7 @@
     <Folder Include="src\Drivers\asf\sam\drivers\pio\" />
     <Folder Include="src\Drivers\asf\sam\drivers\pmc\" />
     <Folder Include="src\Drivers\asf\sam\drivers\spi\" />
+    <Folder Include="src\Drivers\asf\sam\drivers\uart\" />
     <Folder Include="src\Drivers\asf\sam\drivers\usart\" />
     <Folder Include="src\Drivers\asf\sam\utils\" />
     <Folder Include="src\Drivers\asf\sam\utils\cmsis\" />
@@ -1137,7 +1173,8 @@
     <Folder Include="src\Drivers\arudino-pins" />
     <Folder Include="src\Drivers\cc1120\" />
     <Folder Include="src\Drivers\comms_spi" />
-    <Folder Include="src\Drivers\comms_UART" />
+    <Folder Include="src\Drivers\comms_uart" />
+    <Folder Include="src\Drivers\comms_usart" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

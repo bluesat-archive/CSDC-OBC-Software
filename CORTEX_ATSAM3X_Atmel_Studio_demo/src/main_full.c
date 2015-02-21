@@ -215,9 +215,9 @@ TimerHandle_t xCheckTimer = NULL;
 	
 	/* BLUESAT APPLICATIONS - START*/
 	// vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
-	// vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
+	vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
 	// vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
-	vStartcc1120_testTasks( tskIDLE_PRIORITY );
+	// vStartcc1120_testTasks( tskIDLE_PRIORITY );
 	
 	uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
 	uart_print_string_to_serial("==========================\n\r\n\r");

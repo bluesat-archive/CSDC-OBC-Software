@@ -92,7 +92,8 @@ function. */
 
 /* BLUEsat library includes */
 #include <comms_spi_drv.h>
-#include <comms_UART_drv.h>
+#include <comms_uart_drv.h>
+#include <comms_usart_drv.h>
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
 or 0 to run the more comprehensive test and demo application. */
@@ -132,6 +133,18 @@ int main( void )
 {
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
+	
+	// TEMPORARY START
+	configure_usart();
+	configure_uart();
+	
+	while(1) {
+		usart_write(USART0, 'z');		
+		usart_putchar(USART0, 'z');
+		
+		uart_print_string_to_serial("Test");
+	}
+	// TEMPORARY END
 	
 	/* Prepare UART register and PIO */
 	configure_uart();
