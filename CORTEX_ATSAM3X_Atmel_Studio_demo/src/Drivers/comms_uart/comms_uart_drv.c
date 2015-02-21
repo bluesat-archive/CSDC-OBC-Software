@@ -1,5 +1,5 @@
 /*
- * serial_print_drv.c
+ * serial_uart_drv.c
  *
  * Created: 28/01/2015 09:53:42
  *  Author: John
@@ -12,18 +12,15 @@
 
 void configure_uart(void)
 {
-	
-	// Enable Peripheral Clock
 	pmc_enable_periph_clk(ID_UART);
 	
-	// Pin Configuration
 	pio_configure(PIOA, PIO_PERIPH_A, PIO_PA8A_URXD, PIO_PULLUP);
 	pio_configure(PIOA, PIO_PERIPH_A, PIO_PA9A_UTXD, PIO_PULLUP);
 	
 	// uart settings
 	sam_uart_opt_t uart_opt;
-	uart_opt.ul_mck			= 84000000;
-	uart_opt.ul_baudrate	= 115200;
+	uart_opt.ul_mck			= sysclk_get_cpu_hz();
+	uart_opt.ul_baudrate	= 9600;
 	uart_opt.ul_mode		= UART_MR_PAR_NO;
 	uart_opt.ul_chmode		= UART_MR_CHMODE_NORMAL;
 	

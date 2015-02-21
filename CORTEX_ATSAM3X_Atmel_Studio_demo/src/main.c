@@ -133,20 +133,8 @@ int main( void )
 {
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
-	
-	// TEMPORARY START
+
 	configure_usart();
-	configure_uart();
-	
-	while(1) {
-		usart_write(USART0, 'z');		
-		usart_putchar(USART0, 'z');
-		
-		uart_print_string_to_serial("Test");
-	}
-	// TEMPORARY END
-	
-	/* Prepare UART register and PIO */
 	configure_uart();
 	
 	/* Configure SPI */

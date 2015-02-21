@@ -35,23 +35,6 @@
 /* As this is the minimal version, we will only create one task. */
 #define intgNUMBER_OF_TASKS		( 1 )
 
-/* The settings for USART */
-
-/* Misc defines. */
-#define serINVALID_QUEUE				( ( QueueHandle_t ) 0 )
-#define serNO_BLOCK						( ( TickType_t ) 0 )
-#define serPMC_USART_ID					( BOARD_ID_USART )
-
-/* The USART supported by this file. */
-#define serUSART_PORT					( USART0 )
-#define serUSART_IRQ					( USART0_IRQn )
-
-/* Baud rate used by the comtest tasks. */
-#define mainCOM_TEST_BAUD_RATE				( 115200 )
-
-/* Every bit in the interrupt mask. */
-#define serMASK_ALL_INTERRUPTS			( 0xffffffffUL )
-
 /* The task function. */
 static portTASK_FUNCTION_PROTO( vBLUEsat_UART_TestTask, pvParameters );
 
@@ -76,41 +59,13 @@ void vStartBLUEsat_UART_TestTasks( UBaseType_t uxPriority )
 
 static portTASK_FUNCTION( vBLUEsat_UART_TestTask, pvParameters )
 {
-	short sError = pdFALSE;
-	volatile BaseType_t *pxTaskHasExecuted;
-
-	/* Set a pointer to the variable we are going to set to true each
-	iteration.  This is also a good test of the parameter passing mechanism
-	within each port. */
-	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
+	// simple test, don't need this.
+	pvParameters = pvParameters;
 	
-	// send
-	char String[] = "Hello World\n\r- Serial Driver Test\n\r- Now with uart_print_string_to_serial()\n\r\n\r";
-		
-	int x;
-	// int y;
+	char String[] = "Hello World\n\r- UART Driver Test\n\r\n\r";
 	
-	/* Keep performing a calculation and checking the result against a constant. */
 	for( ;; )
 	{
-		uart_print_string_to_serial(String);
-		for (x=0;x<1000000;x++);		
-		
-		if( sError == pdFALSE )
-		{
-			/* We have not encountered any errors, so set the flag that show
-			we are still executing.  This will be periodically cleared by
-			the check task. */
-			portENTER_CRITICAL();
-				*pxTaskHasExecuted = pdTRUE;
-			portEXIT_CRITICAL();
-		}
-
-		/* Yield in case cooperative scheduling is being used. */
-		#if configUSE_PREEMPTION == 0
-		{
-			taskYIELD();
-		}
-		#endif
+		uart_print_string_to_serial(String);	
 	}
 }
