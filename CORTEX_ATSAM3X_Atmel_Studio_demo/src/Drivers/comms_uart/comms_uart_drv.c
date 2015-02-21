@@ -7,8 +7,8 @@
 
 /* Atmel Library */
 #include <asf.h>
+#include "comms_drv.h"
 #include "comms_uart_drv.h"
-#include "serial.h"
 
 void configure_uart(void)
 {

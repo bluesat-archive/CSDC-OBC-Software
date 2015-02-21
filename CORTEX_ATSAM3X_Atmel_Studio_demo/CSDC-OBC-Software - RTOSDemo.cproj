@@ -244,7 +244,6 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
-      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -265,6 +264,7 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
@@ -293,7 +293,6 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
-      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -310,6 +309,7 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
@@ -348,7 +348,6 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
-      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -373,6 +372,7 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
@@ -398,7 +398,6 @@
       <Value>../src/Drivers/asf/common/applications/user_application/sam3x8h_sam3x_ek</Value>
       <Value>../src/Drivers/asf/common/boards</Value>
       <Value>../src/Drivers/asf/common/services/gpio</Value>
-      <Value>../src/Drivers/asf/common/services/serial</Value>
       <Value>../src/Drivers/asf/common/utils</Value>
       <Value>../src/Drivers/asf/sam/boards</Value>
       <Value>../src/Drivers/asf/sam/boards/sam3x_ek</Value>
@@ -415,6 +414,7 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
@@ -619,15 +619,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\common\services\gpio\sam_ioport\sam_gpio.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\asf\common\services\serial\sam_uart\uart_serial.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\asf\common\services\serial\serial.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\asf\common\services\serial\usart_serial.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\common\utils\interrupt.h">
@@ -1053,6 +1044,12 @@
     <Compile Include="src\Drivers\cc1120\cc1120_drv.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\comms\comms_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms\comms_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\comms_spi\comms_spi_drv.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1131,8 +1128,6 @@
     <Folder Include="src\Drivers\asf\common\services\clock\sam3x\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\sam_ioport\" />
-    <Folder Include="src\Drivers\asf\common\services\serial\" />
-    <Folder Include="src\Drivers\asf\common\services\serial\sam_uart\" />
     <Folder Include="src\Drivers\asf\common\utils\" />
     <Folder Include="src\Drivers\asf\common\utils\interrupt\" />
     <Folder Include="src\Drivers\asf\sam\" />
@@ -1175,6 +1170,7 @@
     <Folder Include="src\Drivers\comms_spi" />
     <Folder Include="src\Drivers\comms_uart" />
     <Folder Include="src\Drivers\comms_usart" />
+    <Folder Include="src\Drivers\comms" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
