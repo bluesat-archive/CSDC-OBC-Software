@@ -13,10 +13,7 @@
 #ifndef SERIAL_PRINT_DRV_H_
 #define SERIAL_PRINT_DRV_H_
 
-uint32_t uart_getchar(uint8_t *c);
-uint32_t uart_putchar(const uint8_t c);
 void configure_uart(void);
-
 uint32_t uart_print_string_to_serial(char *c);
 
 #endif /* SERIAL_PRINT_DRV_H_ */
