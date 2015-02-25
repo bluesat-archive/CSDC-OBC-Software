@@ -1,22 +1,7 @@
 CSDC-OBC-Software
-=================
+====
 
-FreeRTOS Kernel, initially ported to the SAM3X series.
-
-Contents
---------
-
-* [Quickstart Guide](#quickstart-guide-for-sam3x-ek-demo-application)
-* [Code Structure Guide](#code-structure-guide)
-  * [Folder Structure](#folder-structure)
-  * [Naming Conventions](#naming-conventions)
-* [Applications](#applications)
-* [Drivers](#drivers-note-1)
-  * [Adding a new driver](#adding-a-new-driver)
-* [Creating a new application](#creating-a-new-application)
-* [References](#references)
-
-
+Please have a look at the [OBC-CSDC wiki](https://github.com/bluesat/CSDC-OBC-Software/wiki) for details.
 
 Quickstart Guide for SAM3X-EK Demo Application
 ------------------
@@ -35,36 +20,6 @@ The following will help you set up the development environment necessary to Flas
 
 5. (TBD) Burn the program onto the dev board using the SAM ICE
 
-Code Structure Guide
-----------------------------
-
-The [OldSat CSC software](https://github.com/bluesat/csc-software/tree/master/BLUEsat-CSC) serves as a good guide to the structure of code we want to see.
-
-### Folder Structure
-```
-> src
--> Applications
---> Application_1
----> *c and *h files
---> Applicaiton_2
----> *c and *h files
--> Drivers (see note 1)
---> Atmel Drivers
----> (see note 1)
---> Driver_1
----> *c and *h files
---> Driver_2
----> *c and *h files
--> FreeRTOS
---> Copy structure exactly from exitsing FreeRTOS code
-```
-
-### Naming Conventions
-
-* BLUEsat applications are appended with '_app'.
-* BLUEsat drivers are appended with '_drv'.
-* BLUEsat is spelt BLUEsat and not Bluesat.
-
 Applications
 -------------
 These are essentially the PortTask functions that will execute in the application layer. They will do most of the high level tasks for the CubeSat. This level is quite abstract and example applications could be 
@@ -73,7 +28,7 @@ These are essentially the PortTask functions that will execute in the applicatio
 * PowerManager
 * AttitudeManager
 
-Drivers (note 1)
+Drivers
 ---------------------
 Drivers will be split into two categories: 
 
@@ -89,37 +44,6 @@ The BLUEsat drivers will be things written by us used to control the boards and 
 * ReadCommandFromEarth (*char inputBuff)
 * SetAttitude(int angle1, int angle2, int angle3) 
 
-### Adding a new driver
-
-Instructions if you need to add a new driver:
-
-1. Open Atmel Studio. Go to Solution Explorer.
-1. Drivers go in ```src > Drivers > DRIVER_NAME```
-1. Right click on parent folder in context menu ```Add > New Folder```
-1. Close Atmel Studio.
-2. Open the *.cproj file a text editor.
-3. Add the path directory under the following folders 4 places:
-```
-    <Project ... >
-        <armgcc.compiler.directories.IncludePaths>
-            <ListValues>
-                <Value>../src/Drivers/DRIVER_NAME</Value>
-        <armgcc.preprocessingassembler.general.IncludePaths>
-            <ListValues>
-                <Value>../src/Drivers/DRIVER_NAME</Value>
-    </ArmGcc>
-        <armgcc.compiler.directories.IncludePaths>
-            <ListValues>
-                <Value>../src/Drivers/DRIVER_NAME</Value>
-        <armgcc.preprocessingassembler.general.IncludePaths>
-            <ListValues>
-                <Value>../src/Drivers/DRIVER_NAME</Value>
-```
-4. Save the file.
-5. Open Atmel Studio.
-6. Add \*.c and \*.h files; they should now be linked. 
-
-
 To Do 
 -----------
 _(Last updated Jan 24th 2015)_
@@ -132,100 +56,12 @@ _(Last updated Jan 24th 2015)_
 4. _
 5. _
 
-Creating a new application
-----
-_Refer to BLUEsat_Blink as an example._
-#### Notes
-
-* Applications are saved in the folder ../src/Applications/"Application Name"/
-* All application \*.c and \*.h files should be saved in the relevant application folder
-* The application needs to include a function to run xTaskCreate, portTASK_FUNCTION, and portTASK_FUNCTION_PROTO
-* Add '#include <"Application Name"/\*.h> into main_full under "BLUESAT APPLICATIONS"
-* Start the application in main_full()
-* _**Important**_: 'vTaskNameTask' must be exactly the same in all cases below.
-* _**Important**_: 'vStartTaskNameTasks' must be exactly the same in main_full() and the application \*.c and \*.h files.
-
-#### In the Application \*.c and \*.h files
-
-##### *portTASK_FUNCTION_PROTO*
-```c
-static portTASK_FUNCTION_PROTO( vTaskNameTask, pvParameters );
-```
-Change:
-
-* 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
-
-##### *Starting the Application*
-
-```c
-void vStartTaskNameTasks( UBaseType_t uxPriority )
-{
-	short sTask;
-	
-	for( sTask = 0; sTask < intgNUMBER_OF_TASKS; sTask++ )
-	{
-		xTaskCreate( vTaskNameTask, "TaskName", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
-	}
-}
-```
-Change:
-
-* 'vStartTaskNameTasks' to the name of the application with the 'vStart' at the front and 'Tasks' at the end.
-* 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
-* 'TaskName' to the name of the application.
-
-Have a look at the [freeRTOS page on xTaskCreate](http://www.freertos.org/a00125.html) for more information on xTaskCreate and its parameters. 
-
-##### *portTASK_FUNCTION*
-
-_This is just an overview of the structure; missing error handling._
-
-```c
-static portTASK_FUNCTION( vTaskNAmeTask, pvParameters )
-{
-	for( ;; )
-	{		
-		// Application code goes inside here
-	}
-}
-```
-
-Change:
-
-* 'vTaskNameTask' to the name of the application, retain the 'v' at the front and 'Task' at the end. 
-
-#### In main_full()
-
-```c
-/* BLUESAT APPLICATIONS - INCLUDES */
-#include <TaskName/TaskName_app.h>
-```
-```c
-void main_full( void )
-{
-	...
-	/* BLUESAT APPLICATIONS - START*/
-	vStartTaskNameTasks( tskIDLE_PRIORITY );
-	...
-}
-```
-Change:
-
-* 'TaskName' to the name of the application.
-* 'vStartTaskNameTasks' to the name of the application with the 'vStart' at the front and 'Tasks' at the end.
-
 References
 ----------
 * [Arduino Due Overview](http://arduino.cc/en/Main/arduinoBoardDue)
 * [Ardiuno Due Pin Mapping](http://arduino.cc/en/Hacking/PinMappingSAM3X)
 * [Arduino Due Schematic](http://arduino.cc/en/uploads/Main/arduino-Due-schematic.pdf)
 * [Atmel ATSAM3X8E Overview](http://www.atmel.com/devices/SAM3X8E.aspx?tab=overview)
-* [Atmel Application Note - UART](http://www.atmel.com/Images/Atmel-42299-Universal-Asynchronous-Receiver-Transceiver-UART_ApplicationNote_AT07896.pdf)
-  * This application note describes how to use the ASF driver for interfacing to the UART module on on SAM.
 * [Atmel Application Note - Getting Started with FreeRTOS on Atmel](http://www.atmel.com/Images/Atmel-42382-Getting-Started-with-FreeRTOS-on-Atmel-SAM-Flash-MCUs_ApplicationNote_AT04056.pdf)
-  * This application note illustrates the basic functionality of the FreeRTOS Real Time Operating System and shows how to use it on SAM microcontroller.
 * [SAM3X/SAM3A Series Summary](http://www.atmel.com/Images/doc11057s.pdf)
-  * PIO Register Mapping: Page 654
-  * USART I/O Lines: Page 780
-  * USART Register Mapping: Page 835
 * [SAM3X/SAM3A Series Complete](http://www.atmel.com/Images/doc11057.pdf)
