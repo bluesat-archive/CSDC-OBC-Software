@@ -28,8 +28,8 @@ void configure_spi(){
 	spi_master_configure(SPI0);											// setup arduino as SPI master
 	spi_enable(SPI0);													// enables SPI
 	
-	spi_master_configure_device(SPI0, 0, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 10
-	spi_master_configure_device(SPI0, 1, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 4
+	spi_master_configure_device(SPI0, SPI_DEVICE_0, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 10
+	spi_master_configure_device(SPI0, SPI_DEVICE_1, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 4 (CC1120)
 }
 
 void spi_master_configure(Spi *p_spi)

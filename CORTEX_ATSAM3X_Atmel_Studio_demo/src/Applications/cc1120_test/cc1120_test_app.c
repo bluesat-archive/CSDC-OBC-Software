@@ -11,6 +11,8 @@
 
 #include <asf.h>
 #include <cc1120_drv.h>
+#include <comms_uart_drv.h>
+#include <comms_drv.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE				// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )									// 
@@ -41,20 +43,63 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 	// LED to use for debugging
 	gpio_configure_pin(PIO_PB27_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
 	
-	int y;
-	
 	uint16_t send_byte = 0;
 	send_byte = send_byte;
 	
 	uint16_t read_byte = 0;
 	read_byte = read_byte;
 	
+	char* p;
+	char buf[20];
+	buf[19] = 0;
+		
 	for (;;) {
+		//cc1120_reset();
 		
-		uint32_t flag = cc1120_reset();
-		flag = flag;
+		read_byte = '0';
+
+		p = (char*)&read_byte;
 		
-		for (y=0; y<1000; y++);		
+		cc1120_write(CC1120_SRES, 0);
+		cc1120_read(&read_byte);
+		
+		my_itoa(buf, read_byte);
+		
+		uart_print_string_to_serial(buf);
+		uart_print_string_to_serial("\r\n");
+		
+		uart_write(UART, *p);
+		uart_write(UART, *(p+1));		
+		for(int y = 0; y<1000; y++);
+		
+		cc1120_write(CC1120_SNOP, 1);
+		for(int y = 0; y<1000; y++);
+		
+		cc1120_write(CC1120_SNOP, 1);
+		for(int y = 0; y<1000; y++);
+		for(int y = 0; y<100000; y++);
 	}
-	
+}
+
+int i2a(char *s, int n){
+	div_t qr;
+	int pos;
+
+	if(n == 0) return 0;
+
+	qr = div(n, 10);
+	pos = i2a(s, qr.quot);
+	s[pos] = qr.rem + '0';
+	return pos + 1;
+}
+
+char* my_itoa(char *output_buff, int num){
+	char *p = output_buff;
+	if(num < 0){
+		*p++ = '-';
+		num *= -1;
+	} else if(num == 0)
+	*p++ = '0';
+	p[i2a(p, num)]='\0';
+	return output_buff;
 }
