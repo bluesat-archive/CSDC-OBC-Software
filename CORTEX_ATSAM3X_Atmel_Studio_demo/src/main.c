@@ -91,9 +91,11 @@ function. */
 #include <asf.h>
 
 /* BLUEsat library includes */
+#include <comms_drv.h>
 #include <comms_spi_drv.h>
 #include <comms_uart_drv.h>
 #include <comms_usart_drv.h>
+#include <cc1120_drv.h>
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
 or 0 to run the more comprehensive test and demo application. */
@@ -134,11 +136,9 @@ int main( void )
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
 
-	configure_usart();
 	configure_uart();
-	
-	/* Configure SPI */
-	configure_spi(SPI0);
+	configure_usart();
+	configure_spi();
 	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */

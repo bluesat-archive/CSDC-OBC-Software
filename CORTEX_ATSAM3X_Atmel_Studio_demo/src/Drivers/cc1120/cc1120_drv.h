@@ -9,7 +9,7 @@
 #ifndef CC1120_DRV_H_
 #define CC1120_DRV_H_
 
-
+#define SPI_DEVICE_CC1120	SPI_DEVICE_1
 
 #define CC1120_MAX_SPI_ACCESS_ADDRESS		0x3F
 
@@ -246,9 +246,9 @@
 #define CC1120_STATE_TXFIFO_ERROR       0x70
 
 /* Access Functions */
-uint32_t cc1120_write(uint8_t address);
-uint32_t cc1120_read(uint8_t address);
 
+uint32_t cc1120_write (uint16_t data, uint8_t last);
+uint32_t cc1120_read (uint16_t *data);
 /* Command Strobe Functions */
 uint32_t cc1120_reset();
 

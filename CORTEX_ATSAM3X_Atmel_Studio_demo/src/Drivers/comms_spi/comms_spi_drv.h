@@ -9,25 +9,14 @@
 #ifndef BLUESAT_SPI_DRV_H_
 #define BLUESAT_SPI_DRV_H_
 
-/*
- *	Enables PINs.
- *	Sets up Arduino as SPI master.
- *	Starts SPI.
- *	Configures peripherals for slaves to listen on.
- */
-void configure_spi(Spi *p_spi);
+#define SPI_DEVICE_0	0000
+#define SPI_DEVICE_1	0001
+#define SPI_DEVICE_2	0011
+#define SPI_DEVICE_3	0111
 
-/*
- *	Configures SPI settings.
- *	Arduino is master.
- */
+void configure_spi();
 void spi_master_configure(Spi *p_spi);
-
-/*
- *	Configures a peripheral with the arduino as master
- *	device_id is 0,1,2, or 3. Make sure the pin is enabled.
- */
 void spi_master_configure_device(Spi *p_spi, uint32_t device_id, uint32_t flags, uint32_t baud_rate);
-
 void BLUEsat_spi_write_string (char* c, uint32_t peripheral_select);
+
 #endif /* BLUESAT_SPI_DRV_H_ */

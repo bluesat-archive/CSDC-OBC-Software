@@ -28,7 +28,6 @@ uint32_t uart_print_string_to_serial(char *c)
 	
 	for (x = 0; c[x] != '\0'; x++) {
 		comms_serial_putchar(UART, c[x]);
-		comms_serial_putchar(USART0, 'z');
 	}
 	
 	return 0;
