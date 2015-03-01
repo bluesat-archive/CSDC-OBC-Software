@@ -134,11 +134,9 @@ int main( void )
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
 
-	configure_usart();
 	configure_uart();
-	
-	/* Configure SPI */
-	configure_spi(SPI0);
+	configure_usart();
+	configure_spi();
 	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */

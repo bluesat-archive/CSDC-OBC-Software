@@ -22,18 +22,18 @@
 #define CONFIG_SPI_MASTER_DELAY_BCT				0						// Delay between consecutive transfers (in number of MCK clocks).
 #define CONFIG_SPI_MASTER_BITS_PER_TRANSFER		SPI_CSR_BITS_8_BIT		// Size of data transfer
 
-void configure_spi(Spi *p_spi){
+void configure_spi(){
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO);		// enables MISO pin
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA26A_SPI0_MOSI);		// enables MOSI pin
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA27A_SPI0_SPCK);		// enables Clock pin
  	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA28A_SPI0_NPCS0);		// enables slave select 0 on pin 10
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA29A_SPI0_NPCS1);		// enables slave select 1 on pin 4
 	
-	spi_master_configure(p_spi);										// setup arduino as SPI master
-	spi_enable(p_spi);													// enables SPI
+	spi_master_configure(SPI0);										// setup arduino as SPI master
+	spi_enable(SPI0);													// enables SPI
 	
-	spi_master_configure_device(p_spi, 0, POLARITY_FLAG, BAUD_RATE);	// configures SPI for slave on pin 10
-	spi_master_configure_device(p_spi, 1, POLARITY_FLAG, BAUD_RATE);	// configures SPI for slave on pin 4
+	spi_master_configure_device(SPI0, 0, POLARITY_FLAG, BAUD_RATE);	// configures SPI for slave on pin 10
+	spi_master_configure_device(SPI0, 1, POLARITY_FLAG, BAUD_RATE);	// configures SPI for slave on pin 4
 }
 
 void spi_master_configure(Spi *p_spi)

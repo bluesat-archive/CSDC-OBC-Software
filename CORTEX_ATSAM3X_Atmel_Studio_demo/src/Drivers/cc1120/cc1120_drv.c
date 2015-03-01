@@ -29,9 +29,6 @@ uint32_t cc1120_reset () {
 	// check to see SO go high, and then low again. Keep CSn low. See 3.2.2 of User Guide	
 	spi_write(SPI0, CC1120_SNOP, 0, 1);
 	
-	
-	
-	
 	if ((spi_flag_write || spi_flag_read) == SPI_ERROR_TIMEOUT) {
 		uart_print_string_to_serial("CC1120 reset failed; spi_write failed.\n\r");
 		return 0;
