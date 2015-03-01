@@ -54,5 +54,4 @@ static portTASK_FUNCTION( vBLUEsat_SPI_TestTask, pvParameters ) {
 		BLUEsat_spi_write_string("Hello, from BLUEsat", SPI_DEVICE_0);
 		BLUEsat_spi_write_string("Hello, from BLUEsat", SPI_DEVICE_1);
 	}
-	
 }
