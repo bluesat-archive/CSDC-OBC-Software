@@ -24,23 +24,19 @@ uint32_t cc1120_reset () {
 	
 	// check to see SO go high, and then low again. Keep CSn low. See 3.2.2 of User Guide	
 	
-	uint16_t spi_read_data = 0;
+	// uint16_t spi_read_data = 0;
+	uint32_t timeout = 500;
+	cc1120_write(CC1120_SRES, 0);
+	uint32_t test = pio_get(PIOA, PIO_PA25A_SPI0_MISO, 0);
 	
-	cc1120_write(CC1120_SRES, 0);	
-	
-	/*
+	test = test;
 	while (pio_get(PIOA, PIO_PA25A_SPI0_MISO, 0)) {
-		comms_serial_putchar(UART, '.');
+		cc1120_write(CC1120_SNOP, 1);
+		if (timeout-- <= 0) {
+			// timed out, failed to reset quickly
+			return 0;
+		} 
 	}
-	comms_serial_putchar(UART, '_');
-	*/
-	
-	cc1120_read(&spi_read_data);
-	
-	// keeps the enable pin low
-	cc1120_write(CC1120_SNOP, 1);
-	
-	for(int y = 0; y<1000; y++);
 	
 	return 1;
 }

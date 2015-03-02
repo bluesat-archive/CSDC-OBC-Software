@@ -10,6 +10,7 @@
 #include "comms_drv.h"
 #include "comms_uart_drv.h"
 
+
 void configure_uart(void)
 {	
 	pio_configure(PIOA, PIO_PERIPH_A, PIO_PA8A_URXD, PIO_PULLUP);
@@ -20,6 +21,7 @@ void configure_uart(void)
 	uart_opt.paritytype	= UART_MR_PAR_NO;
 	
 	comms_serial_init(UART, &uart_opt);
+	init_uart_buffer();
 }
 
 uint32_t uart_print_string_to_serial(char *c)
@@ -33,4 +35,29 @@ uint32_t uart_print_string_to_serial(char *c)
 	return 0;
 }
 
+void uart_write_char_to_buffer(char c) {
+	UART_BUFFER(UART_BUFFER_NEXT) = c;
+	UART_BUFFER_NEXT++;
+}
+void uart_write_string_to_buffer(char* c) {
+	for (uint32_t x = 0; c[x] != '\0'; x++) {
+		uart_write_char_to_buffer(c[x]);
+	}
+	uart_write_char_to_buffer('\n');
+	uart_write_char_to_buffer('\r');
+}
 
+void uart_push_buffer_to_serial() {
+	for (uint32_t pos = 0; pos < UART_BUFFER_NEXT; pos++) {
+		comms_serial_putchar(UART, UART_BUFFER(pos));
+		UART_BUFFER(pos) = '\0';
+	} 
+	UART_BUFFER_NEXT = 0;
+}
+
+void init_uart_buffer() {
+	for (uint32_t pos = 0; pos < UART_BUFFER_SIZE; pos++) {
+		UART_BUFFER(pos) = '\0';
+	}
+	UART_BUFFER_NEXT = 0;
+}

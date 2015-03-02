@@ -59,13 +59,14 @@ void vStartBLUEsat_UART_TestTasks( UBaseType_t uxPriority )
 
 static portTASK_FUNCTION( vBLUEsat_UART_TestTask, pvParameters )
 {
-	// simple test, don't need this.
+	// simple test, don't need this. (not sure how to use it anyway...)
 	pvParameters = pvParameters;
-	
-	char String[] = "Hello World\n\r- UART Driver Test\n\r\n\r";
 	
 	for( ;; )
 	{
-		uart_print_string_to_serial(String);	
+		uart_write_string_to_buffer("Hello World");
+		uart_write_string_to_buffer("- UART Driver Test");
+		uart_write_string_to_buffer("");
+		uart_push_buffer_to_serial();
 	}
 }

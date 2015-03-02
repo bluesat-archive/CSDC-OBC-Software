@@ -49,7 +49,6 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 	uint16_t read_byte = 0;
 	read_byte = read_byte;
 	
-	char* p;
 	char buf[20];
 	buf[19] = 0;
 		
@@ -58,7 +57,6 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 		
 		read_byte = '0';
 
-		p = (char*)&read_byte;
 		
 		cc1120_write(CC1120_SRES, 0);
 		cc1120_read(&read_byte);
@@ -67,9 +65,7 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 		
 		uart_print_string_to_serial(buf);
 		uart_print_string_to_serial("\r\n");
-		
-		uart_write(UART, *p);
-		uart_write(UART, *(p+1));		
+				
 		for(int y = 0; y<1000; y++);
 		
 		cc1120_write(CC1120_SNOP, 1);
@@ -85,21 +81,30 @@ int i2a(char *s, int n){
 	div_t qr;
 	int pos;
 
-	if(n == 0) return 0;
+	if(n == 0) {
+		return 0;
+	}
 
 	qr = div(n, 10);
+	
 	pos = i2a(s, qr.quot);
+	
 	s[pos] = qr.rem + '0';
+	
 	return pos + 1;
 }
 
 char* my_itoa(char *output_buff, int num){
+	
 	char *p = output_buff;
-	if(num < 0){
+	
+	// check if it is even or odd
+	if (num < 0) {
 		*p++ = '-';
 		num *= -1;
-	} else if(num == 0)
+	} else if (num == 0)	
 	*p++ = '0';
 	p[i2a(p, num)]='\0';
+	
 	return output_buff;
 }
