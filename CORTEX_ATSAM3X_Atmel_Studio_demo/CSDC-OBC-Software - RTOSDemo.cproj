@@ -264,10 +264,14 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/asf/sam/drivers/can</Value>
+      <Value>../src/Drivers/asf/sam/drivers/twi</Value>
       <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
+      <Value>../src/Drivers/comms_twi</Value>
+      <Value>../src/Drivers/comms_can</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -309,10 +313,14 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/asf/sam/drivers/can</Value>
+      <Value>../src/Drivers/asf/sam/drivers/twi</Value>
       <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
+      <Value>../src/Drivers/comms_twi</Value>
+      <Value>../src/Drivers/comms_can</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -372,10 +380,14 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/asf/sam/drivers/can</Value>
+      <Value>../src/Drivers/asf/sam/drivers/twi</Value>
       <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
+      <Value>../src/Drivers/comms_twi</Value>
+      <Value>../src/Drivers/comms_can</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -414,10 +426,14 @@
       <Value>../src/Drivers/asf/sam/drivers/usart</Value>
       <Value>../src/Drivers/asf/sam/drivers/uart</Value>
       <Value>../src/Drivers/asf/sam/drivers/spi</Value>
+      <Value>../src/Drivers/asf/sam/drivers/can</Value>
+      <Value>../src/Drivers/asf/sam/drivers/twi</Value>
       <Value>../src/Drivers/comms</Value>
       <Value>../src/Drivers/comms_spi</Value>
       <Value>../src/Drivers/comms_uart</Value>
       <Value>../src/Drivers/comms_usart</Value>
+      <Value>../src/Drivers/comms_twi</Value>
+      <Value>../src/Drivers/comms_can</Value>
       <Value>../src/Drivers/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
@@ -435,10 +451,22 @@
     <Compile Include="src\Applications\blink_test\blink_test_app.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Applications\can_test\can_test_app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\can_test\can_test_app.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Applications\spi_test\spi_test_app.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Applications\spi_test\spi_test_app.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\twi_test\twi_test_app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\twi_test\twi_test_app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Applications\uart_test\uart_test_app.c">
@@ -642,6 +670,12 @@
     <Compile Include="src\Drivers\asf\sam\boards\sam3x_ek\sam3x_ek.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\can\can.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\can\can.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\pio\pio.c">
       <SubType>compile</SubType>
     </Compile>
@@ -667,6 +701,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\spi\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\twi\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\sam\drivers\twi\twi.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\uart\uart.c">
@@ -1050,10 +1090,22 @@
     <Compile Include="src\Drivers\comms\comms_drv.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\comms_can\comms_can_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_can\comms_can_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\comms_spi\comms_spi_drv.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\comms_spi\comms_spi_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_twi\comms_twi_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\comms_twi\comms_twi_drv.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\comms_uart\comms_uart_drv.c">
@@ -1111,6 +1163,8 @@
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\Applications\blink_test" />
+    <Folder Include="src\Applications\can_test" />
+    <Folder Include="src\Applications\twi_test" />
     <Folder Include="src\Applications\uart_test" />
     <Folder Include="src\Applications\spi_test" />
     <Folder Include="src\Applications\cc1120_test" />
@@ -1134,9 +1188,11 @@
     <Folder Include="src\Drivers\asf\sam\boards\" />
     <Folder Include="src\Drivers\asf\sam\boards\sam3x_ek\" />
     <Folder Include="src\Drivers\asf\sam\drivers\" />
+    <Folder Include="src\Drivers\asf\sam\drivers\can\" />
     <Folder Include="src\Drivers\asf\sam\drivers\pio\" />
     <Folder Include="src\Drivers\asf\sam\drivers\pmc\" />
     <Folder Include="src\Drivers\asf\sam\drivers\spi\" />
+    <Folder Include="src\Drivers\asf\sam\drivers\twi\" />
     <Folder Include="src\Drivers\asf\sam\drivers\uart\" />
     <Folder Include="src\Drivers\asf\sam\drivers\usart\" />
     <Folder Include="src\Drivers\asf\sam\utils\" />
@@ -1171,6 +1227,8 @@
     <Folder Include="src\Drivers\comms_uart" />
     <Folder Include="src\Drivers\comms_usart" />
     <Folder Include="src\Drivers\comms" />
+    <Folder Include="src\Drivers\comms_can" />
+    <Folder Include="src\Drivers\comms_twi" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

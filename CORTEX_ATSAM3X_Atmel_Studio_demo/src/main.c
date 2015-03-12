@@ -95,6 +95,8 @@ function. */
 #include <comms_spi_drv.h>
 #include <comms_uart_drv.h>
 #include <comms_usart_drv.h>
+#include <comms_twi_drv.h>
+#include <comms_can_drv.h>
 #include <cc1120_drv.h>
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
@@ -139,6 +141,8 @@ int main( void )
 	configure_uart();
 	configure_usart();
 	configure_spi();
+	configure_twi();
+	configure_can();
 	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
