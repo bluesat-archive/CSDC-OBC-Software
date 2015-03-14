@@ -141,8 +141,8 @@ int main( void )
 	configure_uart();
 	configure_usart();
 	configure_spi();
-	configure_twi();
-	configure_can();
+	//configure_twi();
+	//configure_can();
 	
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */

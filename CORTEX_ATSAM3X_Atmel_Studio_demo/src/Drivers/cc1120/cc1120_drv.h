@@ -17,6 +17,9 @@
 /* Access Types */
 #define CC1120_READ			0x80	// 1000 0000
 #define CC1120_WRITE		0x00	// 0000 0000
+#define CC1120_SINGLE_MODE  0x00
+#define CC1120_BURST_MODE	0x40
+
 
 /* Header Access Masks */
 #define CC1120_SINGLE_REGISTER				0xBF		// 1011 1111	
@@ -246,13 +249,67 @@
 #define CC1120_STATE_TXFIFO_ERROR       0x70
 
 /* Access Functions */
-uint32_t cc1120_write (uint16_t data, uint8_t last);
-uint32_t cc1120_read (uint16_t *data);
+uint32_t cc1120_transmit (uint8_t data, uint8_t last);
+uint32_t cc1120_receive (uint8_t *data);
+
+void cc1120_read_register_address_space(uint8_t *data_buffer);
+void cc1120_read_burst_register(uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
+void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
+
 
 /* Command Strobe Functions */
 uint32_t cc1120_reset();
 
+// struct to hold the register address space, may not use later
 
+typedef struct register_address_space {										// promise
+	uint8_t IOCFG3;
+	uint8_t IOCFG2;
+	uint8_t IOCFG1;
+	uint8_t IOCFG0;
+	uint8_t SYNC3;
+	uint8_t SYNC2;
+	uint8_t SYNC1;
+	uint8_t SYNC0;
+	uint8_t SYNC_CFG1;
+	uint8_t SYNC_CFG0;
+	uint8_t DEVIATION_M;
+	uint8_t MODCFG_DEV_E;
+	uint8_t DCFILT_CFG;
+	uint8_t PREAMBLE_CFG1;
+	uint8_t PREAMBLE_CFG0;
+	uint8_t FREQ_IF_CFG;
+	uint8_t IQIC;
+	uint8_t CHAN_BW;
+	uint8_t MDMCFG1;
+	uint8_t MDMCFG0;
+	uint8_t SYMBOL_RATE2;
+	uint8_t SYMBOL_RATE1;
+	uint8_t SYMBOL_RATE0;
+	uint8_t AGC_REF;
+	uint8_t AGC_CS_THR;
+	uint8_t AGC_GAIN_ADJUST;
+	uint8_t AGC_CFG3;
+	uint8_t AGC_CFG2;
+	uint8_t AGC_CFG1;
+	uint8_t AGC_CFG0;
+	uint8_t FIFO_CFG;
+	uint8_t DEV_ADDR;
+	uint8_t SETTLING_CFG;
+	uint8_t FS_CFG;
+	uint8_t WOR_CFG1;
+	uint8_t WOR_CFG0;
+	uint8_t WOR_EVENT0_MSB;
+	uint8_t WOR_EVENT0_LSB;
+	uint8_t PKT_CFG2;
+	uint8_t PKT_CFG1;
+	uint8_t PKT_CFG0;
+	uint8_t RFEND_CFG1;
+	uint8_t RFEND_CFG0;
+	uint8_t PA_CFG2;
+	uint8_t PA_CFG1;
+	uint8_t PKT_LEN;
+} register_address_space;
 
 
 /*

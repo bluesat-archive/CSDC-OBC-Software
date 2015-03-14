@@ -19,6 +19,7 @@
 
 static portTASK_FUNCTION_PROTO( vcc1120_TestTask, pvParameters );		// The task function.
 
+
 /* Variables that are set to true within the calculation task to indicate
 that the task is still executing.  The check task sets the variable back to
 false, flagging an error if the variable is still false the next time it
@@ -45,38 +46,69 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 	
 	uint16_t send_byte = 0;
 	send_byte = send_byte;
-	
 	uint16_t read_byte = 0;
 	read_byte = read_byte;
 	
-	char buf[20];
-	buf[19] = 0;
+	//char buf[20];
+	//buf[19] = 0;
 		
 	for (;;) {
-		//cc1120_reset();
-		
-		read_byte = '0';
-
-		
-		cc1120_write(CC1120_SRES, 0);
-		cc1120_read(&read_byte);
-		
-		my_itoa(buf, read_byte);
-		
-		uart_print_string_to_serial(buf);
-		uart_print_string_to_serial("\r\n");
-				
-		for(int y = 0; y<1000; y++);
-		
-		cc1120_write(CC1120_SNOP, 1);
-		for(int y = 0; y<1000; y++);
-		
-		cc1120_write(CC1120_SNOP, 1);
-		for(int y = 0; y<1000; y++);
-		for(int y = 0; y<100000; y++);
+		//cc1200_test_one();
+		cc1120_burst_test();
 	}
 }
 
+void cc1120_test_one() {
+	uint16_t send_byte = 0;
+	
+	cc1120_transmit(CC1120_SRES, 1);				// reset chip
+	for(int y = 0; y<1000; y++);
+		
+	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte
+	cc1120_transmit(send_byte, 0);
+	send_byte = CC1120_SNOP;					// read byte 
+	cc1120_transmit(send_byte, 1);
+		
+	for(int y = 0; y<1000; y++);
+		
+	send_byte = CC1120_IOCFG3 | CC1120_WRITE;	// send header byte
+	cc1120_transmit(send_byte, 0);
+	send_byte = 0x55;							// write byte
+	cc1120_transmit(send_byte, 1);
+		
+	for(int y = 0; y<1000; y++);
+		
+	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte 
+	cc1120_transmit(send_byte, 0);
+	send_byte = CC1120_SNOP;					// read byte 
+	cc1120_transmit(send_byte, 1);
+		
+	for(int y = 0; y<50000; y++);
+}
+
+void cc1120_burst_test() {	
+	
+	cc1120_transmit(CC1120_SRES, 1);		// reset the chip
+	for (int y = 0; y<1000; y++);			// delay
+	
+	uint8_t data_buf_tx[4];
+	uint8_t data_buf_rx[4];
+	data_buf_tx[0] = 0x55;
+	data_buf_tx[1] = 0x81;
+	data_buf_tx[2] = 0x55;
+	data_buf_tx[3] = 0x81;
+	
+	cc1120_write_burst_register(CC1120_IOCFG3, data_buf_tx, 4);		// write buffer
+	
+	for (int y = 0; y<1000; y++);						// delay
+	
+	
+	cc1120_read_burst_register(CC1120_IOCFG3, data_buf_rx, 4);	// read four bits
+	
+	for (int y = 0; y<10000; y++);			// large delay
+}
+
+/*
 int i2a(char *s, int n){
 	div_t qr;
 	int pos;
@@ -108,3 +140,4 @@ char* my_itoa(char *output_buff, int num){
 	
 	return output_buff;
 }
+*/

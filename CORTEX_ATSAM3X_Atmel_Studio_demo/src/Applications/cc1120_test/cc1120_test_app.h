@@ -13,8 +13,12 @@
 
 void vStartcc1120_testTasks( UBaseType_t uxPriority );
 
-int i2a(char *s, int n);
+// list of test functions
+void cc1120_test_one();
+void cc1120_burst_test();
 
-char* my_itoa(char *output_buff, int num);
+//int i2a(char *s, int n);
+
+//char* my_itoa(char *output_buff, int num);
 
 #endif /* CC1120_TEST_APP_H_ */
