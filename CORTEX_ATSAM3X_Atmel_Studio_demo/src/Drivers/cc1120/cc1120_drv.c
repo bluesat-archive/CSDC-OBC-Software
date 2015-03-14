@@ -46,30 +46,24 @@ void cc1120_read_register_address_space(uint8_t *data_buffer) {
 }
 
 // Single Register Access
-/*
-void cc1120_read_single() {
-	cc1120_transmit()
-}
-
-void cc1120_write_single() {
-	
-}
-*/
-// Burst Register access
-
-void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
-	
+void cc1120_read_single(uint8_t address, uint8_t *data_buffer) {
+	address = address;
 	data_buffer = data_buffer;
-	
+}
+void cc1120_write_single(uint8_t address, uint8_t *data_buffer) {
+	address = address;
+	data_buffer = data_buffer;
+}
+
+// Burst Register access
+void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
+	data_buffer = data_buffer;
 	cc1120_transmit(start_address | CC1120_READ | CC1120_BURST_MODE, 0);
-	
 	for (uint32_t y = 0; y < iterations-1; y++) {
 		cc1120_transmit(CC1120_SNOP, 0);
-		//cc1120_receive(data_buffer+y);
 	}
 	cc1120_transmit(CC1120_SNOP, 1);
 }
-
 void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
 	cc1120_transmit(start_address | CC1120_WRITE | CC1120_BURST_MODE, 0);
 	for (uint32_t y = 0; y < iterations-1; y++) {
@@ -77,3 +71,45 @@ void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, u
 	}
 	cc1120_transmit(data_buffer[iterations-1], 1);
 }
+
+// Burst Extended Register Access
+void cc1120_read_single_extended(uint8_t address, uint8_t *data_buffer) {
+	cc1120_transmit(CC1120_READ | CC1120_SINGLE_MODE | CC1120_EXTENDED, 0);
+	cc1120_transmit(address, 1);
+	address = address;
+	data_buffer = data_buffer;
+}
+void cc1120_write_single_extended(uint8_t address, uint8_t *data_buffer) {
+	cc1120_transmit(CC1120_WRITE | CC1120_SINGLE_MODE | CC1120_EXTENDED, 0);
+	cc1120_transmit(address, 1);
+	address = address;
+	data_buffer = data_buffer;
+}
+
+// Burst Extended Register Access
+void cc1120_read_burst_extended(uint8_t start_address, uint8_t *data_buffer) {
+	cc1120_transmit(CC1120_READ | CC1120_BURST_MODE | CC1120_EXTENDED, 0);
+	cc1120_transmit(start_address, 1);
+	start_address = start_address;
+	data_buffer = data_buffer;
+}
+void cc1120_write_burst_extended(uint8_t start_address, uint8_t *data_buffer) {
+	cc1120_transmit(CC1120_WRITE | CC1120_BURST_MODE | CC1120_EXTENDED, 0);
+	cc1120_transmit(start_address, 1);
+	start_address = start_address;
+	data_buffer = data_buffer;
+}
+
+// Command Strobes
+
+
+
+// Direct FIF0 Access
+
+
+
+// Standard FIFO Access
+
+
+
+

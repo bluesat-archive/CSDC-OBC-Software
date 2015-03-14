@@ -15,21 +15,14 @@
 
 
 /* Access Types */
-#define CC1120_READ			0x80	// 1000 0000
-#define CC1120_WRITE		0x00	// 0000 0000
-#define CC1120_SINGLE_MODE  0x00
-#define CC1120_BURST_MODE	0x40
+#define CC1120_READ			0x80	// 1--- ----
+#define CC1120_WRITE		0x00	// 0--- ----
+#define CC1120_SINGLE_MODE  0x00	// -0-- ----
+#define CC1120_BURST_MODE	0x40	// -1-- ----
+#define CC1120_EXTENDED		0x2F	// --10 1111
+#define CC1120_DIRECT_FIFO	0x3E	// --11 1110
+#define CC1120_STD_FIFO		0x3F	// --11 1111
 
-
-/* Header Access Masks */
-#define CC1120_SINGLE_REGISTER				0xBF		// 1011 1111	
-#define CC1120_BURST_REGISTER				0x		// 1111 1111
-#define CC1120_SINGLE_EXTENDED_REGISTER		0x		
-#define CC1120_BURST_EXTENDED_REGISTER		0x
-#define CC1120_COMMAND_STROBE				0x
-#define CC1120_DIRECT_FIFO					0x								// lol
-#define CC1120_STANDARD_FIFO				0x									// will come back to fix this 
-																	// soon
 /* Configuration Registers */																					// promise
 #define CC1120_IOCFG3                   0x00
 #define CC1120_IOCFG2                   0x01
@@ -253,9 +246,18 @@ uint32_t cc1120_transmit (uint8_t data, uint8_t last);
 uint32_t cc1120_receive (uint8_t *data);
 
 void cc1120_read_register_address_space(uint8_t *data_buffer);
+// Single Register Access
+void cc1120_read_single(uint8_t address, uint8_t *data_buffer);
+void cc1120_write_single(uint8_t address, uint8_t *data_buffer);
+// Burst Register Access
 void cc1120_read_burst_register(uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
 void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
-
+// Single Extended Register Access
+void cc1120_read_single_extended(uint8_t address, uint8_t *data_buffer);
+void cc1120_write_single_extended(uint8_t address, uint8_t *data_buffer);
+// Burst Extended Register Access
+void cc1120_read_burst_extended(uint8_t address, uint8_t *data_buffer);
+void cc1120_write_burst_extended(uint8_t address, uint8_t *data_buffer);
 
 /* Command Strobe Functions */
 uint32_t cc1120_reset();

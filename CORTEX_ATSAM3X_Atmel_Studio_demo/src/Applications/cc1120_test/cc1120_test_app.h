@@ -17,6 +17,8 @@ void vStartcc1120_testTasks( UBaseType_t uxPriority );
 void cc1120_test_one();
 void cc1120_burst_test();
 
+void CC1120_read_test();
+
 //int i2a(char *s, int n);
 
 //char* my_itoa(char *output_buff, int num);
