@@ -46,18 +46,18 @@ void cc1120_read_register_address_space(uint8_t *data_buffer) {
 }
 
 // Single Register Access
-void cc1120_read_single(uint8_t address, uint8_t *data_buffer) {
-	address = address;
-	data_buffer = data_buffer;
+void cc1120_read_single(uint8_t start_address, uint8_t *data_buffer) {
+	cc1120_transmit(start_address | CC1120_READ | CC1120_SINGLE_MODE, 0);
+	cc1120_receive(data_buffer);
+	//cc1120_transmit(CC1120_SNOP, 1);
 }
-void cc1120_write_single(uint8_t address, uint8_t *data_buffer) {
-	address = address;
-	data_buffer = data_buffer;
+void cc1120_write_single(uint8_t start_address, uint8_t *data_buffer) {
+	cc1120_transmit(start_address | CC1120_WRITE | CC1120_SINGLE_MODE, 0);
+	cc1120_transmit(*data_buffer, 1);
 }
 
 // Burst Register access
 void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
-	
 	uint8_t spi_instance = 0001;
 	uint8_t *current_buffer = data_buffer;
 	
@@ -69,7 +69,7 @@ void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, ui
 	}
 	cc1120_transmit(CC1120_SNOP, 1);
 }
-void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
+void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) { //works
 	cc1120_transmit(start_address | CC1120_WRITE | CC1120_BURST_MODE, 0);
 	for (uint32_t y = 0; y < iterations-1; y++) {
 		cc1120_transmit(data_buffer[y], 0);
