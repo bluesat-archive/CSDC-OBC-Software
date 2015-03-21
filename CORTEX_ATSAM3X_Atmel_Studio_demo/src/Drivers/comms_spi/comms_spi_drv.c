@@ -91,5 +91,5 @@ void SPI0_Handler (void) {
 	spi_read(SPI0, &read_data, &spi_p);
 	write_to_spi_buffer(read_data);
 	
-	//NVIC_ClearPendingIRQ(SPI0_IRQn);
+	NVIC_ClearPendingIRQ(SPI0_IRQn);
 }
