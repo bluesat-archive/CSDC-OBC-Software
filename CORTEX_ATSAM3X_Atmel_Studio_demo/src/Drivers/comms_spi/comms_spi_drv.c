@@ -12,7 +12,7 @@
 #include "comms_spi_drv.h"
 
 #define POLARITY_FLAG							0						// Flags for the clock polarity and phase
-#define BAUD_RATE								9600					// Baud rate
+#define BAUD_RATE								115200					// Baud rate
 #define CONFIG_SPI_MASTER_DELAY_BS				0						// Delay before SPCK (in number of MCK clocks).
 #define CONFIG_SPI_MASTER_DELAY_BCS				0						// Delay between chip selects (in number of MCK clocks). 
 #define CONFIG_SPI_MASTER_DELAY_BCT				0						// Delay between consecutive transfers (in number of MCK clocks).
@@ -36,15 +36,8 @@ void configure_spi(){
 	spi_master_configure_device(SPI0, SPI_DEVICE_0, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 10
 	spi_master_configure_device(SPI0, SPI_DEVICE_1, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 4 (CC1120)
 	
-	spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);
-	
-	NVIC_EnableIRQ(SPI0_IRQn);
-	
-	NVIC_Type* temp_2 = NVIC;
-	temp_2 = temp_2;
-	
-	Spi* temp = SPI0;
-	temp = temp;
+	spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);						// Set what what will trigger the SPI interrupt
+	NVIC_EnableIRQ(SPI0_IRQn);											// Enables the SPI handler in the interrupt controller thing
 }
 
 void spi_master_configure(Spi *p_spi)
@@ -84,11 +77,14 @@ void write_to_spi_buffer(uint8_t data) {
 }
 
 void SPI0_Handler (void) {
-
-	uint8_t spi_p = 0001;
-	// break and check it reaches here
+	uint8_t spi_select = 2;
 	uint16_t read_data = 0;	
-	spi_read(SPI0, &read_data, &spi_p);
+	spi_read(SPI0, &read_data, &spi_select);
+	
+	
+		
+	
+	
 	write_to_spi_buffer(read_data);
 	
 	NVIC_ClearPendingIRQ(SPI0_IRQn);

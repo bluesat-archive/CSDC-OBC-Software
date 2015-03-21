@@ -11,8 +11,7 @@
 
 #define SPI_DEVICE_CC1120	SPI_DEVICE_1
 
-#define CC1120_MAX_SPI_ACCESS_ADDRESS		0x3F
-
+#define STROBE(command) cc1120_transmit(command, 1)
 
 /* Access Types */
 #define CC1120_READ			0x80	// 1--- ----
@@ -23,7 +22,7 @@
 #define CC1120_DIRECT_FIFO	0x3E	// --11 1110
 #define CC1120_STD_FIFO		0x3F	// --11 1111
 
-/* Configuration Registers */																					// promise
+/* Configuration Registers */
 #define CC1120_IOCFG3                   0x00
 #define CC1120_IOCFG2                   0x01
 #define CC1120_IOCFG1                   0x02
@@ -260,7 +259,7 @@ void cc1120_read_burst_extended(uint8_t address, uint8_t *data_buffer);
 void cc1120_write_burst_extended(uint8_t address, uint8_t *data_buffer);
 
 /* Command Strobe Functions */
-uint32_t cc1120_reset();
+//uint32_t cc1120_reset();
 
 // struct to hold the register address space, may not use later
 

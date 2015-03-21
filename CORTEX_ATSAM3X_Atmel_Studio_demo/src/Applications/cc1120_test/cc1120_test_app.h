@@ -16,7 +16,6 @@ void vStartcc1120_testTasks( UBaseType_t uxPriority );
 // list of test functions
 void cc1120_test_one();
 void cc1120_burst_test();
-
 void CC1120_read_test();
 
 //int i2a(char *s, int n);
