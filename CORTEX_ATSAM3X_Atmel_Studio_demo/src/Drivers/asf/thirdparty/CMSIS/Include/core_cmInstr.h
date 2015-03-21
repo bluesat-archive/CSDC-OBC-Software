@@ -83,7 +83,7 @@
     This function acts as a special kind of Data Memory Barrier. 
     It completes when all explicit memory accesses before this instruction complete.
  */
-#define __DSB()                           __dsb(0xF)
+#define  ()                           __dsb(0xF)
 
 
 /** \brief  Data Memory Barrier

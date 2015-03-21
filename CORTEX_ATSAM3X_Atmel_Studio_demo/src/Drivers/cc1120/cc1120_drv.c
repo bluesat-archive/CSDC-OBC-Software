@@ -57,10 +57,15 @@ void cc1120_write_single(uint8_t address, uint8_t *data_buffer) {
 
 // Burst Register access
 void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
-	data_buffer = data_buffer;
+	
+	uint8_t spi_instance = 0001;
+	uint8_t *current_buffer = data_buffer;
+	
 	cc1120_transmit(start_address | CC1120_READ | CC1120_BURST_MODE, 0);
 	for (uint32_t y = 0; y < iterations-1; y++) {
 		cc1120_transmit(CC1120_SNOP, 0);
+		//spi_read(SPI0, (uint16_t *)current_buffer, &spi_instance);
+		current_buffer++;
 	}
 	cc1120_transmit(CC1120_SNOP, 1);
 }
@@ -99,11 +104,51 @@ void cc1120_write_burst_extended(uint8_t start_address, uint8_t *data_buffer) {
 	start_address = start_address;
 	data_buffer = data_buffer;
 }
-
+/*
 // Command Strobes
-
-
-
+void reset_chip() {
+	cc1120_transmit(CC1120_SRES, 1);
+}
+void toggle_frequency_synthesizer() {
+	cc1120_transmit(CC1120_SFSTXON, 1);
+}
+void XOFF_on_CSn_deassert() {
+	cc1120_transmit(CC1120_SXOFF, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SCAL, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SRX, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_STX, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SIDLE, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_AFC, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SWOR, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SPWD, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SFRX, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SFTX, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SWORRST, 1);
+}
+void reset_chip() {
+	cc1120_transmit(CC1120_SNOP, 1);
+}
+*/
 // Direct FIF0 Access
 
 

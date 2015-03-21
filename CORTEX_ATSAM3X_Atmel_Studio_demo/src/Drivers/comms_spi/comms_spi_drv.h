@@ -19,4 +19,5 @@ void spi_master_configure(Spi *p_spi);
 void spi_master_configure_device(Spi *p_spi, uint32_t device_id, uint32_t flags, uint32_t baud_rate);
 void BLUEsat_spi_write_string (char* c, uint32_t peripheral_select);
 
+void write_to_spi_buffer(uint8_t data);
 #endif /* BLUESAT_SPI_DRV_H_ */

@@ -112,7 +112,7 @@ void USART3_Handler     ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void HSMCI_Handler      ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TWI0_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TWI1_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void SPI0_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
+void SPI0_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));		// changed name in spi driver
 #ifdef _SAM3XA_SPI1_INSTANCE_
 void SPI1_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 #endif /* _SAM3XA_SPI1_INSTANCE_ */
@@ -192,7 +192,7 @@ void CAN1_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 #pragma weak HSMCI_Handler=Dummy_Handler
 #pragma weak TWI0_Handler=Dummy_Handler
 #pragma weak TWI1_Handler=Dummy_Handler
-#pragma weak SPI0_Handler=Dummy_Handler
+#pragma weak SPI0_Handler=SPI0_Handler
 #ifdef _SAM3XA_SPI1_INSTANCE_
 #pragma weak SPI1_Handler=Dummy_Handler
 #endif /* _SAM3XA_SPI1_INSTANCE_ */

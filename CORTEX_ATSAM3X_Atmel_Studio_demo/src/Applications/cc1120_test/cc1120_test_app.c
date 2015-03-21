@@ -54,8 +54,8 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 		
 	for (;;) {
 		// cc1200_test_one();
-		// cc1120_burst_test();
-		CC1120_read_test();
+		cc1120_burst_test();
+		// CC1120_read_test();
 	}
 }
 
@@ -99,15 +99,14 @@ void cc1120_burst_test() {
 	data_buf_tx[3] = 0x81;
 	
 	uint8_t data_buf_rx[4];
-	data_buf_rx[0] = 0;
-	data_buf_rx[1] = 0;
-	data_buf_rx[2] = 0;
-	data_buf_rx[3] = 0;
+	data_buf_rx[0] = 'z';
+	data_buf_rx[1] = 'z';
+	data_buf_rx[2] = 'z';
+	data_buf_rx[3] = 'z';
 	
 	cc1120_write_burst_register(CC1120_IOCFG3, data_buf_tx, 4);		// write buffer
 	
 	for (int y = 0; y<1000; y++);						// delay
-	
 	
 	cc1120_read_burst_register(CC1120_IOCFG3, data_buf_rx, 4);	// read four bits
 	
@@ -119,6 +118,8 @@ void CC1120_read_test() {
 	uint8_t send_byte;
 	uint16_t new_data = 0;
 	uint8_t spi_p = 0001;
+	
+	for (int y = 0; y<10000; y++);
 	
 	cc1120_transmit(CC1120_SRES, 1);				// reset chip
 	for(int y = 0; y<1000; y++);
@@ -133,7 +134,8 @@ void CC1120_read_test() {
 	cc1120_transmit(send_byte, 0);
 	send_byte = CC1120_SNOP;
 	
-	spi_read(SPI0, &new_data, &spi_p);
+	while(spi_read(SPI0, &new_data, &spi_p));
+	
 	cc1120_transmit(send_byte, 1);
 	
 //	cc1120_receive(new_data);				

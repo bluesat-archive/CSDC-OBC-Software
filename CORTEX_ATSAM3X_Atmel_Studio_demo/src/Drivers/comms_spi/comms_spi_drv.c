@@ -18,6 +18,11 @@
 #define CONFIG_SPI_MASTER_DELAY_BCT				0						// Delay between consecutive transfers (in number of MCK clocks).
 #define CONFIG_SPI_MASTER_BITS_PER_TRANSFER		SPI_CSR_BITS_8_BIT		// Size of data transfer
 
+#define INTERRUPT_FLAGS							SPI_IDR_RDRF
+
+static uint8_t spi_buffer_start[250];
+static uint32_t spi_buffer_position = 0;
+
 void configure_spi(){
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO);		// enables MISO pin
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA26A_SPI0_MOSI);		// enables MOSI pin
@@ -30,6 +35,16 @@ void configure_spi(){
 	
 	spi_master_configure_device(SPI0, SPI_DEVICE_0, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 10
 	spi_master_configure_device(SPI0, SPI_DEVICE_1, POLARITY_FLAG, BAUD_RATE);		// configures SPI for slave on pin 4 (CC1120)
+	
+	spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);
+	
+	NVIC_EnableIRQ(SPI0_IRQn);
+	
+	NVIC_Type* temp_2 = NVIC;
+	temp_2 = temp_2;
+	
+	Spi* temp = SPI0;
+	temp = temp;
 }
 
 void spi_master_configure(Spi *p_spi)
@@ -57,4 +72,24 @@ void BLUEsat_spi_write_string (char* c, uint32_t peripheral_select) {
 	for (uint32_t pos = 0; c[pos] != '\0'; pos++) {
 		spi_write(SPI0, c[pos], peripheral_select, c[pos+1] == '\0');
 	}
+}
+
+void write_to_spi_buffer(uint8_t data) {
+	spi_buffer_start[spi_buffer_position] = data;
+	spi_buffer_position++;
+	
+	if (spi_buffer_position>250) {
+		spi_buffer_position = 0;
+	}
+}
+
+void SPI0_Handler (void) {
+
+	uint8_t spi_p = 0001;
+	// break and check it reaches here
+	uint16_t read_data = 0;	
+	spi_read(SPI0, &read_data, &spi_p);
+	write_to_spi_buffer(read_data);
+	
+	//NVIC_ClearPendingIRQ(SPI0_IRQn);
 }
