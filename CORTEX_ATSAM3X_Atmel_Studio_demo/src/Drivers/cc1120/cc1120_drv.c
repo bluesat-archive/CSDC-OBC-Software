@@ -49,7 +49,7 @@ void cc1120_read_register_address_space(uint8_t *data_buffer) {
 void cc1120_read_single(uint8_t start_address, uint8_t *data_buffer) {
 	cc1120_transmit(start_address | CC1120_READ | CC1120_SINGLE_MODE, 0);
 	cc1120_receive(data_buffer);
-	cc1120_transmit(CC1120_SNOP, 1);
+	//cc1120_transmit(CC1120_SNOP, 1);
 }
 void cc1120_write_single(uint8_t start_address, uint8_t *data_buffer) {
 	cc1120_transmit(start_address | CC1120_WRITE | CC1120_SINGLE_MODE, 0);
