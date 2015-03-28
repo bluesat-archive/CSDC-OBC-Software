@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #include <asf.h>
-#include "comms_spi_drv.h"
+#include <comms_spi_drv.h>
 
 #define POLARITY_FLAG							0						// Flags for the clock polarity and phase
 #define BAUD_RATE								115200					// Baud rate
@@ -19,9 +19,6 @@
 #define CONFIG_SPI_MASTER_BITS_PER_TRANSFER		SPI_CSR_BITS_8_BIT		// Size of data transfer
 
 #define INTERRUPT_FLAGS							SPI_IDR_RDRF
-
-static uint8_t spi_buffer_start[250];
-static uint32_t spi_buffer_position = 0;
 
 void configure_spi(){
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO);		// enables MISO pin
@@ -68,10 +65,10 @@ void BLUEsat_spi_write_string (char* c, uint32_t peripheral_select) {
 }
 
 void write_to_spi_buffer(uint8_t data) {
-	spi_buffer_start[spi_buffer_position] = data;
+	spi_buffer[spi_buffer_position] = data;
 	spi_buffer_position++;
 	
-	if (spi_buffer_position>250) {
+	if (spi_buffer_position > SPI_BUFFER_SIZE) {
 		spi_buffer_position = 0;
 	}
 }
@@ -80,12 +77,8 @@ void SPI0_Handler (void) {
 	uint8_t spi_select = 2;
 	uint16_t read_data = 0;	
 	spi_read(SPI0, &read_data, &spi_select);
-	
-	
-		
-	
-	
 	write_to_spi_buffer(read_data);
 	
-	NVIC_ClearPendingIRQ(SPI0_IRQn);
+	// NVIC_ClearPendingIRQ(SPI0_IRQn);
+	// commenting this out until we need it
 }

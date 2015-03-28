@@ -9,6 +9,10 @@
 #ifndef BLUESAT_SPI_DRV_H_
 #define BLUESAT_SPI_DRV_H_
 
+#define SPI_BUFFER_SIZE							250						// size in bytes
+uint8_t spi_buffer[SPI_BUFFER_SIZE];
+uint32_t spi_buffer_position;
+
 #define SPI_DEVICE_0	0000
 #define SPI_DEVICE_1	0001
 #define SPI_DEVICE_2	0011
