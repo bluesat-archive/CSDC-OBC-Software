@@ -73,12 +73,24 @@ void write_to_spi_buffer(uint8_t data) {
 	}
 }
 
+void read_top_spi_buffer(uint8_t *data) {
+    *data = spi_buffer[spi_buffer_position];
+}
+
 void SPI0_Handler (void) {
+    
+    // temp solution, not sure exactly how we'll design SPI 
+    // receive buffers with multiple slaves
 	uint8_t spi_select = 2;
 	uint16_t read_data = 0;	
+    
+    // Reads from the SPI receive register
 	spi_read(SPI0, &read_data, &spi_select);
+    
+    // Write into the buffer
 	write_to_spi_buffer(read_data);
 	
+	// commenting this out until we 
+    // figure out if we need it
 	// NVIC_ClearPendingIRQ(SPI0_IRQn);
-	// commenting this out until we need it
 }
