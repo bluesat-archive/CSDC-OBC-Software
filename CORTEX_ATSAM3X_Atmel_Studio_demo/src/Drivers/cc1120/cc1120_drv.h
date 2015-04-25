@@ -11,8 +11,7 @@
 
 #define SPI_DEVICE_CC1120	SPI_DEVICE_1
 
-#define CC1120_MAX_SPI_ACCESS_ADDRESS		0x3F
-
+#define STROBE(command) cc1120_transmit(command, 1)
 
 /* Access Types */
 #define CC1120_READ			0x80	// 1--- ----
@@ -23,7 +22,7 @@
 #define CC1120_DIRECT_FIFO	0x3E	// --11 1110
 #define CC1120_STD_FIFO		0x3F	// --11 1111
 
-/* Configuration Registers */																					// promise
+/* Configuration Registers */
 #define CC1120_IOCFG3                   0x00
 #define CC1120_IOCFG2                   0x01
 #define CC1120_IOCFG1                   0x02
@@ -229,7 +228,7 @@
 #define CC1120_SFRX                     0x3A      /*  SFRX    - Flush the RX FIFO buffer. */
 #define CC1120_SFTX                     0x3B      /*  SFTX    - Flush the TX FIFO buffer. */
 #define CC1120_SWORRST                  0x3C      /*  SWORRST - Reset real time clock. */
-#define CC1120_SNOP                     0x3D      /*  SNOP    - No operation. Returns status byte. */
+#define cc1120_SNOP                  0x3D      /*  SNOP    - No operation. Returns status byte. */
 
 /* Chip states returned in status byte */
 #define CC1120_STATE_IDLE               0x00
@@ -241,78 +240,10 @@
 #define CC1120_STATE_RXFIFO_ERROR       0x60
 #define CC1120_STATE_TXFIFO_ERROR       0x70
 
-/* Access Functions */
-uint32_t cc1120_transmit (uint8_t data, uint8_t last);
-uint32_t cc1120_receive (uint8_t *data);
 
-void cc1120_read_register_address_space(uint8_t *data_buffer);
-// Single Register Access
-void cc1120_read_single(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_single(uint8_t address, uint8_t *data_buffer);
-// Burst Register Access
-void cc1120_read_burst_register(uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
-void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
-// Single Extended Register Access
-void cc1120_read_single_extended(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_single_extended(uint8_t address, uint8_t *data_buffer);
-// Burst Extended Register Access
-void cc1120_read_burst_extended(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_burst_extended(uint8_t address, uint8_t *data_buffer);
 
 /* Command Strobe Functions */
-uint32_t cc1120_reset();
-
-// struct to hold the register address space, may not use later
-
-typedef struct register_address_space {										// promise
-	uint8_t IOCFG3;
-	uint8_t IOCFG2;
-	uint8_t IOCFG1;
-	uint8_t IOCFG0;
-	uint8_t SYNC3;
-	uint8_t SYNC2;
-	uint8_t SYNC1;
-	uint8_t SYNC0;
-	uint8_t SYNC_CFG1;
-	uint8_t SYNC_CFG0;
-	uint8_t DEVIATION_M;
-	uint8_t MODCFG_DEV_E;
-	uint8_t DCFILT_CFG;
-	uint8_t PREAMBLE_CFG1;
-	uint8_t PREAMBLE_CFG0;
-	uint8_t FREQ_IF_CFG;
-	uint8_t IQIC;
-	uint8_t CHAN_BW;
-	uint8_t MDMCFG1;
-	uint8_t MDMCFG0;
-	uint8_t SYMBOL_RATE2;
-	uint8_t SYMBOL_RATE1;
-	uint8_t SYMBOL_RATE0;
-	uint8_t AGC_REF;
-	uint8_t AGC_CS_THR;
-	uint8_t AGC_GAIN_ADJUST;
-	uint8_t AGC_CFG3;
-	uint8_t AGC_CFG2;
-	uint8_t AGC_CFG1;
-	uint8_t AGC_CFG0;
-	uint8_t FIFO_CFG;
-	uint8_t DEV_ADDR;
-	uint8_t SETTLING_CFG;
-	uint8_t FS_CFG;
-	uint8_t WOR_CFG1;
-	uint8_t WOR_CFG0;
-	uint8_t WOR_EVENT0_MSB;
-	uint8_t WOR_EVENT0_LSB;
-	uint8_t PKT_CFG2;
-	uint8_t PKT_CFG1;
-	uint8_t PKT_CFG0;
-	uint8_t RFEND_CFG1;
-	uint8_t RFEND_CFG0;
-	uint8_t PA_CFG2;
-	uint8_t PA_CFG1;
-	uint8_t PKT_LEN;
-} register_address_space;
-
+//uint32_t cc1120_reset();
 
 /*
 rfStatus_t CC1120SpiReadReg(uint16 addr, uint8 *data, uint8 len);
@@ -321,8 +252,46 @@ rfStatus_t CC1120GetRxStatus(void);
 rfStatus_t CC1120SpiWriteReg(uint16 addr, uint8 *data, uint8 len);
 rfStatus_t CC1120SpiWriteTxFifo(uint8 *pWriteData, uint8 len);
 rfStatus_t CC1120SpiReadRxFifo(uint8 *pReadData, uint8 len);
-
-
 */
+
+/* ------------------ SPI TX/RX ---------------------------- */
+uint32_t cc1120_transmit (uint8_t data, uint8_t last);
+uint32_t cc1120_receive (uint8_t *data);
+
+/* ------------------ REGISTER ACCESS ----------------------- */
+void cc1120_read_single(uint8_t address, uint8_t *data);
+void cc1120_write_single(uint8_t address, uint8_t *data);
+void cc1120_read_burst_register(uint8_t address, uint8_t *data, uint32_t iterations);
+void cc1120_write_burst_register (uint8_t address, uint8_t *data, uint32_t iterations);
+
+/* ------------------ EXTENDED REGISTER ACCESS -------------- */
+void cc1120_read_single_extended(uint8_t address, uint8_t *data);
+void cc1120_write_single_extended(uint8_t address, uint8_t *data);
+void cc1120_read_burst_extended(uint8_t address, uint8_t *data, uint32_t iterations);
+void cc1120_write_burst_extended(uint8_t address, uint8_t *data, uint32_t iterations);
+
+/* ------------------ COMMAND STROBES ----------------------- */
+void cc1120_cs_reset_chip();
+void cc1120_cs_toggle_frequency_synthesizer();
+void cc1120_cs_XOFF_on_CSn_deassert();
+void cc1120_cs_calibrate_frequency_synthesizer();
+void cc1120_cs_enable_rx_mode();
+void cc1120_cs_enable_tx_mode();
+void cc1120_cs_enable_idle_mode();
+void cc1120_cs_automatic_frequency_compensation();
+void cc1120_cs_start_auto_rx_polling();
+void cc1120_cs_enter_sleep_on_CSn_deassert();
+void cc1120_cs_flush_rx_fifo();
+void cc1120_cs_flush_tx_fifo();
+void cc1120_cs_reset_eWOR_timer();
+void cc1120_cs_SNOP();
+
+/* ------------------ EXTENDED FUNCTIONS ----------------------- */
+void cc1120_read_register_address_space(uint8_t *data_buffer);
+void cc1120_reset_to_bluesat_default();
+void cc1120_send_last_byte();
+
+
+
 
 #endif /* CC1120_DRV_H_ */

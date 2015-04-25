@@ -67,7 +67,7 @@ void cc1120_test_one() {
 		
 	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte
 	cc1120_transmit(send_byte, 0);
-	send_byte = CC1120_SNOP;					// read byte 
+	send_byte = cc1120_SNOP;					// read byte 
 	cc1120_transmit(send_byte, 1);
 		
 	for(int y = 0; y<1000; y++);
@@ -81,7 +81,7 @@ void cc1120_test_one() {
 		
 	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte 
 	cc1120_transmit(send_byte, 0);
-	send_byte = CC1120_SNOP;					// read byte 
+	send_byte = cc1120_SNOP;					// read byte 
 	cc1120_transmit(send_byte, 1);
 		
 	for(int y = 0; y<50000; y++);
@@ -132,7 +132,7 @@ void CC1120_read_test() {
 	
 	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte
 	cc1120_transmit(send_byte, 0);
-	send_byte = CC1120_SNOP;
+	send_byte = cc1120_SNOP;
 	
 	while(spi_read(SPI0, &new_data, &spi_p));
 	
