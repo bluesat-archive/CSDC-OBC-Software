@@ -58,7 +58,7 @@ void cc1120_write_single(uint8_t start_address, uint8_t *data_buffer) {
 
 // Burst Register access
 void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) {
-	uint8_t spi_instance = 0001;
+	//uint8_t spi_instance = 0001;
 	uint8_t *current_buffer = data_buffer;
 	
 	cc1120_transmit(start_address | CC1120_READ | CC1120_BURST_MODE, 0);
