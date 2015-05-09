@@ -485,135 +485,6 @@
     <Compile Include="src\Applications\cc1120_test\cc1120_test_app.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Common-Demo-Source\BlockQ.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\blocktim.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\comtest.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\countsem.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\death.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\dynamic.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\flash_timer.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\GenQTest.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\AltBlckQ.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\AltBlock.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\AltPollQ.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\AltQTest.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\BlockQ.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\blocktim.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\comtest.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\comtest2.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\comtest_strings.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\countsem.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\crflash.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\crhook.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\death.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\demo_serial.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\dynamic.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\fileIO.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\flash.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\flash_timer.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\flop.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\GenQTest.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\integer.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\IntQueue.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\mevents.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\partest.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\PollQ.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\print.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\QPeek.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\recmutex.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\semtest.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\serial.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\include\TimerDemo.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\integer.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\PollQ.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\recmutex.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Common-Demo-Source\semtest.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\Drivers\asf\common\boards\board.h">
       <SubType>compile</SubType>
     </Compile>
@@ -1133,16 +1004,7 @@
     <Compile Include="src\main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\main_blinky.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\main_full.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\ParTest.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\serial.c">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\asf.h">
@@ -1172,8 +1034,6 @@
     <Folder Include="src\Applications\uart_test" />
     <Folder Include="src\Applications\spi_test" />
     <Folder Include="src\Applications\cc1120_test" />
-    <Folder Include="src\Common-Demo-Source\" />
-    <Folder Include="src\Common-Demo-Source\include\" />
     <Folder Include="src\Applications\" />
     <Folder Include="src\Applications" />
     <Folder Include="src\Drivers" />

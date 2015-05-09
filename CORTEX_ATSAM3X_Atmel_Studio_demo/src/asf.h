@@ -81,7 +81,7 @@
 // From module: pio_handler support enabled
 #include <pio_handler.h>
 
-// From module: USART - Univ. Syn Async Rec/Trans
+// Communication Drivers
 #include <usart.h>
 #include <uart.h>
 #include <spi.h>
