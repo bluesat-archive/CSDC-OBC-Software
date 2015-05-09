@@ -73,6 +73,14 @@
 /* Atmel library includes. */
 #include <asf.h>
 
+/* BLUEsat Application includes. */
+#include <blink_test/blink_test_app.h>
+#include <uart_test/uart_test_app.h>
+#include <spi_test/spi_test_app.h>
+#include <cc1120_test/cc1120_test_app.h>
+#include <twi_test/twi_test_app.h>
+#include <can_test/can_test_app.h>
+
 /* BLUEsat library includes */
 #include <comms_spi_drv.h>
 #include <comms_uart_drv.h>
@@ -82,20 +90,15 @@
 
 /*-----------------------------------------------------------*/
 
-/*
- * Set up the hardware ready to run this demo.
- */
 static void prvSetupHardware( void );
-
-/*
- * main_blinky() is used when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 1.
- * main_full() is used when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 0.
- */
-extern void main_blinky( void );
-extern void main_full( void );
+static void prvSetupSoftware( void );
 
 /* Prototypes for the standard FreeRTOS callback/hook functions implemented
-within this file. */
+within this file. They were place here by Atmel.
+
+We will address these during a code cleanup and once we have a better understanding
+of how freeRTOS works. */
+
 void vApplicationMallocFailedHook( void );
 void vApplicationIdleHook( void );
 void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName );
@@ -103,21 +106,22 @@ void vApplicationTickHook( void );
 
 /*-----------------------------------------------------------*/
 
-/* See the documentation page for this demo on the FreeRTOS.org web site for
-full information - including hardware setup requirements. */
-
 int main( void )
 {   
     prvSetupHardware();
 
-	configure_uart();
-	configure_usart();
-	configure_spi();
-	//configure_twi();
-	//configure_can();
-	
-	main_full();
-
+    prvSetupSoftware();
+    
+    /* Start the scheduler. */
+    vTaskStartScheduler();
+    
+	/* If all is well, the scheduler will now be running, and the following line
+	will never be reached.  If the following line does execute, then there was
+	insufficient FreeRTOS heap memory available for the idle and/or timer tasks
+	to be created.  See the memory management section on the FreeRTOS web site
+	for more details. */
+	for( ;; );
+    
 	return 0;
 }
 /*-----------------------------------------------------------*/
@@ -134,6 +138,27 @@ static void prvSetupHardware( void ) {
 
 	/* Atmel library function to setup for the evaluation kit being used. */
 	board_init();
+    
+    /* Comms drivers that BLUEsat will be using. */
+    configure_uart();
+    configure_usart();
+    configure_spi();
+    //configure_twi();
+    //configure_can();
+}
+/*-----------------------------------------------------------*/
+
+static void prvSetupSoftware( void ) {
+    uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
+    
+    // vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
+    // vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
+    // vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
+    vStartcc1120_testTasks( tskIDLE_PRIORITY );
+    //vStartBLUEsat_CAN_TestTasks( tskIDLE_PRIORITY );
+    //vStartBLUEsat_TWI_TestTasks( tskIDLE_PRIORITY );
+    
+    uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
 }
 /*-----------------------------------------------------------*/
 
