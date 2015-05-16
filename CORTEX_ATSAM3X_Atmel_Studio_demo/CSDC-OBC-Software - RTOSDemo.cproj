@@ -528,6 +528,15 @@
     <Compile Include="src\Drivers\asf\common\services\gpio\sam_ioport\sam_gpio.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\asf\common\services\spi\sam_spi\spi_master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\common\services\spi\sam_spi\spi_master.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Drivers\asf\common\services\spi\spi_master.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\asf\common\utils\interrupt.h">
       <SubType>compile</SubType>
     </Compile>
@@ -1046,6 +1055,8 @@
     <Folder Include="src\Drivers\asf\common\services\clock\sam3x\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\" />
     <Folder Include="src\Drivers\asf\common\services\gpio\sam_ioport\" />
+    <Folder Include="src\Drivers\asf\common\services\spi\" />
+    <Folder Include="src\Drivers\asf\common\services\spi\sam_spi\" />
     <Folder Include="src\Drivers\asf\common\utils\" />
     <Folder Include="src\Drivers\asf\common\utils\interrupt\" />
     <Folder Include="src\Drivers\asf\config\" />
@@ -1086,7 +1097,6 @@
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\GCC\" />
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\GCC\ARM_CM3\" />
     <Folder Include="src\Drivers\asf\thirdparty\FreeRTOS\portable\MemMang\" />
-    <Folder Include="src\Drivers\arudino-pins" />
     <Folder Include="src\Drivers\cc1120\" />
     <Folder Include="src\Drivers\comms_spi" />
     <Folder Include="src\Drivers\comms_uart" />

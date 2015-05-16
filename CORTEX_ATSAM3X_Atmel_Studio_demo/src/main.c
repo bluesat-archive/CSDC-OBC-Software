@@ -91,7 +91,7 @@
 /*-----------------------------------------------------------*/
 
 static void prvSetupHardware( void );
-static void prvSetupSoftware( void );
+static void prvStartApplications( void );
 
 /* Prototypes for the standard FreeRTOS callback/hook functions implemented
 within this file. They were place here by Atmel.
@@ -108,9 +108,11 @@ void vApplicationTickHook( void );
 
 int main( void )
 {   
+    /* Initialise hardware*/
     prvSetupHardware();
 
-    prvSetupSoftware();
+    /* Start applications */
+    prvStartApplications();
     
     /* Start the scheduler. */
     vTaskStartScheduler();
@@ -120,6 +122,7 @@ int main( void )
 	insufficient FreeRTOS heap memory available for the idle and/or timer tasks
 	to be created.  See the memory management section on the FreeRTOS web site
 	for more details. */
+    
 	for( ;; );
     
 	return 0;
@@ -139,7 +142,7 @@ static void prvSetupHardware( void ) {
 	/* Atmel library function to setup for the evaluation kit being used. */
 	board_init();
     
-    /* Comms drivers that BLUEsat will be using. */
+    /* Initialise drivers that BLUEsat will be using. */
     configure_uart();
     configure_usart();
     configure_spi();
@@ -148,7 +151,7 @@ static void prvSetupHardware( void ) {
 }
 /*-----------------------------------------------------------*/
 
-static void prvSetupSoftware( void ) {
+static void prvStartApplications( void ) {
     uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
     
     // vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );

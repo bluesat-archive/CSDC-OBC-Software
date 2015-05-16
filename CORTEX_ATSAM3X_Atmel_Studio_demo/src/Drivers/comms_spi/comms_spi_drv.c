@@ -24,11 +24,13 @@ static uint8_t spi_buffer_start[250];
 static uint32_t spi_buffer_position = 0;
 
 void configure_spi(){
+    
+    // PIO config for SPI controller 0
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA25A_SPI0_MISO);		// enables MISO pin
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA26A_SPI0_MOSI);		// enables MOSI pin
 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA27A_SPI0_SPCK);		// enables Clock pin
  	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA28A_SPI0_NPCS0);		// enables slave select 0 on pin 10
-	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA29A_SPI0_NPCS1);		// enables slave select 1 on pin 4
+ 	pio_set_peripheral(PIOA, PIO_PERIPH_A, PIO_PA29A_SPI0_NPCS1);		// enables slave select 1 on pin 4
 	
 	spi_master_configure(SPI0);											// setup arduino as SPI master
 	spi_enable(SPI0);													// enables SPI
@@ -38,13 +40,7 @@ void configure_spi(){
 	
 	spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);
 	
-	NVIC_EnableIRQ(SPI0_IRQn);
-	
-	NVIC_Type* temp_2 = NVIC;
-	temp_2 = temp_2;
-	
-	Spi* temp = SPI0;
-	temp = temp;
+	//NVIC_EnableIRQ(SPI0_IRQn);
 }
 
 void spi_master_configure(Spi *p_spi)
@@ -54,7 +50,12 @@ void spi_master_configure(Spi *p_spi)
 	spi_set_master_mode(p_spi);
 	spi_disable_mode_fault_detect(p_spi);
 	spi_disable_loopback(p_spi);
+    
+    //spi_set_peripheral_chip_select_value(p_spi, SPI_DEVICE_0);
+    //spi_set_fixed_peripheral_select(p_spi);
+    
 	spi_set_variable_peripheral_select(p_spi);
+    
 	spi_disable_peripheral_select_decode(p_spi);
 	spi_set_delay_between_chip_select(p_spi, CONFIG_SPI_MASTER_DELAY_BCS);
 }
@@ -85,10 +86,11 @@ void write_to_spi_buffer(uint8_t data) {
 
 void SPI0_Handler (void) {
 
-	uint8_t spi_p = 0001;
+    uint8_t spi_p = 0001;
 	// break and check it reaches here
 	uint16_t read_data = 0;	
 	spi_read(SPI0, &read_data, &spi_p);
+    read_data = read_data;
 	write_to_spi_buffer(read_data);
 	
 	NVIC_ClearPendingIRQ(SPI0_IRQn);

@@ -62,11 +62,13 @@ void cc1120_read_burst_register (uint8_t start_address, uint8_t *data_buffer, ui
 	uint8_t *current_buffer = data_buffer;
 	
 	cc1120_transmit(start_address | CC1120_READ | CC1120_BURST_MODE, 0);
+    
 	for (uint32_t y = 0; y < iterations-1; y++) {
 		cc1120_transmit(CC1120_SNOP, 0);
-		//spi_read(SPI0, (uint16_t *)current_buffer, &spi_instance);
+		spi_read(SPI0, (uint16_t *)current_buffer, &spi_instance);
 		current_buffer++;
 	}
+    
 	cc1120_transmit(CC1120_SNOP, 1);
 }
 void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations) { //works
