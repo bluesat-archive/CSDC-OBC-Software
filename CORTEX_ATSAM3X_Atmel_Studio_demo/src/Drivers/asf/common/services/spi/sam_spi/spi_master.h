@@ -51,7 +51,7 @@
 
 /*! \name SPI Master Management Configuration */
 //! @{
-#include "conf_spi_master.h"
+//#include "conf_spi_master.h"
 
 //! Default Configuration of SPI Master Delay BCS
 #ifndef CONFIG_SPI_MASTER_DELAY_BCS
