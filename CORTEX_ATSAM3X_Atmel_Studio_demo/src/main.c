@@ -74,7 +74,6 @@
 #include <asf.h>
 
 /* BLUEsat Application includes. */
-#include <blink_test/blink_test_app.h>
 #include <uart_test/uart_test_app.h>
 #include <spi_test/spi_test_app.h>
 #include <cc1120_test/cc1120_test_app.h>
@@ -154,7 +153,6 @@ static void prvSetupHardware( void ) {
 static void prvStartApplications( void ) {
     uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
     
-    // vStartBLUEsat_BlinkTasks( tskIDLE_PRIORITY );
     // vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
     // vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
     vStartcc1120_testTasks( tskIDLE_PRIORITY );

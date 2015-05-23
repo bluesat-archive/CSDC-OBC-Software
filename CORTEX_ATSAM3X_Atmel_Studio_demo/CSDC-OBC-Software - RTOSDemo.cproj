@@ -453,12 +453,6 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\Applications\blink_test\blink_test_app.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Applications\blink_test\blink_test_app.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\Applications\can_test\can_test_app.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1035,7 +1029,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\Applications\blink_test" />
     <Folder Include="src\Applications\can_test" />
     <Folder Include="src\Applications\twi_test" />
     <Folder Include="src\Applications\uart_test" />
