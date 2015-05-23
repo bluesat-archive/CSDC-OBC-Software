@@ -8,6 +8,7 @@
 /* Scheduler include files. */
 #include "FreeRTOS.h"
 #include "task.h"
+#include <bluesat_conf.h>
 #include "drivers_test_app.h"
 
 #include <asf.h>
@@ -58,5 +59,6 @@ static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
         
         for (int y = 0; y < 1000; y++);
         
+        // twi_probe(TWI0, 0xFF);
 	}
 }

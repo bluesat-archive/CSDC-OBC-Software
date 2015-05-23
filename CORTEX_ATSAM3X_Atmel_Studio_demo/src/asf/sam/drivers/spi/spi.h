@@ -55,8 +55,6 @@ extern "C" {
 /// @endcond
 
 
-void write_to_spi_buffer(uint8_t data);
-
 /** Time-out value (number of attempts). */
 #define SPI_TIMEOUT       15000
 

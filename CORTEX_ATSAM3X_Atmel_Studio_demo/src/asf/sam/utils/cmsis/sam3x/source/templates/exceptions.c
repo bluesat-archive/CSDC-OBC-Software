@@ -190,8 +190,8 @@ void CAN1_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 #pragma weak USART3_Handler=Dummy_Handler
 #endif /* _SAM3XA_USART3_INSTANCE_ */
 #pragma weak HSMCI_Handler=Dummy_Handler
-#pragma weak TWI0_Handler=Dummy_Handler
-#pragma weak TWI1_Handler=Dummy_Handler
+#pragma weak TWI0_Handler=TWI0_Handler
+#pragma weak TWI1_Handler=TWI1_Handler
 #pragma weak SPI0_Handler=SPI0_Handler
 #ifdef _SAM3XA_SPI1_INSTANCE_
 #pragma weak SPI1_Handler=Dummy_Handler

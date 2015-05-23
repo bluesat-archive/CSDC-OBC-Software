@@ -7,6 +7,7 @@
 #include <asf.h>
 #include <spi_master.h>
 #include "cc1120_drv.h"
+#include "bluesat_conf.h"
 
 uint32_t cc1120_transmit (uint8_t data, uint8_t last) {
     last = last;

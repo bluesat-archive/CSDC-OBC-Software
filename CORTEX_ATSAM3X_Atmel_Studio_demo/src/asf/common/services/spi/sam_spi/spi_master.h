@@ -142,7 +142,7 @@ extern void spi_master_init(Spi *p_spi);
  * \param baud_rate Baud rate for communication with slave device in Hz.
  */
  extern void spi_master_setup_device(Spi *p_spi, struct spi_device *device, 
-        spi_flags_t flags, uint32_t baud_rate);
+        spi_flags_t flags, uint32_t baud_rate, board_spi_select_id_t sel_id);
 
 /**
  * \brief Select the given device on the SPI bus.
@@ -218,18 +218,6 @@ static inline void spi_read_single(Spi *p_spi, uint8_t *data)
 extern status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len);
 
 
-/************************************************************************/
-/* BLUEsat functions                                                    */
-/************************************************************************/
-void configure_spi();
-
-/* SPI devices */
-struct spi_device SPI_device_0;
-struct spi_device SPI_device_1;
-struct spi_device SPI_device_2;
-struct spi_device SPI_device_3;
-struct spi_device * SPI_Device_CC1120;
-struct spi_device * SPI_Device_Memory;
 
 
 

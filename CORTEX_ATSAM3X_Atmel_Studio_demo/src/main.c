@@ -77,6 +77,8 @@
 #include <drivers_test/drivers_test_app.h>
 #include <cc1120_test/cc1120_test_app.h>
 
+#include "bluesat_lib/init_services.h"
+
 
 /*-----------------------------------------------------------*/
 
@@ -101,6 +103,9 @@ int main ( void )
 {   
     /* Initialise hardware*/
     prvSetupHardware();
+    
+    /* Initialises services */
+    prvServicesInit();
 
     /* Start applications */
     prvStartApplications();
@@ -132,19 +137,12 @@ static void prvSetupHardware( void ) {
 
 	/* Atmel library function to setup for the evaluation kit being used. */
 	board_init();
-    
-    /* Initialises services */
-    prvServicesInit();
-    
-    /* Initialise drivers that BLUEsat will be using. */
 }
 /*-----------------------------------------------------------*/
 
 static void prvStartApplications( void ) {
-    // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
-    vStartcc1120_testTasks( tskIDLE_PRIORITY );
-    
-    //uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
+    vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
+   // vStartcc1120_testTasks( tskIDLE_PRIORITY );
 }
 /*-----------------------------------------------------------*/
 
@@ -207,6 +205,6 @@ void prvServicesInit() {
     /* Configures SPI settings */    
     configure_spi();
     
-    
+    configure_twi();
     
 }

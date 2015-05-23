@@ -90,6 +90,24 @@
 // From module: System Clock Control - SAM3X/A implementation
 #include <sysclk.h>
 
+// From module: TWI - Two-Wire Interface - SAM implementation
+#include <sam_twi/twi_master.h>
+#include <sam_twi/twi_slave.h>
+#include <twi_master.h>
+#include <twi_slave.h>
+
+// From module: TWI - Two-wire Interface
+#include <twi.h>
+
+// From module: UART - Univ. Async Rec/Trans
+#include <uart.h>
+
+// From module: USART - Serial interface - SAM implementation for devices with both UART and USART
+#include <serial.h>
+
+// From module: USART - Univ. Syn Async Rec/Trans
+#include <usart.h>
+
 // From module: pio_handler support enabled
 #include <pio_handler.h>
 
