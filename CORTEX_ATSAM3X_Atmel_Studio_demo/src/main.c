@@ -141,8 +141,8 @@ static void prvSetupHardware( void ) {
 /*-----------------------------------------------------------*/
 
 static void prvStartApplications( void ) {
-    vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
-   // vStartcc1120_testTasks( tskIDLE_PRIORITY );
+    // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
+    vStartcc1120_testTasks( tskIDLE_PRIORITY );
 }
 /*-----------------------------------------------------------*/
 

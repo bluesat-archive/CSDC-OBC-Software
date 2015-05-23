@@ -240,8 +240,8 @@
 #define CC1120_STATE_TXFIFO_ERROR       0x70
 
 /* Access Functions */
-uint32_t cc1120_transmit (uint8_t data, uint8_t last);
-uint32_t cc1120_receive (uint8_t *data);
+status_code_t cc1120_transmit (uint8_t data, uint8_t len);
+status_code_t cc1120_receive (uint8_t *data);
 
 void cc1120_read_register_address_space(uint8_t *data_buffer);
 // Single Register Access
@@ -256,9 +256,6 @@ void cc1120_write_single_extended(uint8_t address, uint8_t *data_buffer);
 // Burst Extended Register Access
 void cc1120_read_burst_extended(uint8_t address, uint8_t *data_buffer);
 void cc1120_write_burst_extended(uint8_t address, uint8_t *data_buffer);
-
-/* Command Strobe Functions */
-uint32_t cc1120_reset();
 
 // struct to hold the register address space, may not use later
 

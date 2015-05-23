@@ -9,39 +9,19 @@
 #include "cc1120_drv.h"
 #include "bluesat_conf.h"
 
-uint32_t cc1120_transmit (uint8_t data, uint8_t last) {
-    last = last;
+status_code_t cc1120_transmit (uint8_t data, uint8_t len) {
     spi_select_device(SPI0, SPI_Device_CC1120);
-	spi_write_packet(SPI0, (uint8_t*)&data, 1);
+	status_code_t status = spi_write_packet(SPI0, (uint8_t*)&data, len);
     spi_deselect_device(SPI0, SPI_Device_CC1120);
-    return 1;
+    
+    return status;
 }
-uint32_t cc1120_receive (uint8_t *data) {    
+status_code_t cc1120_receive (uint8_t *data) {    
+    uint32_t len = 1;
     spi_select_device(SPI0, SPI_Device_CC1120);
-	spi_read_packet(SPI0, data, 1);
+	status_code_t status = spi_read_packet(SPI0, data, len);
     spi_deselect_device(SPI0, SPI_Device_CC1120);
-    return 1;
-}
-
-uint32_t cc1120_reset () {
-	
-	// check to see SO go high, and then low again. Keep CSn low. See 3.2.2 of User Guide	
-	
-	// uint16_t spi_read_data = 0;
-	uint32_t timeout = 500;
-	cc1120_transmit(CC1120_SRES, 0);
-	uint32_t test = pio_get(PIOA, PIO_PA25A_SPI0_MISO, 0);
-	
-	test = test;
-	while (pio_get(PIOA, PIO_PA25A_SPI0_MISO, 0)) {
-		cc1120_transmit(CC1120_SNOP, 1);
-		if (timeout-- <= 0) {
-			// timed out, failed to reset quickly
-			return 0;
-		} 
-	}
-	
-	return 1;
+    return status;
 }
 
 void cc1120_read_register_address_space(uint8_t *data_buffer) {

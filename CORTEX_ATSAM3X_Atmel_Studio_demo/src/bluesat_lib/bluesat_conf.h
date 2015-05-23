@@ -32,7 +32,7 @@ struct spi_device * SPI_Device_Memory;
 
 /* TWI */
 #define TWI0_SPEED                              100000
-#define TWI0_CHIP                               0
+#define TWI0_CHIP                               0xFF
 #define TWI0_INTERRUPT_FLAGS                    0
 
 uint8_t spi_buffer_start[250];

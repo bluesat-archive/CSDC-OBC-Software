@@ -29,9 +29,7 @@
      twi_master_options_t * p_opt = (twi_master_options_t * ) pvPortMalloc (sizeof(twi_master_options_t));
      p_opt->speed = TWI0_SPEED;
      p_opt->chip = TWI0_CHIP;
-     
-     twi_master_enable(TWI0);
-     
+          
      twi_master_setup(TWI0, p_opt);
      
     // twi_enable_interrupt(TWI0, TWI0_INTERRUPT_FLAGS);

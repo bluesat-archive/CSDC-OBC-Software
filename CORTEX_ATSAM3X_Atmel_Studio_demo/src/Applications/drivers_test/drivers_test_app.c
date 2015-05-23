@@ -59,6 +59,12 @@ static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
         
         for (int y = 0; y < 1000; y++);
         
+        SPI_Device_CC1120 = SPI_Device_CC1120;
+        
         // twi_probe(TWI0, 0xFF);
+        // I have no clue how twi works here.
+        // Running this just gets stuck in a loop where the twi
+        // master_write is waiting for the transmission to be 'completed'.
+        // who knows what exactly that means.
 	}
 }
