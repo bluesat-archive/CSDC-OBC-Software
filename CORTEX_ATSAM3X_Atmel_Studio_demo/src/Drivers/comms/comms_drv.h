@@ -13,7 +13,6 @@
 #include "compiler.h"
 #include "sysclk.h"
 #include "uart.h"
-#include "usart.h"
 
 typedef struct uart_rs232_options {
 	uint32_t baudrate;

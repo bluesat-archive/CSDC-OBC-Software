@@ -74,11 +74,8 @@
 #include <asf.h>
 
 /* BLUEsat Application includes. */
-#include <uart_test/uart_test_app.h>
-#include <spi_test/spi_test_app.h>
+#include <drivers_test/drivers_test_app.h>
 #include <cc1120_test/cc1120_test_app.h>
-#include <twi_test/twi_test_app.h>
-#include <can_test/can_test_app.h>
 
 /* BLUEsat library includes */
 #include <comms_spi_drv.h>
@@ -91,6 +88,7 @@
 
 static void prvSetupHardware( void );
 static void prvStartApplications( void );
+static void services_init( void );
 
 /* Prototypes for the standard FreeRTOS callback/hook functions implemented
 within this file. They were place here by Atmel.
@@ -141,25 +139,25 @@ static void prvSetupHardware( void ) {
 	/* Atmel library function to setup for the evaluation kit being used. */
 	board_init();
     
+    /* Initialises */
+    services_init();
+    
     /* Initialise drivers that BLUEsat will be using. */
-    configure_uart();
-    configure_usart();
-    configure_spi();
-    //configure_twi();
-    //configure_can();
+    
+    
+    // configure_uart();
+    // configure_usart();
+    // configure_spi();
+    // configure_twi();
+    // configure_can();
 }
 /*-----------------------------------------------------------*/
 
 static void prvStartApplications( void ) {
-    uart_print_string_to_serial("Start launching BLUEsat tasks\n\r");
-    
-    // vStartBLUEsat_UART_TestTasks( tskIDLE_PRIORITY );
-    // vStartBLUEsat_SPI_TestTasks( tskIDLE_PRIORITY );
+    //vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
     vStartcc1120_testTasks( tskIDLE_PRIORITY );
-    //vStartBLUEsat_CAN_TestTasks( tskIDLE_PRIORITY );
-    //vStartBLUEsat_TWI_TestTasks( tskIDLE_PRIORITY );
     
-    uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
+    //uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
 }
 /*-----------------------------------------------------------*/
 
@@ -217,3 +215,13 @@ void vApplicationTickHook( void )
 }
 /*-----------------------------------------------------------*/
 
+void services_init() {
+    
+  //  struct spi_device cc1120;
+   // cc1120.id = 0;
+    
+    configure_spi();
+    
+   // spi_master_init (SPI0);
+   // spi_master_setup_device (SPI0, &cc1120, 0, 0, 0);
+}

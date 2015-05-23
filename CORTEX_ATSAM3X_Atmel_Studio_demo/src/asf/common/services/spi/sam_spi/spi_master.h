@@ -218,4 +218,10 @@ static inline void spi_read_single(Spi *p_spi, uint8_t *data)
  */
 extern status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len);
 
+void configure_spi();
+void spi_master_configure(Spi *p_spi);
+void spi_master_configure_device(Spi *p_spi, uint32_t device_id, uint32_t flags, uint32_t baud_rate);
+
+
+
 #endif // _SPI_MASTER_H_

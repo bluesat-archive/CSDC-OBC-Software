@@ -363,3 +363,30 @@ uint32_t spi_get_writeprotect_status(Spi *p_spi)
 /**
  * @}
  */
+
+
+static uint8_t spi_buffer_start[250];
+static uint32_t spi_buffer_position = 0;
+
+void write_to_spi_buffer(uint8_t data) {
+    spi_buffer_start[spi_buffer_position] = data;
+    spi_buffer_position++;
+    
+    if (spi_buffer_position>250) {
+        spi_buffer_position = 0;
+    }
+}
+
+void SPI0_Handler (void) {
+
+    uint8_t spi_p = 0001;
+    // break and check it reaches here
+    
+    uint16_t read_data = 0;
+    spi_read(SPI0, &read_data, &spi_p);
+    
+    read_data = read_data;
+    write_to_spi_buffer(read_data);
+    
+    NVIC_ClearPendingIRQ(SPI0_IRQn);
+}

@@ -8,16 +8,15 @@
 /* Scheduler include files. */
 #include "FreeRTOS.h"
 #include "task.h"
-#include "spi_test_app.h"
+#include "drivers_test_app.h"
 
 #include <asf.h>
-#include <comms_spi_drv.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE	// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )						// Create one task
 
 /* The task function. */
-static portTASK_FUNCTION_PROTO( vBLUEsat_SPI_TestTask, pvParameters );
+static portTASK_FUNCTION_PROTO( vBLUEsat_drivers_test_Task, pvParameters );
 
 /* Variables that are set to true within the calculation task to indicate
 that the task is still executing.  The check task sets the variable back to
@@ -27,18 +26,18 @@ static volatile BaseType_t xTaskCheck[ intgNUMBER_OF_TASKS ] = { ( BaseType_t ) 
 
 /*-----------------------------------------------------------*/
 
-void vStartBLUEsat_SPI_TestTasks( UBaseType_t uxPriority )
+void vStartBLUEsat_drivers_test_Task( UBaseType_t uxPriority )
 {
 	short sTask;
 	
 	for( sTask = 0; sTask < intgNUMBER_OF_TASKS; sTask++ )
 	{
-		xTaskCreate( vBLUEsat_SPI_TestTask, "BLUEsat_SPI_Test", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
+		xTaskCreate( vBLUEsat_drivers_test_Task, "BLUEsat_drivers_test", intgSTACK_SIZE, ( void * ) &( xTaskCheck[ sTask ] ), uxPriority, ( TaskHandle_t * ) NULL );
 	}
 }
 /*-----------------------------------------------------------*/
 
-static portTASK_FUNCTION( vBLUEsat_SPI_TestTask, pvParameters ) {
+static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
 	
 	volatile BaseType_t *pxTaskHasExecuted;
 
@@ -47,11 +46,8 @@ static portTASK_FUNCTION( vBLUEsat_SPI_TestTask, pvParameters ) {
 	within each port. */
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
 	pxTaskHasExecuted = pxTaskHasExecuted;
-	
-	gpio_configure_pin(PIO_PB14_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-		
+			
 	for (;;) {
-		BLUEsat_spi_write_string("Hello, from BLUEsat", SPI_DEVICE_0);
-		BLUEsat_spi_write_string("Hello, from BLUEsat", SPI_DEVICE_1);
+        
 	}
 }

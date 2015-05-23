@@ -54,6 +54,14 @@ extern "C" {
 /**INDENT-ON**/
 /// @endcond
 
+/* The 4 chip selects */
+#define SPI_DEVICE_0	0000
+#define SPI_DEVICE_1	0001
+#define SPI_DEVICE_2	0011
+#define SPI_DEVICE_3	0111
+
+void write_to_spi_buffer(uint8_t data);
+
 /** Time-out value (number of attempts). */
 #define SPI_TIMEOUT       15000
 

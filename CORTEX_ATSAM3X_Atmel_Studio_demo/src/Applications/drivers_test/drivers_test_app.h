@@ -9,7 +9,7 @@
 #ifndef BLUESAT_SPI_TEST_APP_H_
 #define BLUESAT_SPI_TEST_APP_H_
 
-void vStartBLUEsat_SPI_TestTasks( UBaseType_t uxPriority );
+void vStartBLUEsat_drivers_test_Task( UBaseType_t uxPriority );
 
 
 #endif /* BLUESAT_SPI_TEST_APP_H_ */
