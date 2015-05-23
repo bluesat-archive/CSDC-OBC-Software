@@ -72,6 +72,7 @@
 
 /* Atmel library includes. */
 #include <asf.h>
+#include "init_services.h"
 
 /* BLUEsat Application includes. */
 #include <drivers_test/drivers_test_app.h>

@@ -40,14 +40,7 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 	pvParameters = pvParameters;
 		
 	for (;;) {
-        
-        /*
-         *  Sends a burst of data to write to the registers and tries to read
-         *  it back.                                                            
-         */
 		cc1120_burst_test();
-        
-        
 		// CC1120_read_test();
 	}
 }

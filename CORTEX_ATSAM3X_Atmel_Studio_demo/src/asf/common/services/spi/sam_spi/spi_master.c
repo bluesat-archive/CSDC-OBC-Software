@@ -59,23 +59,7 @@
  */
 #define NONE_CHIP_SELECT_ID 0x0f
 
-#define SPI_DEVICE_0        1110
-#define SPI_DEVICE_1        1101
-#define SPI_DEVICE_2        1011
-#define SPI_DEVICE_3        0111
-
-#define DEFAULT_CHIP_ID     SPI_DEVICE_0
-
-/* SPI configuration */
-#define POLARITY_FLAG							0						// Flags for the clock polarity and phase
-#define BAUD_RATE								9600					// Baud rate
-#define CONFIG_SPI_MASTER_DELAY_BS				0						// Delay before SPCK (in number of MCK clocks).
-#define CONFIG_SPI_MASTER_DELAY_BCS				0						// Delay between chip selects (in number of MCK clocks).
-#define CONFIG_SPI_MASTER_DELAY_BCT				0						// Delay between consecutive transfers (in number of MCK clocks).
-#define CONFIG_SPI_MASTER_BITS_PER_TRANSFER		SPI_CSR_BITS_8_BIT		// Size of data transfer
-#define INTERRUPT_FLAGS							SPI_IDR_RDRF            // Interrupt flags
-
-
+#define DEFAULT_CHIP_ID 0
 
 /** \brief Initialize the SPI in master mode.
  *
@@ -108,8 +92,9 @@ void spi_master_init(Spi *p_spi)
  *                  SPI_MODE_3.
  * \param baud_rate Baud rate for communication with slave device in Hz.
  */
-extern void spi_master_setup_device(Spi *p_spi, struct spi_device *device, spi_flags_t flags, uint32_t baud_rate)
+extern void spi_master_setup_device(Spi *p_spi, struct spi_device *device, spi_flags_t flags, uint32_t baud_rate, board_spi_select_id_t sel_id)
  {
+     sel_id = sel_id;
      spi_set_transfer_delay(p_spi, device->id, CONFIG_SPI_MASTER_DELAY_BS, CONFIG_SPI_MASTER_DELAY_BCT);
      spi_set_bits_per_transfer(p_spi, device->id, CONFIG_SPI_MASTER_BITS_PER_TRANSFER);
      spi_set_baudrate_div(p_spi, device->id, spi_calc_baudrate_div(baud_rate, sysclk_get_cpu_hz()));
@@ -238,22 +223,5 @@ status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len)
 
 	return STATUS_OK;
 }
-
-
-void configure_spi() {
-    
-    SPI_Device_Memory = ( struct spi_device * ) pvPortMalloc( sizeof( struct spi_device ) );
-    SPI_Device_Memory->id = SPI_DEVICE_0;
-    
-    SPI_Device_CC1120 = ( struct spi_device * ) pvPortMalloc( sizeof( struct spi_device ) );
-    SPI_Device_CC1120->id = SPI_DEVICE_1;
-    
-    spi_master_init(SPI0);
-    spi_master_setup_device(SPI0, SPI_Device_Memory, POLARITY_FLAG, BAUD_RATE);
-    spi_master_setup_device(SPI0, SPI_Device_CC1120, POLARITY_FLAG, BAUD_RATE);
-    spi_enable(SPI0);
-    spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);
-}
-
 
 //! @}

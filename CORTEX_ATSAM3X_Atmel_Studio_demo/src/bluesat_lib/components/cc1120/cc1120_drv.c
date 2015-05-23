@@ -6,6 +6,7 @@
  */
 #include <asf.h>
 #include <spi_master.h>
+#include <BLUEsatConfig.h>
 #include "cc1120_drv.h"
 
 uint32_t cc1120_transmit (uint8_t data, uint8_t last) {

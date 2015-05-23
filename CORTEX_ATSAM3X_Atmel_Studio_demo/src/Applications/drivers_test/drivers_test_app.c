@@ -12,6 +12,7 @@
 
 #include <asf.h>
 #include <spi_master.h>
+#include <BLUEsatConfig.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE	// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )						// Create one task
