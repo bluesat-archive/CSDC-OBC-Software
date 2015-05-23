@@ -41,6 +41,7 @@
  *
  */
 
+#include "FreeRTOS.h"
 #include "spi_master.h"
 
 /**
@@ -241,11 +242,11 @@ status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len)
 
 void configure_spi() {
     
-    SPI_device_1.id = 0000;
-    SPI_Device_Memory = &SPI_device_0;
+    SPI_Device_Memory = ( struct spi_device * ) pvPortMalloc( sizeof( struct spi_device ) );
+    SPI_Device_Memory->id = SPI_DEVICE_0;
     
-    SPI_device_1.id = 0001;
-    SPI_Device_CC1120 = &SPI_device_1;
+    SPI_Device_CC1120 = ( struct spi_device * ) pvPortMalloc( sizeof( struct spi_device ) );
+    SPI_Device_CC1120->id = SPI_DEVICE_1;
     
     spi_master_init(SPI0);
     spi_master_setup_device(SPI0, SPI_Device_Memory, POLARITY_FLAG, BAUD_RATE);

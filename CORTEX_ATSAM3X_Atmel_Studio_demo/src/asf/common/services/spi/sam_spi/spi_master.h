@@ -224,10 +224,6 @@ extern status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len);
 void configure_spi();
 
 /* SPI devices */
-struct spi_device SPI_device_0;
-struct spi_device SPI_device_1;
-struct spi_device SPI_device_2;
-struct spi_device SPI_device_3;
 struct spi_device * SPI_Device_CC1120;
 struct spi_device * SPI_Device_Memory;
 

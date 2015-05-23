@@ -207,6 +207,7 @@ void prvServicesInit() {
     /* Configures SPI settings */    
     configure_spi();
     
-    
+    /* Configure TWI settings */
+    configure_twi();
     
 }
