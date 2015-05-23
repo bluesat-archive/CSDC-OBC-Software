@@ -274,7 +274,7 @@
       <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/comms_twi</Value>
       <Value>../src/Drivers/comms_can</Value>
-      <Value>../src/Drivers/cc1120</Value>
+      <Value>../src/asf/common/components/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -325,7 +325,7 @@
       <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/comms_twi</Value>
       <Value>../src/Drivers/comms_can</Value>
-      <Value>../src/Drivers/cc1120</Value>
+      <Value>../src/asf/common/components/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -394,7 +394,7 @@
       <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/comms_twi</Value>
       <Value>../src/Drivers/comms_can</Value>
-      <Value>../src/Drivers/cc1120</Value>
+      <Value>../src/asf/common/components/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -442,7 +442,7 @@
       <Value>../src/Drivers/comms_usart</Value>
       <Value>../src/Drivers/comms_twi</Value>
       <Value>../src/Drivers/comms_can</Value>
-      <Value>../src/Drivers/cc1120</Value>
+      <Value>../src/asf/common/components/cc1120</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
       <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
@@ -493,6 +493,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\asf\common\boards\board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\asf\common\components\cc1120\cc1120_drv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\asf\common\components\cc1120\cc1120_drv.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\asf\common\services\clock\genclk.h">
@@ -969,15 +975,6 @@
     <Compile Include="src\asf\thirdparty\FreeRTOS\timers.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Drivers\asf\asf.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\cc1120\cc1120_drv.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\cc1120\cc1120_drv.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\Drivers\comms\comms_drv.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1049,6 +1046,8 @@
     <Folder Include="src\asf\" />
     <Folder Include="src\asf\common\" />
     <Folder Include="src\asf\common\boards\" />
+    <Folder Include="src\asf\common\components" />
+    <Folder Include="src\asf\common\components\cc1120\" />
     <Folder Include="src\asf\common\services\" />
     <Folder Include="src\asf\common\services\clock\" />
     <Folder Include="src\asf\common\services\clock\sam3x\" />
@@ -1097,8 +1096,6 @@
     <Folder Include="src\asf\thirdparty\FreeRTOS\portable\GCC\ARM_CM3\" />
     <Folder Include="src\asf\thirdparty\FreeRTOS\portable\MemMang\" />
     <Folder Include="src\Drivers" />
-    <Folder Include="src\Drivers\asf\" />
-    <Folder Include="src\Drivers\cc1120\" />
     <Folder Include="src\Drivers\comms_spi" />
     <Folder Include="src\Drivers\comms_uart" />
     <Folder Include="src\Drivers\comms_usart" />
