@@ -11,8 +11,6 @@
 
 #include <asf.h>
 #include <cc1120_drv.h>
-#include <comms_uart_drv.h>
-#include <comms_drv.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE				// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )									// 

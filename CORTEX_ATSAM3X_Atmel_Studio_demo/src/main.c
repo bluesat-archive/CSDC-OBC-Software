@@ -77,12 +77,6 @@
 #include <drivers_test/drivers_test_app.h>
 #include <cc1120_test/cc1120_test_app.h>
 
-/* BLUEsat library includes */
-#include <comms_spi_drv.h>
-#include <comms_uart_drv.h>
-#include <comms_usart_drv.h>
-#include <comms_twi_drv.h>
-#include <comms_can_drv.h>
 
 /*-----------------------------------------------------------*/
 
