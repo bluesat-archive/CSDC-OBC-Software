@@ -40,51 +40,18 @@ void vStartcc1120_testTasks( UBaseType_t uxPriority )
 static portTASK_FUNCTION( vcc1120_TestTask, pvParameters ) 
 {
 	pvParameters = pvParameters;
-	
-	// LED to use for debugging
-	gpio_configure_pin(PIO_PB27_IDX, (PIO_TYPE_PIO_OUTPUT_0 | PIO_DEFAULT));
-	
-	uint16_t send_byte = 0;
-	send_byte = send_byte;
-	uint16_t read_byte = 0;
-	read_byte = read_byte;
-	
-	//char buf[20];
-	//buf[19] = 0;
 		
 	for (;;) {
-		// cc1200_test_one();
+        
+        /*
+         *  Sends a burst of data to write to the registers and tries to read
+         *  it back.                                                            
+         */
 		cc1120_burst_test();
+        
+        
 		// CC1120_read_test();
 	}
-}
-
-void cc1120_test_one() {
-	uint16_t send_byte = 0;
-	
-	cc1120_transmit(CC1120_SRES, 1);				// reset chip
-	for(int y = 0; y<1000; y++);
-		
-	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte
-	cc1120_transmit(send_byte, 0);
-	send_byte = CC1120_SNOP;					// read byte 
-	cc1120_transmit(send_byte, 1);
-		
-	for(int y = 0; y<1000; y++);
-		
-	send_byte = CC1120_IOCFG3 | CC1120_WRITE;	// send header byte
-	cc1120_transmit(send_byte, 0);
-	send_byte = 0x55;							// write byte
-	cc1120_transmit(send_byte, 1);
-		
-	for(int y = 0; y<1000; y++);
-		
-	send_byte = CC1120_IOCFG3 | CC1120_READ;	// send header byte 
-	cc1120_transmit(send_byte, 0);
-	send_byte = CC1120_SNOP;					// read byte 
-	cc1120_transmit(send_byte, 1);
-		
-	for(int y = 0; y<50000; y++);
 }
 
 void cc1120_burst_test() {	

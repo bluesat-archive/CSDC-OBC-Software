@@ -5,17 +5,21 @@
  *  Author: Blue
  */
 #include <asf.h>
-#include <comms_uart_drv.h>
-#include <comms_spi_drv.h>
+#include <spi_master.h>
 #include "cc1120_drv.h"
-#include "comms_drv.h"
 
 uint32_t cc1120_transmit (uint8_t data, uint8_t last) {
-	return spi_write(SPI0, (uint16_t)data, SPI_DEVICE_CC1120, last);
+    last = last;
+    spi_select_device(SPI0, SPI_Device_CC1120);
+	spi_write_packet(SPI0, (uint8_t*)&data, 1);
+    spi_deselect_device(SPI0, SPI_Device_CC1120);
+    return 1;
 }
-uint32_t cc1120_receive (uint8_t *data) {
-	uint8_t device_id = SPI_DEVICE_CC1120;
-	return spi_read(SPI0, (uint16_t*)data, &device_id);
+uint32_t cc1120_receive (uint8_t *data) {    
+    spi_select_device(SPI0, SPI_Device_CC1120);
+	spi_read_packet(SPI0, data, 1);
+    spi_deselect_device(SPI0, SPI_Device_CC1120);
+    return 1;
 }
 
 uint32_t cc1120_reset () {

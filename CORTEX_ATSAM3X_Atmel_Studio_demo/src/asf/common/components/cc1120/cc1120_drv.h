@@ -4,12 +4,10 @@
  * Created: 14-02-2015 4:59:25 PM
  *  Author: Blue
  */ 
-
+#include "spi_master.h"
 
 #ifndef CC1120_DRV_H_
 #define CC1120_DRV_H_
-
-#define SPI_DEVICE_CC1120	SPI_DEVICE_1
 
 #define CC1120_MAX_SPI_ACCESS_ADDRESS		0x3F
 

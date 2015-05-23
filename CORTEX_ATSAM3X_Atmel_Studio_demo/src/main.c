@@ -103,7 +103,7 @@ void vApplicationTickHook( void );
 
 /*-----------------------------------------------------------*/
 
-int main( void )
+int main ( void )
 {   
     /* Initialise hardware*/
     prvSetupHardware();
@@ -143,18 +143,11 @@ static void prvSetupHardware( void ) {
     services_init();
     
     /* Initialise drivers that BLUEsat will be using. */
-    
-    
-    // configure_uart();
-    // configure_usart();
-    // configure_spi();
-    // configure_twi();
-    // configure_can();
 }
 /*-----------------------------------------------------------*/
 
 static void prvStartApplications( void ) {
-    //vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
+    // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
     vStartcc1120_testTasks( tskIDLE_PRIORITY );
     
     //uart_print_string_to_serial("Finish launching BLUEsat tasks\n\r");
@@ -217,11 +210,6 @@ void vApplicationTickHook( void )
 
 void services_init() {
     
-  //  struct spi_device cc1120;
-   // cc1120.id = 0;
-    
     configure_spi();
     
-   // spi_master_init (SPI0);
-   // spi_master_setup_device (SPI0, &cc1120, 0, 0, 0);
 }

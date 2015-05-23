@@ -11,6 +11,7 @@
 #include "drivers_test_app.h"
 
 #include <asf.h>
+#include <spi_master.h>
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE	// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )						// Create one task
@@ -46,8 +47,16 @@ static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
 	within each port. */
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
 	pxTaskHasExecuted = pxTaskHasExecuted;
-			
+
 	for (;;) {
+        
+        spi_select_device(SPI0, SPI_Device_CC1120);
+        
+        spi_write_packet(SPI0, (uint8_t*)"zzza", 4);
+        
+        spi_deselect_device(SPI0, SPI_Device_CC1120);
+        
+        for (int y = 0; y < 1000; y++);
         
 	}
 }
