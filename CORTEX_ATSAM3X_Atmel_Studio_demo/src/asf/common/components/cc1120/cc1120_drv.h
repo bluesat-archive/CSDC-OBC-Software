@@ -21,7 +21,7 @@
 #define CC1120_DIRECT_FIFO	0x3E	// --11 1110
 #define CC1120_STD_FIFO		0x3F	// --11 1111
 
-/* Configuration Registers */																					// promise
+/* Configuration Registers */
 #define CC1120_IOCFG3                   0x00
 #define CC1120_IOCFG2                   0x01
 #define CC1120_IOCFG1                   0x02
@@ -262,7 +262,7 @@ uint32_t cc1120_reset();
 
 // struct to hold the register address space, may not use later
 
-typedef struct register_address_space {										// promise
+typedef struct register_address_space {
 	uint8_t IOCFG3;
 	uint8_t IOCFG2;
 	uint8_t IOCFG1;

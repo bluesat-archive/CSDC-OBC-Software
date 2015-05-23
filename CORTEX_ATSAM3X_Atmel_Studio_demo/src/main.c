@@ -82,7 +82,7 @@
 
 static void prvSetupHardware( void );
 static void prvStartApplications( void );
-static void services_init( void );
+static void prvServicesInit( void );
 
 /* Prototypes for the standard FreeRTOS callback/hook functions implemented
 within this file. They were place here by Atmel.
@@ -133,8 +133,8 @@ static void prvSetupHardware( void ) {
 	/* Atmel library function to setup for the evaluation kit being used. */
 	board_init();
     
-    /* Initialises */
-    services_init();
+    /* Initialises services */
+    prvServicesInit();
     
     /* Initialise drivers that BLUEsat will be using. */
 }
@@ -202,8 +202,11 @@ void vApplicationTickHook( void )
 }
 /*-----------------------------------------------------------*/
 
-void services_init() {
+void prvServicesInit() {
     
+    /* Configures SPI settings */    
     configure_spi();
+    
+    
     
 }

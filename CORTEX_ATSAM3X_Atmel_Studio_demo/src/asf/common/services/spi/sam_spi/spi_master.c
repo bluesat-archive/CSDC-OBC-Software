@@ -58,7 +58,12 @@
  */
 #define NONE_CHIP_SELECT_ID 0x0f
 
-#define DEFAULT_CHIP_ID     0
+#define SPI_DEVICE_0        1110
+#define SPI_DEVICE_1        1101
+#define SPI_DEVICE_2        1011
+#define SPI_DEVICE_3        0111
+
+#define DEFAULT_CHIP_ID     SPI_DEVICE_0
 
 /* SPI configuration */
 #define POLARITY_FLAG							0						// Flags for the clock polarity and phase
@@ -82,13 +87,9 @@ void spi_master_init(Spi *p_spi)
     spi_reset(p_spi);
     spi_set_master_mode(p_spi);
     spi_disable_mode_fault_detect(p_spi);
-    spi_disable_loopback(p_spi);
-    
-    // spi_set_variable_peripheral_select(p_spi);
-    
+    spi_disable_loopback(p_spi);    
     spi_set_peripheral_chip_select_value(p_spi, DEFAULT_CHIP_ID);
     spi_set_fixed_peripheral_select(p_spi);
-    
     spi_disable_peripheral_select_decode(p_spi);
     spi_set_delay_between_chip_select(p_spi, CONFIG_SPI_MASTER_DELAY_BCS);
 }
@@ -106,8 +107,7 @@ void spi_master_init(Spi *p_spi)
  *                  SPI_MODE_3.
  * \param baud_rate Baud rate for communication with slave device in Hz.
  */
-extern void spi_master_setup_device(Spi *p_spi, struct spi_device *device,
-     spi_flags_t flags, uint32_t baud_rate)
+extern void spi_master_setup_device(Spi *p_spi, struct spi_device *device, spi_flags_t flags, uint32_t baud_rate)
  {
      spi_set_transfer_delay(p_spi, device->id, CONFIG_SPI_MASTER_DELAY_BS, CONFIG_SPI_MASTER_DELAY_BCT);
      spi_set_bits_per_transfer(p_spi, device->id, CONFIG_SPI_MASTER_BITS_PER_TRANSFER);
@@ -174,8 +174,7 @@ void spi_deselect_device(Spi *p_spi, struct spi_device *device)
  *
  * \pre SPI device must be selected with spi_select_device() first.
  */
-status_code_t spi_write_packet(Spi *p_spi, const uint8_t *data,
-		size_t len)
+status_code_t spi_write_packet(Spi *p_spi, const uint8_t *data,	size_t len)
 {
 	uint32_t timeout = SPI_TIMEOUT;
 	uint32_t i = 0;
@@ -248,11 +247,11 @@ void configure_spi() {
     SPI_device_1.id = 0001;
     SPI_Device_CC1120 = &SPI_device_1;
     
-    spi_master_init(SPI0);											                // setup arduino as SPI master
+    spi_master_init(SPI0);
     spi_master_setup_device(SPI0, SPI_Device_Memory, POLARITY_FLAG, BAUD_RATE);
     spi_master_setup_device(SPI0, SPI_Device_CC1120, POLARITY_FLAG, BAUD_RATE);
-    spi_enable(SPI0);													            // enables SPI
-    spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);                                    // enables the SPI interrupt
+    spi_enable(SPI0);
+    spi_enable_interrupt(SPI0, INTERRUPT_FLAGS);
 }
 
 
