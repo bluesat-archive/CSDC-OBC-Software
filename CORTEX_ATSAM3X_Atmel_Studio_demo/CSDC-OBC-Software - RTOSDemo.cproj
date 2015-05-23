@@ -564,6 +564,9 @@
     <Compile Include="src\Drivers\asf\sam\boards\sam3x_ek\sam3x_ek.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Drivers\asf\sam\croutine.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Drivers\asf\sam\drivers\can\can.c">
       <SubType>compile</SubType>
     </Compile>
@@ -916,9 +919,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\thirdparty\CMSIS\Include\core_cmInstr.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Drivers\asf\thirdparty\FreeRTOS\include\croutine.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Drivers\asf\thirdparty\FreeRTOS\include\FreeRTOS.h">
