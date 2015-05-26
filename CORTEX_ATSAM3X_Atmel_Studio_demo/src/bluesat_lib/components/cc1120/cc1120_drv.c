@@ -9,6 +9,17 @@
 #include "cc1120_drv.h"
 #include "bluesat_conf.h"
 
+
+
+
+
+
+
+
+
+
+/*
+
 status_code_t cc1120_transmit (uint8_t data, uint8_t len) {
     spi_select_device(SPI0, SPI_Device_CC1120);
 	status_code_t status = spi_write_packet(SPI0, (uint8_t*)&data, len);
@@ -91,57 +102,4 @@ void cc1120_write_burst_extended(uint8_t start_address, uint8_t *data_buffer) {
 	start_address = start_address;
 	data_buffer = data_buffer;
 }
-/*
-// Command Strobes
-void reset_chip() {
-	cc1120_transmit(CC1120_SRES, 1);
-}
-void toggle_frequency_synthesizer() {
-	cc1120_transmit(CC1120_SFSTXON, 1);
-}
-void XOFF_on_CSn_deassert() {
-	cc1120_transmit(CC1120_SXOFF, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SCAL, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SRX, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_STX, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SIDLE, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_AFC, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SWOR, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SPWD, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SFRX, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SFTX, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SWORRST, 1);
-}
-void reset_chip() {
-	cc1120_transmit(CC1120_SNOP, 1);
-}
 */
-// Direct FIF0 Access
-
-
-
-// Standard FIFO Access
-
-
-
-
