@@ -11,64 +11,66 @@
 
 #define CC1120_MAX_SPI_ACCESS_ADDRESS		0x3F
 
+/* Message Lengths */
+#define ONE_BYTE			1
 
 /* Access Types */
-#define CC1120_READ			0x80	// 1--- ----
-#define CC1120_WRITE		0x00	// 0--- ----
-#define CC1120_SINGLE_MODE  0x00	// -0-- ----
-#define CC1120_BURST_MODE	0x40	// -1-- ----
-#define CC1120_EXTENDED		0x2F	// --10 1111
-#define CC1120_DIRECT_FIFO	0x3E	// --11 1110
-#define CC1120_STD_FIFO		0x3F	// --11 1111
+#define CC1120_READ_ACCESS				0x80	// 1--- ----
+#define CC1120_WRITE_ACCESS				0x00	// 0--- ----
+#define CC1120_SINGLE_ACCESS			0x00	// -0-- ----
+#define CC1120_BURST_ACCESS				0x40	// -1-- ----
+#define CC1120_EXTENDED_ACCESS			0x2F	// --10 1111
+#define CC1120_DIRECT_FIFO				0x3E	// --11 1110
+#define CC1120_STD_FIFO					0x3F	// --11 1111
 
-/* Configuration Registers */
-#define CC1120_IOCFG3                   0x00
-#define CC1120_IOCFG2                   0x01
-#define CC1120_IOCFG1                   0x02
-#define CC1120_IOCFG0                   0x03
-#define CC1120_SYNC3                    0x04
-#define CC1120_SYNC2                    0x05
-#define CC1120_SYNC1                    0x06
-#define CC1120_SYNC0                    0x07
-#define CC1120_SYNC_CFG1                0x08
-#define CC1120_SYNC_CFG0                0x09
-#define CC1120_DEVIATION_M              0x0A
-#define CC1120_MODCFG_DEV_E             0x0B
-#define CC1120_DCFILT_CFG               0x0C
-#define CC1120_PREAMBLE_CFG1            0x0D
-#define CC1120_PREAMBLE_CFG0            0x0E
-#define CC1120_FREQ_IF_CFG              0x0F
-#define CC1120_IQIC                     0x10
-#define CC1120_CHAN_BW                  0x11
-#define CC1120_MDMCFG1                  0x12
-#define CC1120_MDMCFG0                  0x13
-#define CC1120_SYMBOL_RATE2             0x14
-#define CC1120_SYMBOL_RATE1             0x15
-#define CC1120_SYMBOL_RATE0             0x16
-#define CC1120_AGC_REF                  0x17
-#define CC1120_AGC_CS_THR               0x18
-#define CC1120_AGC_GAIN_ADJUST          0x19
-#define CC1120_AGC_CFG3                 0x1A
-#define CC1120_AGC_CFG2                 0x1B
-#define CC1120_AGC_CFG1                 0x1C
-#define CC1120_AGC_CFG0                 0x1D
-#define CC1120_FIFO_CFG                 0x1E
-#define CC1120_DEV_ADDR                 0x1F
-#define CC1120_SETTLING_CFG             0x20
-#define CC1120_FS_CFG                   0x21
-#define CC1120_WOR_CFG1                 0x22
-#define CC1120_WOR_CFG0                 0x23
-#define CC1120_WOR_EVENT0_MSB           0x24
-#define CC1120_WOR_EVENT0_LSB           0x25
-#define CC1120_PKT_CFG2                 0x26
-#define CC1120_PKT_CFG1                 0x27
-#define CC1120_PKT_CFG0                 0x28
-#define CC1120_RFEND_CFG1               0x29
-#define CC1120_RFEND_CFG0               0x2A
-#define CC1120_PA_CFG2                  0x2B
-#define CC1120_PA_CFG1                  0x2C
-#define CC1120_PA_CFG0                  0x2D
-#define CC1120_PKT_LEN                  0x2E
+/* configuration registers */
+#define CC1120_IOCFG3                   0x0000
+#define CC1120_IOCFG2                   0x0001
+#define CC1120_IOCFG1                   0x0002
+#define CC1120_IOCFG0                   0x0003
+#define CC1120_SYNC3                    0x0004
+#define CC1120_SYNC2                    0x0005
+#define CC1120_SYNC1                    0x0006
+#define CC1120_SYNC0                    0x0007
+#define CC1120_SYNC_CFG1                0x0008
+#define CC1120_SYNC_CFG0                0x0009
+#define CC1120_DEVIATION_M              0x000A
+#define CC1120_MODCFG_DEV_E             0x000B
+#define CC1120_DCFILT_CFG               0x000C
+#define CC1120_PREAMBLE_CFG1            0x000D
+#define CC1120_PREAMBLE_CFG0            0x000E
+#define CC1120_FREQ_IF_CFG              0x000F
+#define CC1120_IQIC                     0x0010
+#define CC1120_CHAN_BW                  0x0011
+#define CC1120_MDMCFG1                  0x0012
+#define CC1120_MDMCFG0                  0x0013
+#define CC1120_SYMBOL_RATE2             0x0014
+#define CC1120_SYMBOL_RATE1             0x0015
+#define CC1120_SYMBOL_RATE0             0x0016
+#define CC1120_AGC_REF                  0x0017
+#define CC1120_AGC_CS_THR               0x0018
+#define CC1120_AGC_GAIN_ADJUST          0x0019
+#define CC1120_AGC_CFG3                 0x001A
+#define CC1120_AGC_CFG2                 0x001B
+#define CC1120_AGC_CFG1                 0x001C
+#define CC1120_AGC_CFG0                 0x001D
+#define CC1120_FIFO_CFG                 0x001E
+#define CC1120_DEV_ADDR                 0x001F
+#define CC1120_SETTLING_CFG             0x0020
+#define CC1120_FS_CFG                   0x0021
+#define CC1120_WOR_CFG1                 0x0022
+#define CC1120_WOR_CFG0                 0x0023
+#define CC1120_WOR_EVENT0_MSB           0x0024
+#define CC1120_WOR_EVENT0_LSB           0x0025
+#define CC1120_PKT_CFG2                 0x0026
+#define CC1120_PKT_CFG1                 0x0027
+#define CC1120_PKT_CFG0                 0x0028
+#define CC1120_RFEND_CFG1               0x0029
+#define CC1120_RFEND_CFG0               0x002A
+#define CC1120_PA_CFG2                  0x002B
+#define CC1120_PA_CFG1                  0x002C
+#define CC1120_PA_CFG0                  0x002D
+#define CC1120_PKT_LEN                  0x002E
 
 /* Extended Configuration Registers */
 #define CC1120_IF_MIX_CFG               0x2F00
@@ -242,41 +244,11 @@
 /******************************************************************************
  * PROTPTYPES
  */ 
+uint8_t cc112xSpiReadReg(uint16_t addr, uint8_t *data, uint8_t len);
+uint8_t cc112xGetTxStatus(void);
+uint8_t cc112xGetRxStatus(void);  
+uint8_t cc112xSpiWriteReg(uint16_t addr, uint8_t *data, uint8_t len);
+uint8_t cc112xSpiWriteTxFifo(uint8_t *pWriteData, uint8_t len);
+uint8_t cc112xSpiReadRxFifo(uint8_t *pReadData, uint8_t len);
 
-/* Level 1 access functions */
-void trxRfSpiInterfaceInit(uint8 prescalerValue);
-rfStatus_t trxSpiCmdStrobe(uint8 cmd);
-rfStatus_t trx8BitRegAccess(uint8 accessType, uint8 addrByte, uint8 *pData, uint16 len);
-rfStatus_t trx16BitRegAccess(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len);
-
-/* Level 2 access functions */
-uint32_t cc112xSpiReadReg(uint16 addr, uint8 *data, uint8 len);
-uint32_t cc112xGetTxStatus(void);
-uint32_t cc112xGetRxStatus(void);  
-uint32_t cc112xSpiWriteReg(uint16 addr, uint8 *data, uint8 len);
-uint32_t cc112xSpiWriteTxFifo(uint8 *pWriteData, uint8 len);
-uint32_t cc112xSpiReadRxFifo(uint8 *pReadData, uint8 len);
-
-
-/*
-
-// Access Functions
-status_code_t cc1120_transmit (uint8_t data, uint8_t len);
-status_code_t cc1120_receive (uint8_t *data);
-
-void cc1120_read_register_address_space(uint8_t *data_buffer);
-// Single Register Access
-void cc1120_read_single(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_single(uint8_t address, uint8_t *data_buffer);
-// Burst Register Access
-void cc1120_read_burst_register(uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
-void cc1120_write_burst_register (uint8_t start_address, uint8_t *data_buffer, uint32_t iterations);
-// Single Extended Register Access
-void cc1120_read_single_extended(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_single_extended(uint8_t address, uint8_t *data_buffer);
-// Burst Extended Register Access
-void cc1120_read_burst_extended(uint8_t address, uint8_t *data_buffer);
-void cc1120_write_burst_extended(uint8_t address, uint8_t *data_buffer);
-
-*/
 #endif /* CC1120_DRV_H_ */

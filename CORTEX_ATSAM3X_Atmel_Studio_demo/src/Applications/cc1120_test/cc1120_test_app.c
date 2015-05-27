@@ -45,13 +45,13 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
          *  Sends a burst of data to write to the registers and tries to read
          *  it back.                                                            
          */
-		cc1120_burst_test();
+		// cc1120_burst_test();
         
         
 		// CC1120_read_test();
 	}
 }
-
+/*
 void cc1120_burst_test() {	
 	
 	cc1120_transmit(CC1120_SRES, 1);		// reset the chip
@@ -105,38 +105,5 @@ void CC1120_read_test() {
 	
 //	cc1120_receive(new_data);				
 	for (int y = 0; y<1000; y++);			// delay
-}
-
-/*
-int i2a(char *s, int n){
-	div_t qr;
-	int pos;
-
-	if(n == 0) {
-		return 0;
-	}
-
-	qr = div(n, 10);
-	
-	pos = i2a(s, qr.quot);
-	
-	s[pos] = qr.rem + '0';
-	
-	return pos + 1;
-}
-
-char* my_itoa(char *output_buff, int num){
-	
-	char *p = output_buff;
-	
-	// check if it is even or odd
-	if (num < 0) {
-		*p++ = '-';
-		num *= -1;
-	} else if (num == 0)	
-	*p++ = '0';
-	p[i2a(p, num)]='\0';
-	
-	return output_buff;
 }
 */
