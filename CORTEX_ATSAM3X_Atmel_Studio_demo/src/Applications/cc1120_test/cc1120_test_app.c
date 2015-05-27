@@ -4,13 +4,16 @@
  * Created: 14-02-2015 5:22:38 PM
  *  Author: Blue
  */ 
-
-#include "FreeRTOS.h"				// Scheduler include files.
-#include "task.h"					// Scheduler include files.
-#include "cc1120_test_app.h"		// Application include file.
-
+/* Library Includes */ 
 #include <asf.h>
 #include <cc1120_drv.h>
+
+/* FreeRTOS Includes */
+#include "FreeRTOS.h"
+#include "task.h"
+
+/* Other Includes */
+#include "cc1120_test_app.h"
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE				// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )									// 
@@ -45,17 +48,17 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
          *  Sends a burst of data to write to the registers and tries to read
          *  it back.                                                            
          */
-		// cc1120_burst_test();
+		cc1120_burst_test();
         
         
 		// CC1120_read_test();
 	}
 }
-/*
+
 void cc1120_burst_test() {	
 	
-	cc1120_transmit(CC1120_SRES, 1);		// reset the chip
-	for (int y = 0; y<1000; y++);			// delay
+	cc1120Reset();
+	for (int y = 0; y<1000; y++);
 	
 	uint8_t data_buf_tx[4];
 	data_buf_tx[0] = 0x55;
@@ -69,15 +72,16 @@ void cc1120_burst_test() {
 	data_buf_rx[2] = 'z';
 	data_buf_rx[3] = 'z';
 	
-	cc1120_write_burst_register(CC1120_IOCFG3, data_buf_tx, 4);		// write buffer
+	cc1120RegAccess(CC1120_WRITE_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_tx, 4);
 	
-	for (int y = 0; y<1000; y++);						// delay
+	for (int y = 0; y<1000; y++);
 	
-	cc1120_read_burst_register(CC1120_IOCFG3, data_buf_rx, 4);	// read four bits
+	cc1120RegAccess(CC1120_READ_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_rx, 4);
 	
-	for (int y = 0; y<10000; y++);			// large delay
+	for (int y = 0; y<10000; y++);
 }
 
+/*
 void CC1120_read_test() {
 	
 	uint8_t send_byte;

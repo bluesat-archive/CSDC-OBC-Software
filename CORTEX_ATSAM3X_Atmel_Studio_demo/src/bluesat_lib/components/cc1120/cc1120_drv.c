@@ -12,7 +12,6 @@
 #include "cc1120_drv.h"
 
 /* Private functions */
-static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len);
 static uint8_t prvTrxSpiCmdStrobe(uint8_t cmd);
 
 static uint8_t prvTrx8BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t *pData, uint16_t len);
@@ -22,7 +21,7 @@ static void prvTrxComm (uint8_t command, uint8_t *pData, uint8_t len);
 
 /*-----------------------------------------------------------*/
 
-static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len) {
+uint8_t cc1120RegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len) {
 	
     uint8_t addrHigh = (uint8_t)(addr>>8);
     uint8_t addrLow  = (uint8_t)(addr & 0x00FF);
@@ -88,7 +87,9 @@ static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8 *pData, 
 }
 */
 
-
+uint8_t cc1120Reset() {
+    return prvTrxSpiCmdStrobe(CC1120_SRES);
+}
 
 static uint8_t prvTrxSpiCmdStrobe(uint8_t cmd) {
 	
