@@ -1,7 +1,8 @@
 CSDC-OBC-Software
 ====
 
-Please have a look at the [OBC-CSDC wiki](https://github.com/bluesat/CSDC-OBC-Software/wiki) for details.
+WE HAVE A NEW WIKI: https://bluesat.atlassian.net/wiki/display/OBCS/CubeSat+OBC-Software+Home
+
 
 Quickstart Guide for SAM3X-EK Demo Application
 ------------------
