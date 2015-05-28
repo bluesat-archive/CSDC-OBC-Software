@@ -4,13 +4,16 @@
  * Created: 14-02-2015 5:22:38 PM
  *  Author: Blue
  */ 
-
-#include "FreeRTOS.h"				// Scheduler include files.
-#include "task.h"					// Scheduler include files.
-#include "cc1120_test_app.h"		// Application include file.
-
+/* Library Includes */ 
 #include <asf.h>
 #include <cc1120_drv.h>
+
+/* FreeRTOS Includes */
+#include "FreeRTOS.h"
+#include "task.h"
+
+/* Other Includes */
+#include "cc1120_test_app.h"
 
 #define intgSTACK_SIZE			configMINIMAL_STACK_SIZE				// number of variables available for this task
 #define intgNUMBER_OF_TASKS		( 1 )									// 
@@ -54,8 +57,8 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
 
 void cc1120_burst_test() {	
 	
-	cc1120_transmit(CC1120_SRES, 1);		// reset the chip
-	for (int y = 0; y<1000; y++);			// delay
+	cc1120Reset();
+	for (int y = 0; y<1000; y++);
 	
 	uint8_t data_buf_tx[4];
 	data_buf_tx[0] = 0x55;
@@ -69,15 +72,16 @@ void cc1120_burst_test() {
 	data_buf_rx[2] = 'z';
 	data_buf_rx[3] = 'z';
 	
-	cc1120_write_burst_register(CC1120_IOCFG3, data_buf_tx, 4);		// write buffer
+	cc1120RegAccess(CC1120_WRITE_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_tx, 4);
 	
-	for (int y = 0; y<1000; y++);						// delay
+	for (int y = 0; y<1000; y++);
 	
-	cc1120_read_burst_register(CC1120_IOCFG3, data_buf_rx, 4);	// read four bits
+	cc1120RegAccess(CC1120_READ_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_rx, 4);
 	
-	for (int y = 0; y<10000; y++);			// large delay
+	for (int y = 0; y<10000; y++);
 }
 
+/*
 void CC1120_read_test() {
 	
 	uint8_t send_byte;
@@ -105,38 +109,5 @@ void CC1120_read_test() {
 	
 //	cc1120_receive(new_data);				
 	for (int y = 0; y<1000; y++);			// delay
-}
-
-/*
-int i2a(char *s, int n){
-	div_t qr;
-	int pos;
-
-	if(n == 0) {
-		return 0;
-	}
-
-	qr = div(n, 10);
-	
-	pos = i2a(s, qr.quot);
-	
-	s[pos] = qr.rem + '0';
-	
-	return pos + 1;
-}
-
-char* my_itoa(char *output_buff, int num){
-	
-	char *p = output_buff;
-	
-	// check if it is even or odd
-	if (num < 0) {
-		*p++ = '-';
-		num *= -1;
-	} else if (num == 0)	
-	*p++ = '0';
-	p[i2a(p, num)]='\0';
-	
-	return output_buff;
 }
 */
