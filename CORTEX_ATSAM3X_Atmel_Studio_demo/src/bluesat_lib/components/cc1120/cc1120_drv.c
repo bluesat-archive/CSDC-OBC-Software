@@ -14,54 +14,31 @@
 /* Private functions */
 static uint8_t prvTrxSpiCmdStrobe(uint8_t cmd);
 
+/*
 static uint8_t prvTrx8BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t *pData, uint16_t len);
 static uint8_t prvTrx16BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t *pData, uint8_t len);
 static void prvTrxComm (uint8_t command, uint8_t *pData, uint8_t len);
+*/
 
-
-/*-----------------------------------------------------------*/
-
-uint8_t cc1120RegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len) {
-	
-    uint8_t addrHigh = (uint8_t)(addr>>8);
-    uint8_t addrLow  = (uint8_t)(addr & 0x00FF);
-    uint8_t status = 0;
-
-	if (!addrHigh) {
-        // Regular Register Access
-		status = prvTrx8BitRegAccess(accessType, addrLow, pData, len);
-	} else {
-        // Extended Register Access
-		status = prvTrx16BitRegAccess(accessType, addrLow, pData, len);
-	}
-
-    return status;
-}
-
-
-// This function is a shortened version of all the other low level access functions.
-// Much easier to understand in one reading and refactored, need to test it.
-/*
-static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8 *pData, uint8 len) {
+uint8_t uTrxRegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len) {
 
     uint8_t addrHigh = (uint8_t)(addr>>8);
     uint8_t addrLow  = (uint8_t)(addr & 0x00FF);
-    uint8_t status = 0;
+    uint8_t status;
     uint8_t command;
 
     // Start communication
     spi_select_device(SPI0, SPI_Device_CC1120);
 
-    // Access either regular or extended address space
     if (!addrHigh) {
-        // read/write/burst/single and address
+        // Regular address space
         command = accessType | addrLow;
 
         // Send header, read status byte
         spi_write_packet(SPI0, &command, ONE_BYTE);
         spi_read_packet(SPI0, &status, ONE_BYTE);
     } else {
-        // read/write/burst/single in extended address space
+        // Extended address space
         command = accessType | CC1120_EXTENDED_ACCESS;
 
         // Send header, read status byte
@@ -70,13 +47,12 @@ static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8 *pData, 
         
         // Send extended address
         spi_write_packet(SPI0, &addrLow, ONE_BYTE);
-        
     }
 
     // Transmit/Receive data
 	if (accessType & CC1120_READ_ACCESS) {
-    	spi_read_packet(SPI0, pData, len);
-    } else if (accessType & CC1120_WRITE_ACCESS) {
+        spi_read_packet(SPI0, pData, len);
+    } else {
     	spi_write_packet(SPI0, pData, len);
 	}
 
@@ -85,7 +61,7 @@ static uint8_t prvTrxRegAccess(uint8_t accessType, uint16_t addr, uint8 *pData, 
 
     return status;
 }
-*/
+
 
 uint8_t cc1120Reset() {
     return prvTrxSpiCmdStrobe(CC1120_SRES);
@@ -103,7 +79,24 @@ static uint8_t prvTrxSpiCmdStrobe(uint8_t cmd) {
 	
 	return status;
 }
-/*-----------------------------------------------------------*/
+
+/*
+uint8_t cc1120RegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len) {
+	
+    uint8_t addrHigh = (uint8_t)(addr>>8);
+    uint8_t addrLow  = (uint8_t)(addr & 0x00FF);
+    uint8_t status = 0;
+
+	if (!addrHigh) {
+        // Regular Register Access
+		status = prvTrx8BitRegAccess(accessType, addrLow, pData, len);
+	} else {
+        // Extended Register Access
+		status = prvTrx16BitRegAccess(accessType, addrLow, pData, len);
+	}
+
+    return status;
+}
 
 static uint8_t prvTrx8BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t *pData, uint16_t len) {
 	
@@ -111,14 +104,16 @@ static uint8_t prvTrx8BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t
 	uint8_t status = 0;
 	
 	spi_select_device(SPI0, SPI_Device_CC1120);
+    
 	spi_write_packet(SPI0, &command, ONE_BYTE);
 	spi_read_packet(SPI0, &status, ONE_BYTE);
+    
 	prvTrxComm (command, pData, len);
+    
 	spi_deselect_device(SPI0, SPI_Device_CC1120);
 	
 	return status;
 }
-/*-----------------------------------------------------------*/
 
 static uint8_t prvTrx16BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_t *pData, uint8_t len) {
 	
@@ -144,13 +139,13 @@ static uint8_t prvTrx16BitRegAccess(uint8_t accessType, uint8_t addrByte, uint8_
 	
 	return status;
 }
-/*-----------------------------------------------------------*/
 
 static void prvTrxComm (uint8_t command, uint8_t *pData, uint8_t len) {
 	if (command & CC1120_READ_ACCESS) {
 		spi_read_packet(SPI0, pData, len);
-	} else if (command & CC1120_WRITE_ACCESS) {
+	} else {
+        // write buffer
 		spi_write_packet(SPI0, pData, len);
 	}
 }
-/*-----------------------------------------------------------*/
+*/

@@ -45,7 +45,7 @@ static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
 
 	/* Set a pointer to the variable we are going to set to true each
 	iteration.  This is also a good test of the parameter passing mechanism
-	within each port. */
+	within each porty. */
 	pxTaskHasExecuted = ( volatile BaseType_t * ) pvParameters;
 	pxTaskHasExecuted = pxTaskHasExecuted;
 
@@ -58,8 +58,6 @@ static portTASK_FUNCTION( vBLUEsat_drivers_test_Task, pvParameters ) {
         spi_deselect_device(SPI0, SPI_Device_CC1120);
         
         for (int y = 0; y < 1000; y++);
-        
-        SPI_Device_CC1120 = SPI_Device_CC1120;
         
         // twi_probe(TWI0, 0xFF);
         // I have no clue how twi works here.

@@ -72,11 +72,11 @@ void cc1120_burst_test() {
 	data_buf_rx[2] = 'z';
 	data_buf_rx[3] = 'z';
 	
-	cc1120RegAccess(CC1120_WRITE_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_tx, 4);
+	uTrxRegAccess(CC1120_WRITE_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_tx, 4);
 	
 	for (int y = 0; y<1000; y++);
 	
-	cc1120RegAccess(CC1120_READ_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_rx, 4);
+	uTrxRegAccess(CC1120_READ_ACCESS | CC1120_BURST_ACCESS, CC1120_IOCFG3, data_buf_rx, 4);
 	
 	for (int y = 0; y<10000; y++);
 }

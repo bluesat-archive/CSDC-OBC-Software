@@ -16,10 +16,12 @@
      SPI_Device_CC1120->id = SPI_DEVICE_CC1120_CHIP_ID;
      
      spi_master_init(SPI0);
+     
      spi_master_setup_device(SPI0, SPI_Device_Memory, POLARITY_FLAG, BAUD_RATE, 0);
      spi_master_setup_device(SPI0, SPI_Device_CC1120, POLARITY_FLAG, BAUD_RATE, 0);
+     
      spi_enable(SPI0);
-     spi_enable_interrupt(SPI0, SPI_INTERRUPT_FLAGS);
+   //  spi_enable_interrupt(SPI0, SPI_INTERRUPT_FLAGS);
      
      spi_buffer_index = 0;
  }

@@ -244,6 +244,9 @@
 /******************************************************************************
  * PROTPTYPES
  */
+
+uint8_t uTrxRegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len);
+
 uint8_t cc1120Reset();
 uint8_t cc1120RegAccess(uint8_t accessType, uint16_t addr, uint8_t *pData, uint8_t len);
 uint8_t cc112xSpiReadReg(uint16_t addr, uint8_t *data, uint8_t len);
