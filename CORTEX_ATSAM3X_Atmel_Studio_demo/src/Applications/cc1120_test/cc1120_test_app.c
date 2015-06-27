@@ -50,9 +50,18 @@ static portTASK_FUNCTION( vcc1120_TestTask, pvParameters )
          */
 		cc1120_burst_test();
         
-        
+        uart_serial_test();
 		// CC1120_read_test();
 	}
+}
+
+void uart_serial_test() {
+    
+    uint8_t message[21] = "Bluesat goes bleep.\n\r";
+    
+    usart_serial_write_packet((usart_if)UART, message, 21);
+    
+    for (int y = 0; y < 100000; y++);
 }
 
 void cc1120_burst_test() {	

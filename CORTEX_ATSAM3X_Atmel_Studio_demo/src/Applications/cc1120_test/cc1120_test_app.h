@@ -16,5 +16,6 @@ void vStartcc1120_testTasks( UBaseType_t uxPriority );
 // test functions
 void cc1120_burst_test();
 void CC1120_read_test();
+void uart_serial_test();
 
 #endif /* CC1120_TEST_APP_H_ */

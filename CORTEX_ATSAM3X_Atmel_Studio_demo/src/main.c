@@ -106,7 +106,7 @@ int main ( void )
     
     /* Initialises services */
     prvServicesInit();
-
+    
     /* Start applications */
     prvStartApplications();
     
@@ -155,6 +155,7 @@ void prvServicesInit() {
 static void prvStartApplications( void ) {
      // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
     vStartcc1120_testTasks( tskIDLE_PRIORITY );
+    
 }
 /*-----------------------------------------------------------*/
 
