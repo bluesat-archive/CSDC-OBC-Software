@@ -11,5 +11,6 @@
 
 void configure_spi();
 void configure_twi();
+void configure_uart();
 
 #endif /* INIT_SERVICES_H_ */

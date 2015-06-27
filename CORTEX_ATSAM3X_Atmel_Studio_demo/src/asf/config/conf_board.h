@@ -45,7 +45,7 @@
 #define CONF_BOARD_H_INCLUDED
 
 /* Configure UART pins */
-//#define CONF_BOARD_UART_CONSOLE
+#define CONF_BOARD_UART_CONSOLE
 
 /* Configure ADC example pins */
 //#define CONF_BOARD_ADC

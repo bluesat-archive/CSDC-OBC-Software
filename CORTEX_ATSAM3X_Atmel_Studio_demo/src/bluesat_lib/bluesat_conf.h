@@ -35,6 +35,10 @@ struct spi_device * SPI_Device_Memory;
 #define TWI0_CHIP                               0xFF
 #define TWI0_INTERRUPT_FLAGS                    0
 
+/* UART */
+#define CONF_UART_BAUDRATE                      9600
+#define CONF_UART_PARITY                        UART_MR_PAR_NO
+
 uint8_t spi_buffer_start[250];
 uint32_t spi_buffer_index;
 

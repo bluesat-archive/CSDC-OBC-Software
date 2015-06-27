@@ -37,3 +37,13 @@
     // twi_enable_interrupt(TWI0, TWI0_INTERRUPT_FLAGS);
      
  }
+ 
+ void configure_uart( void ) {
+     
+     usart_serial_options_t * uart_opt = (usart_serial_options_t *) pvPortMalloc (sizeof(usart_serial_options_t));
+     
+     uart_opt->baudrate = CONF_UART_BAUDRATE;
+     uart_opt->paritytype = UART_MR_PAR_NO;       
+     
+     usart_serial_init((usart_if)UART, uart_opt);
+ }

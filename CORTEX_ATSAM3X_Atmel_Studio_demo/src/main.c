@@ -140,6 +140,18 @@ static void prvSetupHardware( void ) {
 }
 /*-----------------------------------------------------------*/
 
+void prvServicesInit() {
+    
+    /* Configures SPI settings */
+    configure_spi();
+    
+    configure_twi();
+    
+    configure_uart();
+    
+}
+/*-----------------------------------------------------------*/
+
 static void prvStartApplications( void ) {
      // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
     vStartcc1120_testTasks( tskIDLE_PRIORITY );
@@ -199,12 +211,3 @@ void vApplicationTickHook( void )
 	functions can be used (those that end in FromISR()). */
 }
 /*-----------------------------------------------------------*/
-
-void prvServicesInit() {
-    
-    /* Configures SPI settings */    
-    configure_spi();
-    
-    configure_twi();
-    
-}
