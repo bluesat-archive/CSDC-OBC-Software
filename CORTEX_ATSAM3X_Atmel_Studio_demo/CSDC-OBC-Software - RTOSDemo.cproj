@@ -1019,6 +1019,9 @@
     <Compile Include="src\bluesat_lib\components\cc1120\cc1120_drv.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\bluesat_lib\components\m25p32\m25p32_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\bluesat_lib\init_services.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1115,6 +1118,7 @@
     <Folder Include="src\asf\thirdparty\FreeRTOS\portable\MemMang\" />
     <Folder Include="src\bluesat_lib\components\" />
     <Folder Include="src\bluesat_lib\components\cc1120\" />
+    <Folder Include="src\bluesat_lib\components\m25p32" />
     <Folder Include="src\Config\" />
     <Folder Include="src\bluesat_lib" />
   </ItemGroup>
