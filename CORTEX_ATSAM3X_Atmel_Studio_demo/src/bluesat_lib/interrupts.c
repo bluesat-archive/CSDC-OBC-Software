@@ -6,28 +6,57 @@
  */ 
 #include <asf.h>
 #include "bluesat_conf.h"
+#include "FreeRTOS.h"
 
-void write_to_spi_buffer(uint8_t data) {
-    spi_buffer_start[spi_buffer_index] = data;
-    spi_buffer_index++;
-    
-    if (spi_buffer_index>250) {
-        spi_buffer_index = 0;
-    }
-}
+volatile uint32_t spi_sr_temp;
+volatile uint32_t spi_dr_temp;
+BaseType_t HigherPriorityTaskWoken;
 
-void SPI0_Handler (void) {
-
-    uint8_t spi_p = SPI_Device_CC1120->id;
-    // break and check it reaches here
-    
-    uint16_t read_data = 0;
-    spi_read(SPI0, &read_data, &spi_p);
-    
-    read_data = read_data;
-    write_to_spi_buffer(read_data);
-    
+void SPI0_Handler (void) 
+{
     NVIC_ClearPendingIRQ(SPI0_IRQn);
+    spi_sr_temp = spi_read_status(SPI0);
+	xHigherPriorityTaskWoken = pdFALSE;
+    if(spi_sr_temp & SPI_SR_OVRES )
+    {
+		// receive overrun - handle error
+        spi_sr_temp = spi_sr_temp;
+    }
+
+    if(spi_sr_temp & SPI_SR_MODF)
+    {
+		// mode fault occurred - handle error
+        spi_sr_temp = spi_sr_temp;
+    }
+
+    if(spi_sr_temp & SPI_SR_RDRF)
+    {
+		spi_dr_temp = spi_read_single(SPI0);
+        if(errQUEUE_FULL == xQueueSendFromISR(SPI_TX_QUEUE, &spi_dr_temp, &HigherPriorityTaskWoken ))
+		{
+			// Queue full - handle error 
+		}
+    }
+	
+	if(spi_sr_temp & SPI_SR_TDRE)
+	{
+		if( pdTRUE != xQueueReceiveFromISR(SPI_TX_QUEUE, &spi_dr_temp, HigherPriorityTaskWoken ))
+		{
+			// Failed to get a byte from TX queue - handle it!
+		}
+		
+		if(!(uxQueueMessagesWaitingFromISR(SPI_TX_QUEUE) > 0))
+		{
+			spi_disable_interrupt(SPI0, SPI_IDR_TXEMPTY);
+		}
+	}
+	
+	if(HigherPriorityTaskWoken == pdTRUE)
+	{
+		portYIELD_FROM_ISR(HigherPriorityTaskWoken)
+	}
+
+
 }
 
 void TWI0_Handler() {

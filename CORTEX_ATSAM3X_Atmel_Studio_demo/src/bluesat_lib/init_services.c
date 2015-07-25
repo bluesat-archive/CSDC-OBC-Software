@@ -14,7 +14,10 @@
      
      SPI_Device_CC1120 = (struct spi_device *) pvPortMalloc( sizeof (struct spi_device) );
      SPI_Device_CC1120->id = SPI_DEVICE_CC1120_CHIP_ID;
-     
+	 
+	 SPI_TX_QUEUE = xQueueCreate(SPI_TX_QUEUE_MAX_LENGTH, sizeof(uint32_t));
+	 SPI_RX_QUEUE = xQueueCreate(SPI_RX_QUEUE_MAX_LENGTH, sizeof(uint32_t));
+	      
      spi_master_init(SPI0);
      spi_master_setup_device(SPI0, SPI_Device_Memory, POLARITY_FLAG, BAUD_RATE, 0);
      spi_master_setup_device(SPI0, SPI_Device_CC1120, POLARITY_FLAG, BAUD_RATE, 0);
