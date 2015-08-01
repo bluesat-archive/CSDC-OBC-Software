@@ -41,7 +41,9 @@
  *
  */
 
+#include "bluesat_conf.h"
 #include "spi_master.h"
+
 
 /**
  * \brief Max number when the chip selects are connected to a 4- to 16-bit decoder.
@@ -61,6 +63,8 @@
 
 #define DEFAULT_CHIP_ID     0
 
+BaseType_t HigherPriorityTaskWoken;
+
 /** \brief Initialize the SPI in master mode.
  *
  * \param p_spi  Base address of the SPI instance.
@@ -77,6 +81,9 @@ void spi_master_init(Spi *p_spi)
     spi_set_fixed_peripheral_select(p_spi);
     spi_disable_peripheral_select_decode(p_spi);
     spi_set_delay_between_chip_select(p_spi, CONFIG_SPI_MASTER_DELAY_BCS);
+	
+	SPI_TX_QUEUE = xQueueCreate(SPI_TX_QUEUE_MAX_LENGTH, 4*sizeof(uint8_t));
+	SPI_RX_QUEUE = xQueueCreate(SPI_RX_QUEUE_MAX_LENGTH, 4*sizeof(uint8_t));
 }
 
 /**
@@ -225,5 +232,38 @@ status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len)
 }
 
 
+extern status_code_t spi_read_packet_async(spi_devices_t src, uint8_t* data, size_t len)
+{
+	//create item buffer
+	uint32_t item;
+	
+	if (len > SPI_RX_QUEUE_MAX_LENGTH) {
+		return ERR_INVALID_ARG;
+	}
+
+	for (int i = 0; i < len; ++i) {
+		xQueueReceive(SPI_RX_QUEUE, &item, 0);
+		data[i] = (uint8_t) item;
+	}
+}
+
+extern status_code_t spi_write_packet_async(spi_devices_t dest, uint8_t* data, size_t len)
+{	
+	//create item buffer
+	uint32_t item = spi_device_masks[dest];
+	
+	if (len > SPI_TX_QUEUE_MAX_LENGTH) {
+		return ERR_INVALID_ARG;
+	}
+
+	for (int i = 0; i < len; ++i) {
+		//place data byte in packet
+		item &= 0xffff0000;
+		item |= (uint32_t) data[i];
+		xQueueSend(SPI_TX_QUEUE, &item, 0);
+	
+	}
+
+}
 
 //! @}

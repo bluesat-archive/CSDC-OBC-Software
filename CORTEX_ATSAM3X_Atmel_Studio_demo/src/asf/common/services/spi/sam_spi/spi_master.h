@@ -217,9 +217,9 @@ static inline void spi_read_single(Spi *p_spi, uint8_t *data)
  */
 extern status_code_t spi_read_packet(Spi *p_spi, uint8_t *data, size_t len);
 
-extern status_code_t spi_read_packet_async(struct spi_device * src, uint8_t* data, size_t len);
+extern status_code_t spi_read_packet_async(spi_devices_t src, uint8_t* data, size_t len);
 
-extern status_code_t spi_write_packet_async(struct spi_device * dest, uint8_t* data, size_t len);
+extern status_code_t spi_write_packet_async(spi_devices_t dest, uint8_t* data, size_t len);
 
 
 

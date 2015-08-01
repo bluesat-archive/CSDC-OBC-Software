@@ -19,6 +19,9 @@ struct spi_device * SPI_Device_Memory;
 QueueHandle_t SPI_TX_QUEUE;
 QueueHandle_t SPI_RX_QUEUE;
 
+#define SPI_TX_QUEUE_MAX_LENGTH					64
+#define SPI_RX_QUEUE_MAX_LENGTH					64
+
 /* SPI */
 #define SPI_DEVICE_0                            0000
 #define SPI_DEVICE_1                            0001
@@ -36,22 +39,28 @@ QueueHandle_t SPI_RX_QUEUE;
 #define CONFIG_SPI_MASTER_BITS_PER_TRANSFER		SPI_CSR_BITS_8_BIT		// Size of data transfer
 #define SPI_INTERRUPT_FLAGS						SPI_IDR_RDRF            // Interrupt flags
 
-
-#define SPI_TX_QUEUE_MAX_LENGTH					64
-#define SPI_RX_QUEUE_MAX_LENGTH					64
+typedef enum {
+	SPI_CS_MEMORY = 0,
+	SPI_CS_RADIO = 1
+	} spi_devices_t;
+	
+const uint32_t spi_device_masks[] = \
+{
+	0x00 << SPI_TDR_PCS_Pos,
+	0x01 << SPI_TDR_PCS_Pos
+	
+};
 
 /* TWI */
 #define TWI0_SPEED                              100000
 #define TWI0_CHIP                               0xFF
 #define TWI0_INTERRUPT_FLAGS                    0
 
-<<<<<<< Updated upstream
 uint8_t spi_buffer_start[250];
 uint32_t spi_buffer_index;
-=======
+
 /* UART */
 #define CONF_UART_BAUDRATE                      9600
 #define CONF_UART_PARITY                        UART_MR_PAR_NO
->>>>>>> Stashed changes
 
 #endif /* BLUESAT_CONFIG_H_ */
