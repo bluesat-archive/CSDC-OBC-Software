@@ -509,6 +509,12 @@
     <None Include="src\asf.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\Applications\memory_test\memory_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\memory_test\memory_test.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\asf\common\boards\board.h">
       <SubType>compile</SubType>
     </Compile>
@@ -1059,6 +1065,7 @@
     <Folder Include="src\Applications\cc1120_test" />
     <Folder Include="src\Applications\" />
     <Folder Include="src\Applications" />
+    <Folder Include="src\Applications\memory_test" />
     <Folder Include="src\asf\" />
     <Folder Include="src\asf\common\" />
     <Folder Include="src\asf\common\boards\" />
