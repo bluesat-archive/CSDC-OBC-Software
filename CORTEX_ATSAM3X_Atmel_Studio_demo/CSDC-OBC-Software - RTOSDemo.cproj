@@ -509,6 +509,15 @@
     <None Include="src\asf.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\Applications\i2c_test\i2c_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\i2c_test\i2c_read.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Applications\i2c_test\i2c_write.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\asf\common\boards\board.h">
       <SubType>compile</SubType>
     </Compile>
@@ -1059,6 +1068,7 @@
     <Folder Include="src\Applications\cc1120_test" />
     <Folder Include="src\Applications\" />
     <Folder Include="src\Applications" />
+    <Folder Include="src\Applications\i2c_test" />
     <Folder Include="src\asf\" />
     <Folder Include="src\asf\common\" />
     <Folder Include="src\asf\common\boards\" />
