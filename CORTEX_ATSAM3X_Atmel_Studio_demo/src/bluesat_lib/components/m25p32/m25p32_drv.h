@@ -15,8 +15,10 @@
 #define WRITE_ENABLE 0x06
 #define WRITE_DISABLE 0x04
 #define BULK_ERASE 0xc7
+#define SECTOR_ERASE 0xd8
 
 //Prototypes
 void m25p32BulkErase();
+void m25p32SectorErase(uint32_t addr);
 
 #endif /* M25P32_DRV_H_ */
