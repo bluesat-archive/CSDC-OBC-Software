@@ -30,6 +30,7 @@
 //Prototypes
 void m25p32BulkErase();
 void m25p32SectorErase(uint32_t addr);
-void m25p32PageProgram(Byte* data, uint32_t addr);
+void m25p32PageProgram(Byte* data, uint32_t addr,uint32_t dataSize);
+void m25p32ReadStatusRegister(uint8_t* status);
 
 #endif /* M25P32_DRV_H_ */
