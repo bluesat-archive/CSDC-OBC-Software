@@ -434,6 +434,7 @@
       <Value>../src/ASF/common/services/serial/sam_uart</Value>
       <Value>../src/ASF/common/services/serial</Value>
       <Value>../src/ASF/common/services/twi</Value>
+      <Value>../src/bluesat_lib/components/m25p32</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.OtherFlags>-fdata-sections</armgcc.compiler.optimization.OtherFlags>
@@ -442,6 +443,7 @@
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcc.compiler.miscellaneous.OtherFlags>-pipe -Wall -Wextra -std=gnu99 -ffunction-sections -fdata-sections --param max-inline-insns-single=500 -Dprintf=iprintf</armgcc.compiler.miscellaneous.OtherFlags>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-T../src/asf/sam/utils/linker_scripts/sam3x/sam3x8/gcc/flash.ld -Wl,--cref -Wl,--entry=Reset_Handler -mthumb</armgcc.linker.miscellaneous.LinkerFlags>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=SAM3X_EK -D__SAM3X8H__</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.IncludePaths>

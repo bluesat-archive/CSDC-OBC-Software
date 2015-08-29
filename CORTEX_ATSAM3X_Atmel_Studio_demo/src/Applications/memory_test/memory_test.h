@@ -8,14 +8,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifndef CC1120_TEST_APP_H_
-#define CC1120_TEST_APP_H_
+#ifndef M25P32_TEST_APP_H_
+#define M25P32_TEST_APP_H_
 
-void vStartcc1120_testTasks( UBaseType_t uxPriority );
+void vStartm25p32_testTasks( UBaseType_t uxPriority );
 
 // test functions
-void cc1120_burst_test();
-void CC1120_read_test();
-void uart_serial_test();
+void m25p32_read_write_test();
 
-#endif /* CC1120_TEST_APP_H_ */
+#endif /* M25P32_TEST_APP_H_ */
