@@ -51,18 +51,17 @@ void m25p32SectorErase(uint32_t addr){
     spi_select_device(SPI0,SPI_Device_Memory);
     command = SECTOR_ERASE;
     spi_write_packet(SPI0,&command,ONE_BYTE);
-    //not sure about this<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     spi_write_packet(SPI0,address,3 * ONE_BYTE);
     spi_deselect_device(SPI0,SPI_Device_Memory);
     
-    while(m25p32WriteRunning());
+    //while(m25p32WriteRunning());
     disableWrite();
 }
 
 void m25p32PageWrite(Byte* data, uint32_t addr,uint32_t dataSize){
     uint8_t command,address[3];
     uint16_t i;
-    while(m25p32WriteRunning());
+    //while(m25p32WriteRunning());
     enableWrite();
     
     address[0] = (addr&0x00FF0000)>>16;
@@ -81,7 +80,7 @@ void m25p32PageWrite(Byte* data, uint32_t addr,uint32_t dataSize){
     
     spi_deselect_device(SPI0,SPI_Device_Memory);
     
-    while(m25p32WriteRunning());
+    //while(m25p32WriteRunning());
     disableWrite();
 }
 

@@ -56,26 +56,15 @@ static portTASK_FUNCTION( vm25p32_TestTask, pvParameters )
 }
 
 void m25p32_read_write_test(){
-    uint8_t message[10] ={
-        0x01,
-        0x02,
-        0x03,
-        0x04,
-        0x05,
-        0x06,
-        0x07,
-        0x08,
-        0x09,
-        0x0a
-    };
-    uint8_t recieved[10];
-    uint8_t dummy[] = "  ",newLine[] = "\n\r";
+    uint8_t message[10] = "aaaa  aaaa";
+    uint8_t recieved[10] = "";
+    uint8_t dummy[] = "<>",newLine[] = "\n\r";
     uint32_t address = 0x0000aabb;
-    m25p32PageWrite(message,address,10);
-    m25p32PageRead(recieved,address,10);
+    m25p32PageWrite(message,address,1);
+    m25p32PageRead(recieved,address,1);
     usart_serial_write_packet((usart_if)UART,message,10);
     usart_serial_write_packet((usart_if)UART,dummy,2);
-    usart_serial_write_packet((usart_if)UART,recieved,10);
+    usart_serial_write_packet((usart_if)UART,recieved,1);
     usart_serial_write_packet((usart_if)UART,newLine,2);
     
     

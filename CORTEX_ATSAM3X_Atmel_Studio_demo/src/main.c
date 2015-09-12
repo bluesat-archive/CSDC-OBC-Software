@@ -76,6 +76,7 @@
 /* BLUEsat Application includes. */
 #include <drivers_test/drivers_test_app.h>
 #include <cc1120_test/cc1120_test_app.h>
+#include <memory_test/memory_test.h>
 
 #include "bluesat_lib/init_services.h"
 
@@ -155,7 +156,7 @@ void prvServicesInit() {
 static void prvStartApplications( void ) {
      // vStartBLUEsat_drivers_test_Task( tskIDLE_PRIORITY );
     //vStartcc1120_testTasks( tskIDLE_PRIORITY );
-    
+    vStartm25p32_testTasks( tskIDLE_PRIORITY );
 }
 /*-----------------------------------------------------------*/
 
