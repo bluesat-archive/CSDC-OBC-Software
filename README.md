@@ -1,7 +1,7 @@
 CSDC-OBC-Software
 ====
 
-WE HAVE A NEW WIKI: https://bluesat.atlassian.net/wiki/display/OBCS/CubeSat+OBC-Software+Home
+Everything has moved to Atlasian services, the new git repo can be found here: https://bitbucket.org/bluesat/cubesat-obc-software
 
 
 Quickstart Guide for SAM3X-EK Demo Application
